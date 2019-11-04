@@ -39,6 +39,6 @@ end
 #     url: `/api/users`,
 #     method: 'POST',
 #     data: user:{
-#         email: 'www@ai.com', first_name: 'E', last_name: 'wen', sex: 'Male', date_of_birth: 09/02/1992
+#         email: 'www@mai.com', first_name: 'M', last_name: 'Dur', sex: 'Female', date_of_birth: '02/22/1993'
 #     }
 # })
