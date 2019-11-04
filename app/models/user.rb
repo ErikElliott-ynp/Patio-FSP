@@ -35,10 +35,3 @@ end
 
 
 
-# $.ajax({
-#     url: `/api/users`,
-#     method: 'POST',
-#     data: user:{
-#         email: 'www@mai.com', first_name: 'M', last_name: 'Dur', sex: 'Female', date_of_birth: '02/22/1993'
-#     }
-# })
