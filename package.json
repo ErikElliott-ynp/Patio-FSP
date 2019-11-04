@@ -8,8 +8,11 @@
     "babel-loader": "^8.0.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-logger": "^1.1.0",
     "react-router-dom": "^5.1.2",
+    "react-thunk": "^1.0.0",
     "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },

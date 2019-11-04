@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-    validates :email, null: false, uniqueness: true
-    validates :first_name, :last_name, :sex, null: false
+    validates :email, presence: true, uniqueness: true
+    validates :first_name, :last_name, :sex, :date_of_birth, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
+   
 
     attr_reader :password
 
@@ -13,7 +14,7 @@ class User < ApplicationRecord
     end
 
     def password=(password)
-        @password = word
+        @password = password
         self.password_digest = BCrypt::Password.create(password)
     end
 
@@ -31,3 +32,13 @@ class User < ApplicationRecord
     end
 
 end
+
+
+
+# $.ajax({
+#     url: `/api/users`,
+#     method: 'POST',
+#     data: user:{
+#         email: 'www@ai.com', first_name: 'E', last_name: 'wen', sex: 'Male', date_of_birth: 09/02/1992
+#     }
+# })

@@ -4,8 +4,9 @@ import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", () => {
     const divRoot = document.getElementById("root");
-    const store =  configureStore();
+    // const store =  configureStore();
     
-    ReactDOM.render(<Root store={store} />, divRoot);
+    ReactDOM.render(<h1>Friends right here</h1> , divRoot);
 })
 
+    // < Root store = { store } />

@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-    before_action :require_login
+    before_action :require_login, only: [:update]
 
     def create
         @user = User.new(user_params)
@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show
         else
-            render :json [@user.errors.full_messages], status 422
+            render json: @user.errors.full_messages, status: 422
         end
     end
 
@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
         if @user.update(change_params)
             render :show
         else
-            render :json [@user.errors.full_messages], status 422
+            render json: @user.errors.full_messages, status: 422
         end
         
     end
@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:work, :education, :about_me, :first_name, :last_name, :sex, :email, :date_of_birth)
+        params.require(:user).permit(:work, :password, :education, :about_me, :first_name, :last_name, :sex, :email, :date_of_birth)
     end
 
     def change_params
