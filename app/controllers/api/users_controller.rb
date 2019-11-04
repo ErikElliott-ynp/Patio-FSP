@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
 
+    before_action :require_login
+
     def create
         @user = User.new(user_params)
         if @user.save
@@ -15,7 +17,7 @@ class Api::UsersController < ApplicationController
         if @user.update(change_params)
             render :show
         else
-            render :json [@user.errors.full_messages]
+            render :json [@user.errors.full_messages], status 422
         end
         
     end
