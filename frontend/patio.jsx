@@ -5,8 +5,10 @@ import { signup, login, logout} from "./util/session_api_util"
 
 document.addEventListener("DOMContentLoaded", () => {
     const divRoot = document.getElementById("root");
-    // const store =  configureStore();
+    const store =  configureStore();
     
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
     window.signup = signup;
     window.login = login;
     window.logout = logout;
