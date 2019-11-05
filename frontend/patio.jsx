@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
-import { signup, login, logout} from "./util/session_api_util"
+// import { signup, login, logout} from "./util/session_api_util"
+import Root
 
 document.addEventListener("DOMContentLoaded", () => {
     const divRoot = document.getElementById("root");
@@ -9,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.signup = signup;
-    window.login = login;
-    window.logout = logout;
+    // window.signup = signup;
+    // window.login = login;
+    // window.logout = logout;
 
     ReactDOM.render(<h1>Friends right here</h1> , divRoot);
 })
