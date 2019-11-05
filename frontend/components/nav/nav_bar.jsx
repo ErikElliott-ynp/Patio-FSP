@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -28,24 +30,40 @@ class NavBar extends React.Component {
                     {
                         this.props.loggedIn ? (
                             <div className="logged-in-bar">
-                                <div className="search-bar">
-                                    <input type="search" placeholder="Search"/>
+                                <div className="left-logged-in">
+                                    <Link to="/feed" style={{ textDecoration: 'none' }}>
+                                        <div className="logo-logged-in">
+                                            <h2 className="the-p">P</h2>
+                                        </div>
+                                    </Link>
+                                    <input className="search-bar" type="search" placeholder="Search"/>
                                     <i className="fa fa-search"></i>
                                 </div>
-                                <button onClick={() => this.props.logout()}>Log Out</button>
+                                <div className="right-logged-in">
+                                    <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
+                                        <div className="info-blip">
+                                            <p>
+                                                {this.props.currentUser.firstName}
+                                            </p>
+                                        </div>
+                                    </Link>
+                                    <button onClick={() => this.props.logout()} className="action-button logout clearfix">Log Out</button>
+                                </div>
                             </div>
                         ) : (
-                            <div className="sign-in-bar">
-                                <h1 className="logo">The Patio</h1>
-                                <form onSubmit={this.handleSubmit}>
-                                    <label>Email
-                                        <input onChange={this.handleChange('email')} type="text" value={this.state.email}/>
-                                    </label>
-                                    <label>Password
-                                        <input onChange={this.handleChange('password')} type="password" value={this.state.password}/>password                     
-                                    </label>
-                                    <input type="submit" value="Log In"/>
-                                </form>
+                            <div className="login-bar">
+                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo outline clearfix" >The Patio</h1></Link>
+                                <div className="submission-form clearfix">
+                                    <form onSubmit={this.handleSubmit}>
+                                        <div>
+                                                <span className="signin-text outline">Email</span>
+                                                <span className="pass-text outline">Password</span>
+                                        </div>
+                                        <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
+                                        <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
+                                        <input className="action-button" type="submit" value="Log In"/>
+                                    </form>
+                                </div>
                             </div>
                         )
                     }
