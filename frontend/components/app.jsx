@@ -5,7 +5,7 @@ const App = () => {
     return (
         <div id="app">
             <NavBarContainer />
-            <h1>And here. . . we . . .go</h1>
+            
         </div>
     )
 }
