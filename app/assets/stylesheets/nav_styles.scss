@@ -13,15 +13,21 @@
 
 body {
     background-color: #39799E;
+    background-image: linear-gradient(rgb(0, 0, 0), #39799E 50%);
 }
 
 /* 4796C6 */
 
 .nav-bar {
+    position: fixed;
+    top: 0;
     float: left;
+    display: block;
     width: 100%;
     background-color: #8D979E;
+    background-image: linear-gradient(#e2e9ff, #8D979E 50%);
     height: 80px;
+    z-index: 5;
 
 }
 
@@ -103,7 +109,7 @@ body {
 }
 
 .signin-input-box:hover {
-    cursor: copy
+    cursor: text;
 }
 
 .clearfix::after {
@@ -160,6 +166,3 @@ body {
     color: white;
 }
 
-.iconic {
-    background-image: url(<%= assest_path('patio_photo') =>);
-}
