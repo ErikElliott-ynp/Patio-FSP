@@ -1,20 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
-// import { signup, login, logout} from "./util/session_api_util"
-import Root
+import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
     const divRoot = document.getElementById("root");
-    const store =  configureStore();
+    let store;
+    store =  configureStore();
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id}
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
     
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    // window.signup = signup;
-    // window.login = login;
-    // window.logout = logout;
 
-    ReactDOM.render(<h1>Friends right here</h1> , divRoot);
+    ReactDOM.render(< Root store={store} /> , divRoot);
 })
 
-    // < Root store = { store } />
+    
