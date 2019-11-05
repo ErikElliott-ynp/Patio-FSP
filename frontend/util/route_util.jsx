@@ -1,9 +1,8 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-dom";
-import { withRouter } from "react-router";
+import { Route, Redirect, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Auth = ({ component: Component, path, loggedIn, exact }) => {
+const Auth = ({ component: Component, path, loggedIn, exact }) => (
     <Route
         path={path}
         exact={exact}
@@ -11,7 +10,17 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             !loggedIn ? <Component {...props} /> : <Redirect to="/feed" />
         }   
     />
-};
+);
+
+const Pro = ({ component: Component, path, loggedIn, exact }) => (
+    <Route
+        path={path}
+        exact={exact}
+        render={props =>
+            loggedIn ? <Component {...props} /> : <Redirect to="/" />
+        }
+    />
+);
 
 const mSTP = state => {
     return {
@@ -20,3 +29,5 @@ const mSTP = state => {
 }
 
 export const AuthRoute = withRouter(connect(mSTP, null)(Auth));
+
+export const ProtectedRoute = withRouter(connect(mSTP, null)(Pro));

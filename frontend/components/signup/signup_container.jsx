@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-dom";
+import { connect } from "react-redux";
 import { signup } from "../../actions/session_actions";
 import SignupFrom from "./signup_form";
 
