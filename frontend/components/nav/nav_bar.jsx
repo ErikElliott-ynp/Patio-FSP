@@ -27,7 +27,7 @@ class NavBar extends React.Component {
                 {
                     this.props.loggedIn ? (
                         <div className="logged-in-bar">
-
+                            
                         </div>
                     ) : (
                         <div className="sign-in-bar">
