@@ -1,5 +1,4 @@
 import React from "react";
-import ErrorMessage from "./error_message"
 
 
 
@@ -8,10 +7,10 @@ class SignupForm extends React.Component{
         super(props)
 
         this.state = {
-            email: "",
-            password: "",
             firstName: "",
             lastName: "",
+            email: "",
+            password: "",
             dateOfBirth: "",
             sex: "",
         }
@@ -41,9 +40,11 @@ class SignupForm extends React.Component{
     }
 
     render(){
-        const errors = this.props.errors.map( error => {
-            return <ErrorMessage error={error}/>
-        })
+        const errors = this.props.errors
+
+        if (errors.includes("First name can't be blank")) {
+            document.getElementById('signup-names').classList.remove('hidden');
+        }
         return (
             <div className="signup-max">
                 <div className="left-side">
@@ -53,8 +54,12 @@ class SignupForm extends React.Component{
                     <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
-                    <div className="names signup-errors">
-                        {errors}
+                    <div className="names signup-errors hidden" id="signup-names">
+                        <p>First Name can't be blank</p>
+                    </div>
+
+                    <div className="lname sign-errors" id="lname">
+                        <p>Last Name can't blank</p>
                     </div>
                     <h2 className="outline">Sign Up</h2>
                     <p className="outline">It's quick and easy</p>
@@ -66,7 +71,7 @@ class SignupForm extends React.Component{
                         <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="   Email" value={this.state.email}/>
                         <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="   New Password" value={this.state.password}/>
                         <label className="bday-text"><h4 className="outline">Birthday</h4>
-                            <input onChange={this.handleChange('dateOfBirth')} value={this.state.dateOfBirth} min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" />
+                            <input onChange={this.handleChange('dateOfBirth')} value={this.state.dateOfBirth} min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" required/>
                         </label>
                         <div className="gender-buttons">
                             <h4 className="outline">Sex:</h4>
@@ -82,5 +87,7 @@ class SignupForm extends React.Component{
         )
     }
 }
+
+
 
 export default SignupForm;

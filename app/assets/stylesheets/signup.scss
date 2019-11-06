@@ -273,15 +273,40 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 .signup-errors {
-    position: fixed;
-    top: 225px;
-    right: 850px;
-    width: 175px;
-    height: 50px;
+    width: 155px;
+    height: 40px;
     background-color: rgb(201, 23, 23);
     font-family: monospace;
     border-radius: 3px;
+    border: 2px solid rgb(153, 18, 18);
+    color: white;
+
 }
+
+
+.signup-errors:after {
+  content: " ";
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  border-top: 10px solid transparent;
+  border-right: none;
+  border-left: 10px solid rgb(153, 18, 18);
+  border-bottom: 10px solid transparent;
+  z-index: -1;
+  
+}
+
+.names{
+    position: fixed;
+    top: 196px;
+    right: 637px;
+}
+
+.signup-errors p {
+    margin-top: 6px;
+}
+
 
 .demo {
 
