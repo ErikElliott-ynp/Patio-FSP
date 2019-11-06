@@ -49,14 +49,21 @@ class SignupForm extends React.Component{
                 <div className="signup-info">
                     <h2>Sign Up</h2>
                     <p>It's quick and easy</p>
-                    <form onSubmit={this.handleSubmit}>
+                    <form className="" onSubmit={this.handleSubmit}>
                         <div className="signup-names">
-                            <input onChange={this.handleChange('firstName')} type="text" placeholder="First Name" value={this.state.firstName}/>
-                            <input onChange={this.handleChange('lastName')} type="text" placeholder="Last Name" value={this.state.lastName}/>
+                            <input className="fn-input-box" onChange={this.handleChange('firstName')} type="text" placeholder="First Name" value={this.state.firstName}/>
+                            <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="Last Name" value={this.state.lastName}/>
                         </div>
-                        <input onChange={this.handleChange('email')} type="text" placeholder="Email" value={this.state.email}/>
+                        <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="Email" value={this.state.email}/>
                         <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="New Password" value={this.state.password}/>
-                        <input type="date" name="" id="bday" className="bday-box" />
+                        <label className="bday-text"><h4>Gender</h4>
+                            <input value="2019-10-31" min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" />
+                        </label>
+                        <label><h4>Gender</h4>
+                            <input type="radio" value="Male" id="male"/><p>Male</p><br/>
+                            <input type="radio" value="Female" id="female"/><p>Female</p><br/>
+                            <input type="radio" value="Other" id="other"/>
+                        </label>
 
                     </form>
                 </div>

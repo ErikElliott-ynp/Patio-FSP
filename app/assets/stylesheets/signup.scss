@@ -12,6 +12,10 @@ input[type=date]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+::-webkit-input-placeholder {
+  
+  font-size: 18px;
+}
 
 .tagline {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -25,17 +29,21 @@ input[type=date]::-webkit-outer-spin-button {
 
 .signup-max {
     position: absolute;
-    left: 5%;
+    left: 0;
     bottom: 0;
     display: flex;
-    width: 80vw;
+    width: 100vw;
     height: 90%;
 }
 
 .signup-info {
-    position: absolute;
-    right: 5%;
+    position: relative;
+    right: 0;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -43,6 +51,7 @@ input[type=date]::-webkit-outer-spin-button {
 
 .signup-info  * {
     margin: 10px;
+    
 }
 
 .signup-info form {
@@ -50,10 +59,13 @@ input[type=date]::-webkit-outer-spin-button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .left-side {
     display: block;
+    position: relative;
+    left: 0;
     box-sizing: border-box;
     width: 50%;
 }
@@ -74,4 +86,45 @@ strong {
     bottom: 5%;
 }
 
-.pw
+.pw-input-box {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.email-input-box {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+
+}
+
+.fn-input-box {
+    width: 190px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.ln-input-box {
+    width: 190px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.bday-box {
+    width: 200px;
+    height: 40px;
+}
+
+.bday-text {
+    font-size: 28px
+}
+
+.signup-info h2 {
+    font-size: 36px;
+
+}
+
+.signup-info > p {
+    font-size: 19px;
+}
