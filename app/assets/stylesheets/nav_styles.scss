@@ -152,8 +152,7 @@ body {
 }
 
 .hidden {
-    
-
+    visibility: hidden;
 }
 
 .errors {
@@ -162,13 +161,29 @@ body {
     right: 645px;
     height: 35px;
     width: 125px;
-    background-color: red;
+    background-color: rgb(201, 23, 23);
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     font-family: monospace;
     border-radius: 3px;
     text-align: center;
     line-height: 15px;
+}
+
+.errors:after {
+  content: " ";
+  position: absolute;
+  right: -8px;
+  top: 8px;
+  border-top: 10px solid transparent;
+  border-right: none;
+  border-left: 10px solid rgb(201, 23, 23);
+  border-bottom: 10px solid transparent;
+  z-index: -1;
+}
+
+.errors > p {
+    margin-top: 2px;
 }
 
 .logged-in-bar {
