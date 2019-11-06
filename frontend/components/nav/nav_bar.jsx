@@ -17,17 +17,19 @@ class NavBar extends React.Component {
     handleSubmit(e){
         debugger
         e.preventDefault();
-        this.props.login(this.state).then(() => this.setState({
+        this.props.login(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
             email: "",
             password: ""
-        })).then((user) => this.props.history.push(`/users/${user.id}`) )
+        }))
     }
 
     handleChange(field) {
         return (e) => this.setState( { [field]: e.target.value })
     }
     render () {
-
+        const errors = this.props.errors.map( error => {
+            return error;
+        })
         return (
             <div className="nav-bar">
                 <div className="nav-flex">
@@ -56,6 +58,9 @@ class NavBar extends React.Component {
                             </div>
                         ) : (
                             <div className="login-bar">
+                                <div class="errors hidden">
+                                    <p>{errors}</p>
+                                </div>
                                 <div className="logo-box clearfix">
                                     <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
                                 </div>

@@ -151,6 +151,26 @@ body {
     right: 20%;
 }
 
+.hidden {
+    
+
+}
+
+.errors {
+    position: fixed;
+    top: 36px;
+    right: 645px;
+    height: 35px;
+    width: 125px;
+    background-color: red;
+    color: white;
+    font-size: 13px;
+    font-family: monospace;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 15px;
+}
+
 .logged-in-bar {
     float: left;
     width: 100%;

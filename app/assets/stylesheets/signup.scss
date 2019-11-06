@@ -238,6 +238,9 @@ input[type="radio"] {
 
 input[type=date]::-webkit-datetime-edit {
     color: rgb(88, 88, 88);
+    margin-left: 15px;
+    letter-spacing: 2px;
+    font-family: sans-serif
 }
 
 
@@ -263,6 +266,10 @@ input[type=date]::-webkit-datetime-edit {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    margin-right: 15px;
 }
 
 .demo {
