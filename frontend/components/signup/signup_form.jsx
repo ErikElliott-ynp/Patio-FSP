@@ -21,6 +21,7 @@ class SignupForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        this.hideErrors();
         this.props.signup(this.state).then(() => this.setState({
             email: "",
             password: "",
@@ -39,11 +40,18 @@ class SignupForm extends React.Component{
         this.setState( { 'sex': e.target.value } )
     }
 
+    hideErrors() {
+        const errorBoxes = Array.from(document.getElementsByClassName('i'));
+        errorBoxes.map( box => box.classList.add('hidden'))
+    }
+
     render(){
         const errors = this.props.errors
 
         if (errors.includes("First name can't be blank")) {
             document.getElementById('signup-names').classList.remove('hidden');
+        } else if (errors.includes("Last name can't be blank")) {
+            document.getElementById('lname').classList.remove('hidden');
         }
         return (
             <div className="signup-max">
@@ -54,12 +62,21 @@ class SignupForm extends React.Component{
                     <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
-                    <div className="names signup-errors hidden" id="signup-names">
+                    <div className="names signup-errors i hidden" id="signup-names">
                         <p>First Name can't be blank</p>
                     </div>
 
-                    <div className="lname sign-errors" id="lname">
-                        <p>Last Name can't blank</p>
+                    <div className="lname signup-errors-left i hidden" id="lname">
+                        <p>Last Name can't be blank</p>
+                    </div>
+                    <div className="email signup-errors i hidden" id="email">
+                        <p>Email can't be blank</p>
+                    </div>
+                    <div className="p-word signup-errors i hidden" id="p-word">
+                        <p>Password must be at least 6 characters</p>
+                    </div>
+                    <div className="sex signup-errors i hidden" id="sex">
+                        <p>Please Select a Sex</p>
                     </div>
                     <h2 className="outline">Sign Up</h2>
                     <p className="outline">It's quick and easy</p>

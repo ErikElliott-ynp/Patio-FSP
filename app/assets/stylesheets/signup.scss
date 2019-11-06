@@ -275,12 +275,43 @@ input[type=date]::-webkit-inner-spin-button {
 .signup-errors {
     width: 155px;
     height: 40px;
-    background-color: rgb(201, 23, 23);
+    background-color: rgb(179, 0, 0);
+    font-family: monospace;
+    border-radius: 3px;
+    border: 2px solid rgb(114, 18, 18);
+    color: white;
+
+}
+
+.signup-errors-left {
+    width: 155px;
+    height: 40px;
+    background-color: rgb(179, 0, 0);
     font-family: monospace;
     border-radius: 3px;
     border: 2px solid rgb(153, 18, 18);
     color: white;
 
+}
+
+
+.signup-errors-left:after {
+  content: " ";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid rgb(114, 18, 18);
+  border-left: none;
+  border-bottom: 10px solid transparent;
+  z-index: -1;
+  
+}
+
+.lname {
+    position: fixed;
+    top: 193px;
+    right: 42px;
 }
 
 
@@ -291,7 +322,7 @@ input[type=date]::-webkit-inner-spin-button {
   top: 10px;
   border-top: 10px solid transparent;
   border-right: none;
-  border-left: 10px solid rgb(153, 18, 18);
+  border-left: 10px solid rgb(114, 18, 18);
   border-bottom: 10px solid transparent;
   z-index: -1;
   
@@ -299,14 +330,35 @@ input[type=date]::-webkit-inner-spin-button {
 
 .names{
     position: fixed;
-    top: 196px;
+    top: 193px;
     right: 637px;
 }
 
-.signup-errors p {
+.email {
+    position: fixed;
+    top: 267px;
+    right: 637px;
+}
+
+.p-word {
+    position: fixed;
+    top: 331px;
+    right: 637px;
+}
+
+.sex {
+    position: fixed;
+    top: 513px;
+    right: 620px;
+}
+
+.signup-info p {
     margin-top: 6px;
 }
 
+.p-word p {
+    margin: 5px 3px;
+}
 
 .demo {
 
