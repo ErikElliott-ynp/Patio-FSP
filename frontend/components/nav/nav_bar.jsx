@@ -56,7 +56,7 @@ class NavBar extends React.Component {
                         ) : (
                             <div className="login-bar">
                                 <div className="logo-box clearfix">
-                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo outline clearfix" >Patio</h1></Link>
+                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
                                 </div>
                                 <div className="submission-form clearfix">
                                     <form onSubmit={this.handleSubmit}>

@@ -21,7 +21,14 @@ class SignupForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state)
+        this.props.signup(this.state).then(() => this.setState({
+            email: "",
+            password: "",
+            firstName: "",
+            lastName: "",
+            dateOfBirth: "",
+            sex: "",
+        })).then(() => this.props.history.push('/feed'))
     }
 
     handleChange(field) {
@@ -37,12 +44,9 @@ class SignupForm extends React.Component{
             <div className="signup-max">
                 <div className="left-side">
                     <h2 className="outline">Your Friends are all here</h2>
-                    <div className="img-slogan">
-                        <div className="iconic">
-                            <h3 className="tagline outline">Connect with friends and family on The Patio.</h3>
-                            <h3 className="outline hook"><strong>See Photos and Updates </strong>from friends and <strong>Share what's new </strong>in your life</h3>
-                        </div>
-                    </div>
+                    <h3 className="tagline outline">Connect with friends and family on Patio</h3>
+                    <h3 className="outline hook"><strong>See Photos and Updates </strong>from friends</h3>
+                    <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
                     <h2 className="outline">Sign Up</h2>

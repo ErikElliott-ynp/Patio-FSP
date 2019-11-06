@@ -10,6 +10,7 @@ const Root = ({ store }) => {
             <Provider store={store}>
                 <HashRouter>
                     <App />
+                    {document.title = "Patio"}
                 </HashRouter>
             </Provider>
         </div>
