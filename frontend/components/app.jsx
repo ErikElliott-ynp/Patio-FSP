@@ -3,6 +3,7 @@ import NavBarContainer from "./nav/nav_bar_container";
 import { Route, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SignupContainer from "../components/signup/signup_container"
+import Profile from "./profile"
 
 const App = () => {
     return (
@@ -11,8 +12,8 @@ const App = () => {
                 <AuthRoute path="/login" component={SignupContainer} />       
                 <AuthRoute path="/signup" component={SignupContainer} />       
             <Switch>
-                {/* <Route to="/users/:userId" /> */}
-                <Route to="/" component={SignupContainer} />
+                <ProtectedRoute path="/users/:userId" component={Profile}/>
+                <Route path="/" component={SignupContainer} />
             </Switch>
             
         </div>

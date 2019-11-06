@@ -168,16 +168,17 @@ body {
     border-radius: 3px;
     text-align: center;
     line-height: 15px;
+    border: 2px solid rgb(153, 18, 18);
 }
 
 .errors:after {
   content: " ";
   position: absolute;
-  right: -8px;
+  right: -10px;
   top: 8px;
   border-top: 10px solid transparent;
   border-right: none;
-  border-left: 10px solid rgb(201, 23, 23);
+  border-left: 10px solid rgb(153, 18, 18);
   border-bottom: 10px solid transparent;
   z-index: -1;
 }

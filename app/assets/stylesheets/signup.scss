@@ -272,6 +272,17 @@ input[type=date]::-webkit-inner-spin-button {
     margin-right: 15px;
 }
 
+.signup-errors {
+    position: fixed;
+    top: 225px;
+    right: 850px;
+    width: 175px;
+    height: 50px;
+    background-color: rgb(201, 23, 23);
+    font-family: monospace;
+    border-radius: 3px;
+}
+
 .demo {
 
 }

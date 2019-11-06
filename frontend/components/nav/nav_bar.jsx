@@ -29,7 +29,11 @@ class NavBar extends React.Component {
     render () {
         const errors = this.props.errors.map( error => {
             return error;
-        })
+        });
+        if (this.props.errors[0] === "Invalid Username or Password") {
+            const navErrorsBox = document.getElementsByClassName('errors')[0];
+            navErrorsBox.classList.remove('hidden');
+        }
         return (
             <div className="nav-bar">
                 <div className="nav-flex">
@@ -58,7 +62,7 @@ class NavBar extends React.Component {
                             </div>
                         ) : (
                             <div className="login-bar">
-                                <div class="errors hidden">
+                                <div className="errors hidden">
                                     <p>{errors}</p>
                                 </div>
                                 <div className="logo-box clearfix">

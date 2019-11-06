@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorMessage from "./error_message"
 
 
 
@@ -40,6 +41,9 @@ class SignupForm extends React.Component{
     }
 
     render(){
+        const errors = this.props.errors.map( error => {
+            return <ErrorMessage error={error}/>
+        })
         return (
             <div className="signup-max">
                 <div className="left-side">
@@ -49,6 +53,9 @@ class SignupForm extends React.Component{
                     <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
+                    <div className="names signup-errors">
+                        {errors}
+                    </div>
                     <h2 className="outline">Sign Up</h2>
                     <p className="outline">It's quick and easy</p>
                     <form onSubmit={this.handleSubmit}>
