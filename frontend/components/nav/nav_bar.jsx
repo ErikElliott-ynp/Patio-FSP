@@ -50,7 +50,7 @@ class NavBar extends React.Component {
                                             <h2 className="the-p">P</h2>
                                         </div>
                                     </Link>
-                                    <input className="search-bar" type="search" placeholder="Search"/>
+                                    <input className="search-bar" type="text" placeholder="Search"/>
                                     <i className="fa fa-search"></i>
                                 </div>
                                 <div className="right-logged-in">

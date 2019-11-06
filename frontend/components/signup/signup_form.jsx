@@ -22,14 +22,14 @@ class SignupForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.hideErrors();
-        this.props.signup(this.state).then(() => this.setState({
+        this.props.signup(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
             email: "",
             password: "",
             firstName: "",
             lastName: "",
             dateOfBirth: "",
             sex: "",
-        })).then(() => this.props.history.push('/feed'))
+        }))
     }
 
     handleChange(field) {
@@ -44,6 +44,8 @@ class SignupForm extends React.Component{
         const errorBoxes = Array.from(document.getElementsByClassName('i'));
         errorBoxes.map( box => box.classList.add('hidden'))
     }
+
+    demo
 
     render(){
         const errors = this.props.errors
@@ -98,7 +100,7 @@ class SignupForm extends React.Component{
                             <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other" /><p className="outline">Other</p>
                         </div>
                         <input className="sign-up-button" type="submit" value="Sign Up!"/>
-                        <button className="sign-up-button demo" type="submit">Demo User</button>
+                        <button className="sign-up-button demo" id="demo">Demo User</button>
                     </form>
                 </div>
             </div>
