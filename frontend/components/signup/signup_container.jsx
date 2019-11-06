@@ -5,7 +5,6 @@ import SignupFrom from "./signup_form";
 
 
 const mDTP = dispatch => {
-    debugger
     return {
         signup: user => dispatch(signup(user))
     }

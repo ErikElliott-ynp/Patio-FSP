@@ -1,9 +1,9 @@
 class Api::UsersController < ApplicationController
 
     before_action :require_login, only: [:update]
+    before_action :underscore_params!
 
     def create
-        debugger
         @user = User.new(user_params)
         if @user.save
             login(@user)
@@ -32,4 +32,23 @@ class Api::UsersController < ApplicationController
     def change_params
         params.require(:user).permit(:work, :education, :about_me)
     end
+
+
+    def underscore_params!
+        underscore_hash = -> (hash) do
+            hash.transform_keys!(&:underscore)
+            hash.each do |key, value|
+            if value.is_a?(ActionController::Parameters)
+                underscore_hash.call(value)
+            elsif value.is_a?(Array)
+                value.each do |item|
+                next unless item.is_a?(ActionController::Parameters)
+                underscore_hash.call(item)
+                end
+            end
+            end
+        end
+        underscore_hash.call(params)
+    end
+   
 end

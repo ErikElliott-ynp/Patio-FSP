@@ -30,7 +30,6 @@ export const login = currentUser => dispatch => {
 }
 
 export const signup = user => dispatch => {
-    debugger
     return SessionAPIUtil.signup(user)
         .then(() => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors)) )
 }

@@ -21,7 +21,6 @@ class SignupForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.signup(this.state)
     }
 
@@ -46,7 +45,7 @@ class SignupForm extends React.Component{
                     </div>
                 </div>
                 <div className="signup-info">
-                    <h2>Sign Up</h2>
+                    <h2 >Sign Up</h2>
                     <p>It's quick and easy</p>
                     <form className="" onSubmit={this.handleSubmit}>
                         <div className="signup-names">
@@ -55,16 +54,16 @@ class SignupForm extends React.Component{
                         </div>
                         <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="   Email" value={this.state.email}/>
                         <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="   New Password" value={this.state.password}/>
-                        <label className="bday-text"><h4>Birthday</h4>
+                        <label className="bday-text"><h4 className="outline">Birthday</h4>
                             <input onChange={this.handleChange('dateOfBirth')} value={this.state.dateOfBirth} min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" />
                         </label>
                         <div className="gender-buttons">
-                            <h4>Sex:</h4>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="male" id="male"/><p>Male</p><br/>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="female" id="female"/><p>Female</p><br/>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other"/><p>Other</p>
+                            <h4 className="outline">Sex:</h4>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="male" id="male" /><p className="outline">Male</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="female" id="female" /><p className="outline">Female</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other" /><p className="outline">Other</p>
                         </div>
-                        <input type="submit" value="Sign Up!"/>
+                        <input className="sign-up-button" type="submit" value="Sign Up!"/>
                     </form>
                 </div>
             </div>

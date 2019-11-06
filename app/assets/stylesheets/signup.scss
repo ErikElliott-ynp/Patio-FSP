@@ -46,6 +46,12 @@ input[type=date]::-webkit-outer-spin-button {
     flex-direction: column;
 }
 
+.signup-info > h2 {
+    font-size: 42px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    letter-spacing: 1px;
+}
 
 
 
@@ -84,40 +90,48 @@ strong {
     font-size: 24px;
     position: relative;
     bottom: 5%;
+
 }
 
 .pw-input-box {
     width: 400px;
     height: 40px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 .email-input-box {
     width: 400px;
     height: 40px;
     border-radius: 5px;
-
+    border: 1px solid black;
 }
 
 .fn-input-box {
     width: 188px;
     height: 40px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 .ln-input-box {
     width: 188px;
     height: 40px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 .bday-box {
     width: 200px;
     height: 40px;
+    border: 1px solid black;
 }
 
 .bday-text {
-    font-size: 28px
+    font-size: 24px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
 }
 
 .signup-info h2 {
@@ -135,8 +149,49 @@ strong {
     flex-direction: row;
 }
 
+.gender-buttons > h4, p {
+    font-size: 20px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+}
+
 input[type="radio"] {
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
     transform: scale(1.5);
+    color: black;
+}
+
+.signup-max input[type="text"], input[type="password"]  {
+    font-size:25px;
+}
+
+
+ input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+}
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #ffa500;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
 }
