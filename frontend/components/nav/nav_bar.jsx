@@ -52,16 +52,20 @@ class NavBar extends React.Component {
                             </div>
                         ) : (
                             <div className="login-bar">
-                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo outline clearfix" >The Patio</h1></Link>
+                                <div className="logo-box">
+                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo outline clearfix" >Patio</h1></Link>
+                                </div>
                                 <div className="submission-form clearfix">
                                     <form onSubmit={this.handleSubmit}>
                                         <div>
                                                 <span className="signin-text outline">Email</span>
                                                 <span className="pass-text outline">Password</span>
                                         </div>
-                                        <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
-                                        <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
-                                        <input className="action-button" type="submit" value="Log In"/>
+                                        <div className="sign-inputs-cont">
+                                            <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
+                                            <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
+                                            <input className="action-button" type="submit" value="Log In"/>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

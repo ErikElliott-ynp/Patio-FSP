@@ -34,7 +34,7 @@ class SignupForm extends React.Component{
                     <h2 className="outline">Your Friends are all here</h2>
                     <div className="img-slogan">
                         <div className="iconic">
-                            <h3 className="outline tagline">Connect with friends and family on The Patio.</h3>
+                            <h3 className="tagline">Connect with friends and family on The Patio.</h3>
                             <h3 className="outline hook"><strong>See Photos and Updates</strong>from friends and <strong>Share what's new </strong>in your life</h3>
                         </div>
                     </div>

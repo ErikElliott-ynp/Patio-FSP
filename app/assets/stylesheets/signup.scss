@@ -12,21 +12,10 @@ input[type=date]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-.iconic {
-    height: 40vw;
-    width: 50vw;
-    background-image: image_url('patio_photo.jpg');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    box-shadow: -30px -25px 6px white;
-    display: flex;
-    align-items: baseline;
-    position: relative;
-}
+
 .tagline {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
+    color: black;
     letter-spacing: 1px;
     position: absolute;
     top: 4%;
