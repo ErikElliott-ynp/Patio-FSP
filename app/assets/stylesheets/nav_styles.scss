@@ -14,10 +14,7 @@
 
 body {
     background-color: rgb(91, 96, 99);
-    background-image: image_url('patio_photo.jpg') ;
-    background-repeat: no-repeat;
-    background-position: 70% 0;
-    background-size: cover;
+   
 
 }
 
@@ -185,15 +182,6 @@ body {
 
 .errors > p {
     margin-top: 2px;
-}
-
-.logged-in-bar {
-    float: left;
-    width: 100%;
-    background-color: #8D979E;
-    height: 10px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .search-bar {

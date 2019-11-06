@@ -17,6 +17,13 @@ input[type=date]::-webkit-outer-spin-button {
   font-size: 18px;
 }
 
+.signup-max {
+    background-image: image_url('patio_photo.jpg') ;
+    background-repeat: no-repeat;
+    background-position: 70% 0;
+    background-size: cover;
+}
+
 .tagline {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
@@ -32,26 +39,24 @@ input[type=date]::-webkit-outer-spin-button {
     left: 0;
     box-sizing: border-box;
     width: 50%;
-}
-
-.left-side * {
-    box-sizing: border-box;
+   
 }
 
 .left-side > h2 {
     font-size: 50px;
     position: absolute;
-    top: 20px;
-    left: 125px;
+    top: 30px;
+    left: 135px;
     color: white;
-    margin-bottom: 15px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
 
 .left-side > h3 {
+    position: relative;
+    top: 100px;
     margin-left: 155px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 

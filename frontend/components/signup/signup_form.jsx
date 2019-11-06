@@ -59,7 +59,7 @@ class SignupForm extends React.Component{
                 <div className="left-side">
                     <h2 className="outline">Your Friends are all here</h2>
                     <h3 className="tagline outline">Connect with friends and family on Patio</h3>
-                    <h3 className="outline hook"><strong>See Photos and Updates </strong>from friends</h3>
+                    <h3 className="outline hook"><strong>See Photos and Updates </strong>in your NewsFeed</h3>
                     <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
