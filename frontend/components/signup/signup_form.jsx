@@ -14,24 +14,23 @@ class SignupForm extends React.Component{
             dateOfBirth: "",
             sex: "",
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRadio = this.handleRadio.bind(this);
 
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state).then(this.setState({
-            email: "",
-            password: "",
-            firstName: "",
-            lastName: "",
-            dateOfBirth: "",
-            sex: "",
-        }))
+        debugger
+        this.props.signup(this.state)
     }
 
     handleChange(field) {
         return (e) => this.setState({ [field]: e.target.value })
+    }
+
+    handleRadio(e) {
+        this.setState( { 'sex': e.target.value } )
     }
 
     render(){
@@ -51,20 +50,21 @@ class SignupForm extends React.Component{
                     <p>It's quick and easy</p>
                     <form className="" onSubmit={this.handleSubmit}>
                         <div className="signup-names">
-                            <input className="fn-input-box" onChange={this.handleChange('firstName')} type="text" placeholder="First Name" value={this.state.firstName}/>
-                            <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="Last Name" value={this.state.lastName}/>
+                            <input className="fn-input-box" onChange={this.handleChange('firstName')} type="text" placeholder="   First Name" value={this.state.firstName}/>
+                            <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="   Last Name" value={this.state.lastName}/>
                         </div>
-                        <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="Email" value={this.state.email}/>
-                        <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="New Password" value={this.state.password}/>
-                        <label className="bday-text"><h4>Gender</h4>
-                            <input value="2019-10-31" min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" />
+                        <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="   Email" value={this.state.email}/>
+                        <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="   New Password" value={this.state.password}/>
+                        <label className="bday-text"><h4>Birthday</h4>
+                            <input onChange={this.handleChange('dateOfBirth')} value={this.state.dateOfBirth} min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" />
                         </label>
-                        <label><h4>Gender</h4>
-                            <input type="radio" value="Male" id="male"/><p>Male</p><br/>
-                            <input type="radio" value="Female" id="female"/><p>Female</p><br/>
-                            <input type="radio" value="Other" id="other"/>
-                        </label>
-
+                        <div className="gender-buttons">
+                            <h4>Sex:</h4>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="male" id="male"/><p>Male</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="female" id="female"/><p>Female</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other"/><p>Other</p>
+                        </div>
+                        <input type="submit" value="Sign Up!"/>
                     </form>
                 </div>
             </div>

@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
     before_action :require_login, only: [:update]
 
     def create
+        debugger
         @user = User.new(user_params)
         if @user.save
             login(@user)

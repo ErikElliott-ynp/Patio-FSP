@@ -100,13 +100,13 @@ strong {
 }
 
 .fn-input-box {
-    width: 190px;
+    width: 188px;
     height: 40px;
     border-radius: 5px;
 }
 
 .ln-input-box {
-    width: 190px;
+    width: 188px;
     height: 40px;
     border-radius: 5px;
 }
@@ -127,4 +127,16 @@ strong {
 
 .signup-info > p {
     font-size: 19px;
+}
+
+.gender-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
 }
