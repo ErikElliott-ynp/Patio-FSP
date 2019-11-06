@@ -15,12 +15,16 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e){
-        debugger
         e.preventDefault();
+        this.hideErrors();
         this.props.login(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
             email: "",
             password: ""
         }))
+    }
+
+    hideErrors() {
+        document.getElementsByClassName('errors')[0].classList.add('hidden');
     }
 
     handleChange(field) {

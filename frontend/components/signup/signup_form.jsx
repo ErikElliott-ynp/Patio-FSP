@@ -48,11 +48,12 @@ class SignupForm extends React.Component{
     render(){
         const errors = this.props.errors
 
-        if (errors.includes("First name can't be blank")) {
-            document.getElementById('signup-names').classList.remove('hidden');
-        } else if (errors.includes("Last name can't be blank")) {
-            document.getElementById('lname').classList.remove('hidden');
+        errors.forEach( error => {
+            const words = error.split(" ");
+            const klass = document.getElementsByClassName(words[0])[0];
+            if (klass) klass.classList.remove('hidden')
         }
+            )
         return (
             <div className="signup-max">
                 <div className="left-side">
@@ -62,20 +63,20 @@ class SignupForm extends React.Component{
                     <h3 className="outline hook"><strong>Share what's new </strong>in your life</h3>
                 </div>
                 <div className="signup-info">
-                    <div className="names signup-errors i hidden" id="signup-names">
+                    <div className="names signup-errors i First hidden" id="signup-names">
                         <p>First Name can't be blank</p>
                     </div>
 
-                    <div className="lname signup-errors-left i hidden" id="lname">
+                    <div className="lname signup-errors-left i Last hidden" id="lname">
                         <p>Last Name can't be blank</p>
                     </div>
-                    <div className="email signup-errors i hidden" id="email">
+                    <div className="Email signup-errors i  hidden" id="email">
                         <p>Email can't be blank</p>
                     </div>
-                    <div className="p-word signup-errors i hidden" id="p-word">
+                    <div className="p-word Password signup-errors i hidden" id="p-word">
                         <p>Password must be at least 6 characters</p>
                     </div>
-                    <div className="sex signup-errors i hidden" id="sex">
+                    <div className="Sex signup-errors i hidden" id="sex">
                         <p>Please Select a Sex</p>
                     </div>
                     <h2 className="outline">Sign Up</h2>
