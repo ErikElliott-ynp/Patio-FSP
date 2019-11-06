@@ -15,11 +15,12 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e){
+        debugger
         e.preventDefault();
-        this.props.login(this.state).then(this.setState({
+        this.props.login(this.state).then(() => this.setState({
             email: "",
             password: ""
-        }))
+        })).then((user) => this.props.history.push(`/users/${user.id}`) )
     }
 
     handleChange(field) {
@@ -68,6 +69,7 @@ class NavBar extends React.Component {
                                             <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
                                             <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
                                             <input className="action-button" type="submit" value="Log In"/>
+                                            
                                         </div>
                                     </form>
                                 </div>

@@ -29,9 +29,9 @@ export const login = currentUser => dispatch => {
         .then( user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors)) )
 }
 
-export const signup = user => dispatch => {
-    return SessionAPIUtil.signup(user)
-        .then(() => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors)) )
+export const signup = currentUser => dispatch => {
+    return SessionAPIUtil.signup(currentUser)
+        .then((user) => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors)) )
 }
 
 export const logout = () => dispatch => {

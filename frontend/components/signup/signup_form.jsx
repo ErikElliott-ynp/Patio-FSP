@@ -68,6 +68,7 @@ class SignupForm extends React.Component{
                             <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other" /><p className="outline">Other</p>
                         </div>
                         <input className="sign-up-button" type="submit" value="Sign Up!"/>
+                        <button className="sign-up-button demo" type="submit">Demo User</button>
                     </form>
                 </div>
             </div>

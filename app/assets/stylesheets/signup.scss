@@ -80,7 +80,7 @@ strong {
 
 .signup-info {
     position: relative;
-    right: 0;
+    right: 70px;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -93,6 +93,7 @@ strong {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     letter-spacing: 1px;
+    margin-bottom: 0;
 }
 
 
@@ -230,6 +231,13 @@ input[type="radio"] {
 .signup-max input[type="date"] {
     font-size:20px;
     margin-left: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+
+}
+
+input[type=date]::-webkit-datetime-edit {
+    color: rgb(88, 88, 88);
 }
 
 
@@ -237,7 +245,7 @@ input[type="radio"] {
     width: 180px;
     height: 35px;
     border-radius: 4px;
-    background-color: #ECB22E;
+    background-color: #4A154B;
     font-size: 22px;
     letter-spacing: 1px;
     border: 1px solid black;   
@@ -246,7 +254,7 @@ input[type="radio"] {
 
 .sign-up-button:hover {
     cursor: pointer;
-    background-color: #4A154B;
+    background-color: #ECB22E;
 }
 
 .sign-up-button {
@@ -255,4 +263,8 @@ input[type="radio"] {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
+}
+
+.demo {
+
 }
