@@ -1,7 +1,8 @@
-@media screen and (min-width: 800px) {
+@media only screen and (max-width: 680px) {
     .submission-form {
-       font-family: Arial, Helvetica, sans-serif;
-        margin: 15px;
+        float: right;
+        right: 0;
+        position: relative;
         overflow: hidden;
     }
 
@@ -15,7 +16,7 @@
 }
 
 body {
-    background-color: #39799E;
+    background-color: rgb(91, 96, 99);
 }
 
 /* 4796C6 */
@@ -25,8 +26,8 @@ body {
     top: 0;
     display: block;
     width: 100%;
-    background-color: #8D979E;
-    background-image: linear-gradient(rgb(165, 179, 189), #8D979E 60%);
+    background-color: rgb(39, 98, 133);
+    background-image: linear-gradient(rgb(88, 150, 185), rgb(39, 98, 133) 40%);
     height: 80px;
     z-index: 5;
     border-bottom: 1px solid;
@@ -77,7 +78,6 @@ body {
 
 .pass-text {
     color: white;
-    margin-left: 6px;
     margin-bottom: 5px;
     margin-top: 5px;
 }

@@ -16,7 +16,10 @@ class NavBar extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.login(this.state)
+        this.props.login(this.state).then(this.setState({
+            email: "",
+            password: ""
+        }))
     }
 
     handleChange(field) {
@@ -52,7 +55,7 @@ class NavBar extends React.Component {
                             </div>
                         ) : (
                             <div className="login-bar">
-                                <div className="logo-box">
+                                <div className="logo-box clearfix">
                                     <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo outline clearfix" >Patio</h1></Link>
                                 </div>
                                 <div className="submission-form clearfix">
@@ -61,7 +64,7 @@ class NavBar extends React.Component {
                                                 <span className="signin-text outline">Email</span>
                                                 <span className="pass-text outline">Password</span>
                                         </div>
-                                        <div className="sign-inputs-cont">
+                                        <div className="sign-inputs-cont clearfix">
                                             <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
                                             <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
                                             <input className="action-button" type="submit" value="Log In"/>

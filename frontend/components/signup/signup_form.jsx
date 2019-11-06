@@ -20,7 +20,14 @@ class SignupForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state)
+        this.props.signup(this.state).then(this.setState({
+            email: "",
+            password: "",
+            firstName: "",
+            lastName: "",
+            dateOfBirth: "",
+            sex: "",
+        }))
     }
 
     handleChange(field) {
@@ -34,8 +41,8 @@ class SignupForm extends React.Component{
                     <h2 className="outline">Your Friends are all here</h2>
                     <div className="img-slogan">
                         <div className="iconic">
-                            <h3 className="tagline">Connect with friends and family on The Patio.</h3>
-                            <h3 className="outline hook"><strong>See Photos and Updates</strong>from friends and <strong>Share what's new </strong>in your life</h3>
+                            <h3 className="tagline outline">Connect with friends and family on The Patio.</h3>
+                            <h3 className="outline hook"><strong>See Photos and Updates </strong>from friends and <strong>Share what's new </strong>in your life</h3>
                         </div>
                     </div>
                 </div>
@@ -48,7 +55,7 @@ class SignupForm extends React.Component{
                             <input onChange={this.handleChange('lastName')} type="text" placeholder="Last Name" value={this.state.lastName}/>
                         </div>
                         <input onChange={this.handleChange('email')} type="text" placeholder="Email" value={this.state.email}/>
-                        <input onChange={this.handleChange('password')} type="password" placeholder="New Password" value={this.state.password}/>
+                        <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="New Password" value={this.state.password}/>
                         <input type="date" name="" id="bday" className="bday-box" />
 
                     </form>
