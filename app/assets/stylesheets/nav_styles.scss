@@ -145,7 +145,8 @@ body {
 .logout{
     float: right;
     width: 60px;
-    right: 20%;
+    right: 50px;
+
 }
 
 .hidden {
@@ -185,20 +186,27 @@ body {
 }
 
 .search-bar {
-    width: 20%;
-    height: 60px
+    position: relative;
+    width: 400px;
+    height: 80px
 }
 
 .logo-logged-in {
+    position: relative;
+    left: 200px;
+    top: 50%;
     height: 35px;
     width: 35px;
-    border-radius: 20%;
-    background-color: white
+    border-radius: 8%;
+    background-color: white;
+    text-transform: lowercase;
 }
 
 .the-p {
+    position: relative;
+    bottom: 8px;
     font-size: 40px;
-    color: #39799E;
+    color: rgba(47, 182, 223, 0.904);
     text-align: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 10px;
