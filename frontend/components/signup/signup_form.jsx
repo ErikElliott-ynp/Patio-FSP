@@ -45,9 +45,9 @@ class SignupForm extends React.Component{
                     </div>
                 </div>
                 <div className="signup-info">
-                    <h2 >Sign Up</h2>
-                    <p>It's quick and easy</p>
-                    <form className="" onSubmit={this.handleSubmit}>
+                    <h2 className="outline">Sign Up</h2>
+                    <p className="outline">It's quick and easy</p>
+                    <form onSubmit={this.handleSubmit}>
                         <div className="signup-names">
                             <input className="fn-input-box" onChange={this.handleChange('firstName')} type="text" placeholder="   First Name" value={this.state.firstName}/>
                             <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="   Last Name" value={this.state.lastName}/>

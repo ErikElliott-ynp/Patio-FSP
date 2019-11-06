@@ -64,7 +64,7 @@ class NavBar extends React.Component {
                                                 <span className="signin-text outline">Email</span>
                                                 <span className="pass-text outline">Password</span>
                                         </div>
-                                        <div className="sign-inputs-cont clearfix">
+                                        <div className="signin-inputs-cont clearfix">
                                             <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
                                             <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
                                             <input className="action-button" type="submit" value="Log In"/>

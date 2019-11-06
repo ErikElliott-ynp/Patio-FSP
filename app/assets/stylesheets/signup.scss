@@ -79,6 +79,8 @@ input[type=date]::-webkit-outer-spin-button {
     font-size: 50px;
     color: white;
     margin-bottom: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 strong {
@@ -132,24 +134,37 @@ strong {
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1px;
+    left: 1px;
+}
+
+.bday-text > h4 {
+   margin-left: 2px;
 }
 
 .signup-info h2 {
-    font-size: 36px;
-
+    font-size: 42px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .signup-info > p {
-    font-size: 19px;
+    font-size: 24px;
+    color: white;
 }
 
 .gender-buttons {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    align-items: center;
 }
 
-.gender-buttons > h4, p {
+.gender-buttons > h4 {
+    font-size: 28px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+}
+.gender-buttons > p {
     font-size: 20px;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -169,10 +184,10 @@ input[type="radio"] {
 
 
  input[type='radio']:after {
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         border-radius: 15px;
-        top: -2px;
+        top: 1px;
         left: -1px;
         position: relative;
         background-color: #d1d3d1;
@@ -183,15 +198,38 @@ input[type="radio"] {
 }
 
     input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         border-radius: 15px;
-        top: -2px;
+        top: 1px;
         left: -1px;
         position: relative;
-        background-color: #ffa500;
+        background-color: black;
         content: '';
         display: inline-block;
         visibility: visible;
         border: 2px solid white;
 }
+
+.signup-max input[type="date"] {
+    font-size:20px;
+    margin-left: 1px;
+}
+
+
+.sign-up-button {
+    width: 180px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #3b3b3b;
+    font-size: 22px;
+    letter-spacing: 1px;
+    border: 1px solid black;   
+    color: white;
+}
+
+.sign-up-button:hover {
+    cursor: pointer;
+    background-color: #3b3b3b;
+}
+
