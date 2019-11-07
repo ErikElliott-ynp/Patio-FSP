@@ -25,10 +25,32 @@ class Api::PostsController < ApplicationController
         end
     end
 
+    def update 
+        @post = Post.find_by(id: params[:id])
+        if @post.author_id == current_user.id && @post.update(change_params)
+            render :show
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
+    end
+
+    def destroy
+        @post = Post.find_by(id: params[:id])
+        if @post.destroy
+            render json: {}
+        else 
+            render json: @post.errors.full_messages, status: 422
+        end
+    end
+
     private
 
     def post_params
         params.require(:permit).permit(:body, :profile_id, :author_id)
+    end
+
+    def change_params
+        params.require(:permit).permit(:body)
     end
 
      def underscore_params!
