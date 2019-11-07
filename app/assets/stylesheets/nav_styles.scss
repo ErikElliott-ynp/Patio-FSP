@@ -142,6 +142,13 @@ body {
 		1px 1px 0 #000;
 }
 
+.demo {
+    position: fixed;
+    bottom: 10px;
+    right: 23.6%;
+    z-index: 2;
+}
+
 .logout{
     float: right;
     width: 60px;

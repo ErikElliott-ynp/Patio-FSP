@@ -39,56 +39,60 @@ class NavBar extends React.Component {
             navErrorsBox.classList.remove('hidden');
         }
         return (
-            <div className="nav-bar">
-                <div className="nav-flex">
-                    {
-                        this.props.loggedIn ? (
-                            <div className="logged-in-bar">
-                                <div className="left-logged-in">
-                                    <Link to="/feed" style={{ textDecoration: 'none' }}>
-                                        <div className="logo-logged-in">
-                                            <h2 className="the-p">P</h2>
-                                        </div>
-                                    </Link>
-                                    <input className="search-bar" type="text" placeholder="Search"/>
-                                    <i className="fa fa-search"></i>
+            <div>
+                <button className="sign-up-button demo" id="demo">Demo User</button>
+           
+                <div className="nav-bar">
+                    <div className="nav-flex">
+                        {
+                            this.props.loggedIn ? (
+                                <div className="logged-in-bar">
+                                    <div className="left-logged-in">
+                                        <Link to="/feed" style={{ textDecoration: 'none' }}>
+                                            <div className="logo-logged-in">
+                                                <h2 className="the-p">P</h2>
+                                            </div>
+                                        </Link>
+                                        <input className="search-bar" type="text" placeholder="Search"/>
+                                        <i className="fa fa-search"></i>
+                                    </div>
+                                    <div className="right-logged-in">
+                                        <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
+                                            <div className="info-blip">
+                                                <p>
+                                                    {this.props.currentUser.firstName}
+                                                </p>
+                                            </div>
+                                        </Link>
+                                        <button onClick={() => this.props.logout()} className="action-button logout clearfix">Log Out</button>
+                                    </div>
                                 </div>
-                                <div className="right-logged-in">
-                                    <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
-                                        <div className="info-blip">
-                                            <p>
-                                                {this.props.currentUser.firstName}
-                                            </p>
-                                        </div>
-                                    </Link>
-                                    <button onClick={() => this.props.logout()} className="action-button logout clearfix">Log Out</button>
+                                
+                            ) : (
+                                <div className="login-bar">
+                                    <div className="errors hidden">
+                                        <p>{errors}</p>
+                                    </div>
+                                    <div className="logo-box clearfix">
+                                        <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
+                                    </div>
+                                    <div className="submission-form clearfix">
+                                        <form onSubmit={this.handleSubmit}>
+                                            <div>
+                                                    <span className="signin-text outline">Email</span>
+                                                    <span className="pass-text outline">Password</span>
+                                            </div>
+                                            <div className="signin-inputs-cont clearfix">
+                                                <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
+                                                <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
+                                                <input className="action-button" type="submit" value="Log In"/>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        ) : (
-                            <div className="login-bar">
-                                <div className="errors hidden">
-                                    <p>{errors}</p>
-                                </div>
-                                <div className="logo-box clearfix">
-                                    <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
-                                </div>
-                                <div className="submission-form clearfix">
-                                    <form onSubmit={this.handleSubmit}>
-                                        <div>
-                                                <span className="signin-text outline">Email</span>
-                                                <span className="pass-text outline">Password</span>
-                                        </div>
-                                        <div className="signin-inputs-cont clearfix">
-                                            <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
-                                            <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
-                                            <input className="action-button" type="submit" value="Log In"/>
-                                            
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        )
-                    }
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         )

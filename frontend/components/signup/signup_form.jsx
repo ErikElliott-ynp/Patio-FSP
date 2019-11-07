@@ -45,7 +45,11 @@ class SignupForm extends React.Component{
         errorBoxes.map( box => box.classList.add('hidden'))
     }
 
-    demo
+    demoUser() {
+        let userEmail = "demouser@demo.io".split("");
+        let userPass = "mountain".split("");
+
+    }
 
     render(){
         const errors = this.props.errors
@@ -100,7 +104,6 @@ class SignupForm extends React.Component{
                             <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other" /><p className="outline">Other</p>
                         </div>
                         <input className="sign-up-button" type="submit" value="Sign Up!"/>
-                        <button className="sign-up-button demo" id="demo">Demo User</button>
                     </form>
                 </div>
             </div>
