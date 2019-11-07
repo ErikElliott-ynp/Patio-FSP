@@ -45,7 +45,7 @@ class NavBar extends React.Component {
             }, () => window.setTimeout(() => this.demoLogin(email, password), 100)
             )
         } else {
-            this.props.login(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
+            this.props.login(this.state).then((user) => this.props.history.push(`/feed`)).then(() => this.setState({
                 email: "",
                 password: ""
             }));
@@ -75,8 +75,10 @@ class NavBar extends React.Component {
             navErrorsBox.classList.remove('hidden');
         }
 
-        if (this.props.loggedIn) document.getElementById('demo').classList.add('hidden');
-
+        if (this.props.loggedIn) {
+            const el = document.getElementById('demo');
+            if (el) el.classList.add('hidden');
+        }
         return (
             <div>
                 <button onClick={() => this.handleDemo()} className="sign-up-button demo" id="demo">Demo User</button>

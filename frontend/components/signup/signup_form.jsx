@@ -22,7 +22,7 @@ class SignupForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.hideErrors();
-        this.props.signup(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
+        this.props.signup(this.state).then(() => this.props.history.push(`/feed`)).then(() => this.setState({
             email: "",
             password: "",
             firstName: "",

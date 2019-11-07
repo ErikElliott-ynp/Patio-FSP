@@ -1,21 +1,6 @@
-@media only screen and (max-width: 680px) {
-    .submission-form {
-        float: right;
-        right: 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .logo {
-        margin-left: 0px;
-    }
-}
-
 
 body {
     background-color: rgb(91, 96, 99);
-   
-
 }
 
 
@@ -199,19 +184,22 @@ body {
 
 .search-bar {
     position: relative;
-    top: -3px;
+    top: -14px;
     left: 240px;
-    width: 400px;
-    height: 18px;
+    width: 360px;
+    height: 28px;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 .search-bar::placeholder {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-left: 10px;
     padding-top: 5px;
+    padding-bottom: 0px;
     letter-spacing: 1px;
     text-align: start;
+    font-size: 14px; 
 }
 
 .logo-logged-in {
