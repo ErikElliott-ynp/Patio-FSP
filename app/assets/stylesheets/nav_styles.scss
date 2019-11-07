@@ -235,6 +235,7 @@ body {
 
 .info-blip {
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .fa-search {
@@ -258,3 +259,12 @@ body {
     display: block;
 }
 
+.right-logged-in {
+    float: right;
+    width: 50%;
+}
+
+.profile-photo {
+    background-image: image_url('#');
+    border-radius: 100%;
+}

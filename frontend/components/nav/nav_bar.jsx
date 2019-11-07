@@ -11,7 +11,6 @@ class NavBar extends React.Component {
             password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.demoLogin = this.demoLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -45,7 +44,7 @@ class NavBar extends React.Component {
             }, () => window.setTimeout(() => this.demoLogin(email, password), 100)
             )
         } else {
-            this.props.login(this.state).then((user) => this.props.history.push(`/feed`)).then(() => this.setState({
+            this.props.login(this.state).then((u) => this.props.history.push(`/feed`)).then(() => this.setState({
                 email: "",
                 password: ""
             }));
@@ -105,9 +104,10 @@ class NavBar extends React.Component {
                                         <input className="search-bar" type="text" placeholder="Search"/>
                                         <i className="fa fa-search"></i>
                                     </div>
-                                    <div className="right-logged-in">
+                                    <div className="right-logged-in clearfix">
                                         <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
                                             <div className="info-blip">
+                                                <img src="#" className="profile-photo"/>
                                                 <p>
                                                     {this.props.currentUser.firstName}
                                                 </p>
