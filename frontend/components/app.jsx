@@ -1,6 +1,6 @@
 import React from "react";
 import NavBarContainer from "./nav/nav_bar_container";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SignupContainer from "../components/signup/signup_container"
 import Profile from "./profile"
@@ -15,7 +15,8 @@ const App = () => {
             <Switch>
                 <ProtectedRoute path="/users/:userId" component={Profile}/>
                 <ProtectedRoute path="/feed" component={NewsFeed} />
-                <Route path="/" component={SignupContainer} />
+                <Route exact path="/" component={SignupContainer} />
+                <Redirect to="/feed" />
             </Switch>
             
         </div>
