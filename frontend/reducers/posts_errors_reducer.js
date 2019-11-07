@@ -1,20 +1,19 @@
-import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions"
+import { RECEIVE_POST_ERRORS, RECEIVE_POST, RECEIVE_POSTS } from "../actions/post_actions"
 
-const PostsReducer = (state = {}, action) => {
+
+const PostsErrorsReducer = (state = [], action) => {
     Object.freeze(state)
-    let nextState = Object.assign({}, state)
 
     switch (action.type) {
-        case RECEIVE_POSTS:
-            return Object.assign({}, action.posts);
+        case RECEIVE_POST_ERRORS:
+            return Object.assign([], action.errors);
         case RECEIVE_POST:
-            nextState[action.post.id] = action.post;
-        case REMOVE_POST:
-            delete nextState[action.postId];
-            return nextState;
+            return [];
+        case RECEIVE_POSTS:
+            return [];
         default:
-            return state;
+            return [];
     }
 }
 
-export default PostsReducer;
+export default PostsErrorsReducer;
