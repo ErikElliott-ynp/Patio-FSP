@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
-    before_action :require_login, only: [:update]
-    before_action :underscore_params!
+    before_action :require_login, only: :update
+    before_action :underscore_params!, only: [:create, :update]
 
     def create
         
