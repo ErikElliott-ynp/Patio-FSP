@@ -30,6 +30,18 @@ class NavBar extends React.Component {
     handleChange(field) {
         return (e) => this.setState( { [field]: e.target.value })
     }
+
+
+    demoUser() {
+        let userEmail = "demoUser@demo.io".split("");
+        let userPass = "mountain".split("");
+        while (userEmail.length !== 0 || userPass.length !== 0) {
+            setInterval(() => this.setState( { email: userEmail.shift() } ) , 1500 );
+            setInterval(() => this.setState( { password: userPass.shift() } ), 750 );
+            
+        }
+    }
+
     render () {
         const errors = this.props.errors.map( error => {
             return error;
@@ -40,7 +52,7 @@ class NavBar extends React.Component {
         }
         return (
             <div>
-                <button className="sign-up-button demo" id="demo">Demo User</button>
+                <button onClick={() => this.demoUser()} className="sign-up-button demo" id="demo">Demo User</button>
            
                 <div className="nav-bar">
                     <div className="nav-flex">

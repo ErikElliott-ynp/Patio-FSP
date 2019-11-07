@@ -45,11 +45,6 @@ class SignupForm extends React.Component{
         errorBoxes.map( box => box.classList.add('hidden'))
     }
 
-    demoUser() {
-        let userEmail = "demouser@demo.io".split("");
-        let userPass = "mountain".split("");
-
-    }
 
     render(){
         const errors = this.props.errors
