@@ -91,8 +91,10 @@ class NavBar extends React.Component {
                 <button onClick={() => this.handleDemo()} className="sign-up-button demo" id="demo">Demo User</button>
            
                 <div className="nav-bar">
+                    <div className="nav-flex">
                         {
                             this.props.loggedIn ? (
+                                <div className="logged-in-bar">
                                     <div className="left-logged-in">
                                         <Link to="/feed" style={{ textDecoration: 'none' }}>
                                             <div className="logo-logged-in">
@@ -124,6 +126,7 @@ class NavBar extends React.Component {
 
                                         <button onClick={this.handleLogout} className="action-button logout clearfix">Log Out</button>
                                     </div>
+                                </div>
                                 
                             ) : (
                                 <div className="login-bar">
@@ -151,6 +154,7 @@ class NavBar extends React.Component {
                         }
                     </div>
                 </div>
+            </div>
         )
     }
 }

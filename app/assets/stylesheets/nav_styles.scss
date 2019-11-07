@@ -177,6 +177,14 @@ body {
     margin-top: 2px;
 }
 
+.logged-in-bar {
+    height: 100%;
+}
+
+.nav-flex {
+    height: 100%;
+}
+
 .left-logged-in {
     float: left;
     left: 0;
@@ -262,6 +270,14 @@ body {
     top: 0;
     width: 50%;
     display: flex;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.right-logged-in * {
+    padding-bottom: 10px;
+
 }
 
 .info-blip {
@@ -271,7 +287,6 @@ body {
     font-size: 14px;
     letter-spacing: 0.5px;
     border-right: 1px solid gray;
-    padding: 10px;
 }
 
 .info-blip p {
@@ -289,6 +304,7 @@ body {
     border-right: 1px solid gray;
 }
 
-.fa-user-friends {
-
+.icons-cont * {
+    font-size: 22px;
+    margin: 0 10px;
 }
