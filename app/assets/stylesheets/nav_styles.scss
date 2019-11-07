@@ -178,6 +178,8 @@ body {
 }
 
 .left-logged-in {
+    float: left;
+    left: 0;
     width: 50%;
     height: 100%;
 }
@@ -233,12 +235,6 @@ body {
     color: rgb(37, 142, 173);
 }
 
-.info-blip {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
 
 .fa-search {
     position: absolute;
@@ -263,10 +259,36 @@ body {
 
 .right-logged-in {
     float: right;
+    top: 0;
     width: 50%;
+    display: flex;
+}
+
+.info-blip {
+    display: flex;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-right: 1px solid gray;
+    padding: 10px;
+}
+
+.info-blip p {
+    display: inline-block;
 }
 
 .profile-photo {
     background-image: image_url('#');
     border-radius: 100%;
+}
+
+.home {
+    color: white;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.fa-user-friends {
+
 }
