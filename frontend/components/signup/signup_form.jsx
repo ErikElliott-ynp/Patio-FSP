@@ -51,8 +51,12 @@ class SignupForm extends React.Component{
 
         errors.forEach( error => {
             const words = error.split(" ");
-            const klass = document.getElementsByClassName(words[0])[0];
-            if (klass) klass.classList.remove('hidden')
+            const htmlEle = document.getElementsByClassName(words[0])[0];
+            if (htmlEle) {
+                let kids = Array.from(htmlEle.children);
+                kids[0].innerHTML = error;
+                htmlEle.classList.remove('hidden');
+            }
         }
             )
         return (
@@ -71,7 +75,7 @@ class SignupForm extends React.Component{
                     <div className="lname signup-errors-left i Last hidden" id="lname">
                         <p>Last Name can't be blank</p>
                     </div>
-                    <div className="Email signup-errors i  hidden" id="email">
+                    <div className="Email signup-errors i hidden" id="email">
                         <p>Email can't be blank</p>
                     </div>
                     <div className="p-word Password signup-errors i hidden" id="p-word">

@@ -87,6 +87,7 @@ strong {
     position: relative;
     right: 70px;
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,8 +316,8 @@ input[type=date]::-webkit-inner-spin-button {
 
 .lname {
     position: fixed;
-    top: 193px;
-    right: 42px;
+    top: 32.7%;
+    right: 3%;
 }
 
 
@@ -335,26 +336,27 @@ input[type=date]::-webkit-inner-spin-button {
 
 .names{
     position: fixed;
-    top: 193px;
-    right: 637px;
+    top: 32.8%;
+    right: 44.1%;
 }
 
 .Email {
     position: fixed;
-    top: 267px;
-    right: 637px;
+    top: 42.2%;
+    right: 44.1%;
 }
 
 .p-word {
     position: fixed;
-    top: 331px;
-    right: 637px;
+    top: 50.5%;
+    right: 44.1%;
+    height: 50px;
 }
 
 .Sex {
     position: fixed;
-    top: 513px;
-    right: 620px;
+    top: 75.0%;
+    right: 42.7%;
 }
 
 .signup-info p {
