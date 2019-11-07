@@ -201,7 +201,8 @@ body {
     height: 17px;
     border-radius: 4px;
     font-size: 14px;
-    padding: 0;
+    padding: 3px;
+    border: .5px solid black;
 }
 
 .search-bar::placeholder {
