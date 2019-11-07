@@ -10,8 +10,9 @@ class NavBar extends React.Component {
             email: "",
             password: ""
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
-
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleSubmit(e){
@@ -32,14 +33,37 @@ class NavBar extends React.Component {
     }
 
 
-    demoUser() {
-        let userEmail = "demoUser@demo.io".split("");
-        let userPass = "mountain".split("");
-        while (userEmail.length !== 0 || userPass.length !== 0) {
-            setInterval(() => this.setState( { email: userEmail.shift() } ) , 1500 );
-            setInterval(() => this.setState( { password: userPass.shift() } ), 750 );
-            
+    demoLogin(email, password) {
+        if (email.length > 0) {
+            this.setState( {
+                email: this.state.email + email.shift()
+            }, () =>  window.setTimeout(() => this.demoLogin(email, password), 100)
+            )
+        } else if (password.length > 0) {
+            this.setState({
+                password: this.state.password + password.shift()
+            }, () => window.setTimeout(() => this.demoLogin(email, password), 100)
+            )
+        } else {
+            this.props.login(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
+                email: "",
+                password: ""
+            }));
         }
+    }
+
+    handleDemo() {
+        let email = "demouser@demo.io".split("");
+        let password = "mountain".split("");
+        this.setState( { email: "", password: "" }, () => (
+            this.demoLogin(email, password)
+        ) );
+
+    }
+
+    handleLogout() {
+        this.props.logout().then(document.getElementById('demo').classList.remove('hidden')
+        );
     }
 
     render () {
@@ -50,9 +74,12 @@ class NavBar extends React.Component {
             const navErrorsBox = document.getElementsByClassName('errors')[0];
             navErrorsBox.classList.remove('hidden');
         }
+
+        if (this.props.loggedIn) document.getElementById('demo').classList.add('hidden');
+
         return (
             <div>
-                <button onClick={() => this.demoUser()} className="sign-up-button demo" id="demo">Demo User</button>
+                <button onClick={() => this.handleDemo()} className="sign-up-button demo" id="demo">Demo User</button>
            
                 <div className="nav-bar">
                     <div className="nav-flex">
@@ -76,7 +103,7 @@ class NavBar extends React.Component {
                                                 </p>
                                             </div>
                                         </Link>
-                                        <button onClick={() => this.props.logout()} className="action-button logout clearfix">Log Out</button>
+                                        <button onClick={this.handleLogout} className="action-button logout clearfix">Log Out</button>
                                     </div>
                                 </div>
                                 
