@@ -53,7 +53,7 @@ class NavBar extends React.Component {
     }
 
     handleDemo() {
-        let email = "demouser@demo.io".split("");
+        let email = "DemoUser@demo.io".split("");
         let password = "mountain".split("");
         this.setState( { email: "", password: "" }, () => (
             this.demoLogin(email, password)
@@ -64,6 +64,13 @@ class NavBar extends React.Component {
     handleLogout() {
         this.props.logout().then(document.getElementById('demo').classList.remove('hidden')
         );
+    }
+
+    componentDidMount () {
+        if (this.props.loggedIn) {
+            const el = document.getElementById('demo');
+            if (el) el.classList.add('hidden');
+        }
     }
 
     render () {
@@ -79,6 +86,7 @@ class NavBar extends React.Component {
             const el = document.getElementById('demo');
             if (el) el.classList.add('hidden');
         }
+       
         return (
             <div>
                 <button onClick={() => this.handleDemo()} className="sign-up-button demo" id="demo">Demo User</button>

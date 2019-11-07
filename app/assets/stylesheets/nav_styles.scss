@@ -190,6 +190,7 @@ body {
     height: 28px;
     border-radius: 4px;
     font-size: 14px;
+    padding: 0;
 }
 
 .search-bar::placeholder {
@@ -213,6 +214,11 @@ body {
     text-transform: lowercase;
 }
 
+.logo-logged-in:hover {
+    box-shadow: -2px 2px rgb(37, 142, 173);
+}
+
+
 .the-p {
     position: relative;
     bottom: 8px;
@@ -223,7 +229,32 @@ body {
     margin: 10px;
 }
 
+.logo-logged-in:hover .the-p {
+    color: rgb(37, 142, 173);
+}
+
 .info-blip {
     color: white;
+}
+
+.fa-search {
+    position: absolute;
+    top: 39px;
+    left: 573px;
+    width: 30px;
+}
+
+.fa-search::before {
+    height: 30px;
+    width: 32px;
+    text-align: center;
+}
+
+.fa-search:hover {
+    cursor: pointer;
+}
+
+.fa {
+    display: block;
 }
 
