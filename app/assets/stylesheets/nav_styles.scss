@@ -139,7 +139,11 @@ body {
     width: 60px;
     right: 50px;
     margin-bottom: 9px;
+    background-color: #ECB22E;
+}
 
+.logout:hover {
+    background-color: rgb(150, 140, 140);
 }
 
 .hidden {
@@ -195,8 +199,8 @@ body {
 
 .search-bar {
     position: relative;
-    top: -31px;
-    left: 240px;
+    top: -33px;
+    left: 243px;
     width: 360px;
     height: 17px;
     border-radius: 4px;
@@ -248,7 +252,7 @@ body {
 
 .fa-search {
     position: absolute;
-    top: 17px;
+    top: 16px;
     left: 579px;
     width: 30px;
     color: gray;
@@ -295,7 +299,7 @@ body {
 }
 
 .info-blip:hover {
-    background-color: gray;
+    background-color: rgb(150, 140, 140);
     border-radius: 2px;
 }
 
@@ -319,7 +323,7 @@ body {
     font-size: 16px;
     letter-spacing: .5px;
     margin-bottom: 8px;
-    padding: 9px 25px 5px 0; 
+    padding: 9px 26px 5px 0; 
     border-right: 1px solid gray;
 }
 
