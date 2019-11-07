@@ -18,6 +18,7 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
+        @post.author_id = current_user.id
         if @post.save 
             render :show
         else
@@ -27,7 +28,7 @@ class Api::PostsController < ApplicationController
 
     def update 
         @post = Post.find_by(id: params[:id])
-        if @post.author_id == current_user.id && @post.update(change_params)
+        if @post && @post.author_id == current_user.id && @post.update(change_params)
             render :show
         else
             render json: @post.errors.full_messages, status: 422
@@ -36,21 +37,21 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post = Post.find_by(id: params[:id])
-        if @post.destroy
+        if @post && @post.destroy
             render json: {}
         else 
-            render json: @post.errors.full_messages, status: 422
+            render json: ["Post not found"], status: 404
         end
     end
 
     private
 
     def post_params
-        params.require(:permit).permit(:body, :profile_id, :author_id)
+        params.require(:post).permit(:body, :profile_id)
     end
 
     def change_params
-        params.require(:permit).permit(:body)
+        params.require(:post).permit(:body)
     end
 
      def underscore_params!

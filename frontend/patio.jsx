@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
+import * as PostAPIUtil from "./util/post_api_util";
+
 document.addEventListener("DOMContentLoaded", () => {
     const divRoot = document.getElementById("root");
     let store;
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     
+    window.PostAPIUtil = PostAPIUtil;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
