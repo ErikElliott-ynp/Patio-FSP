@@ -275,10 +275,6 @@ body {
     justify-content: space-evenly;
 }
 
-.right-logged-in * {
-    padding-bottom: 5px;
-
-}
 
 .info-blip {
     height: 100%;
@@ -288,10 +284,20 @@ body {
     font-size: 14px;
     letter-spacing: 0.5px;
     border-right: 1px solid gray;
+    padding-right: 15px;
+    margin-bottom: 5px;
+    align-items: flex-end;
+    
+}
+
+.info-blip:hover {
+    background-color: gray;
 }
 
 .info-blip p {
     display: inline-block;
+    margin-bottom: 7px;
+    padding-left: 5px;
 }
 
 .profile-photo {
@@ -302,7 +308,7 @@ body {
 .home {
     height: 100%;
     color: white;
-    border-right: 1px solid gray;
+
 }
 
 .icons-cont {
@@ -313,5 +319,12 @@ body {
 
 .icons-cont * {
     font-size: 22px;
-    margin: 0 7px;
+    margin: 5px 7px;
+    color: rgb(36, 34, 34)
+
+}
+
+.icons-cont i:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
 }
