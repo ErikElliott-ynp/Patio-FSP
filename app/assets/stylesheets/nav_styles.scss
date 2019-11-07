@@ -10,7 +10,7 @@ body {
     display: block;
     width: 100%;
     background-color: #36C5F0;
-    background-image: linear-gradient(rgb(129, 177, 192), #36C5F0 40%);
+    background-image: linear-gradient(rgb(135, 214, 238), #36C5F0 23%);
     height: 80px;
     z-index: 5;
     border-bottom: 1px solid;
@@ -188,16 +188,16 @@ body {
 .left-logged-in {
     float: left;
     left: 0;
-    width: 50%;
+    width: 40%;
     height: 100%;
 }
 
 .search-bar {
     position: relative;
-    top: -14px;
+    top: -31px;
     left: 240px;
     width: 360px;
-    height: 28px;
+    height: 17px;
     border-radius: 4px;
     font-size: 14px;
     padding: 0;
@@ -216,7 +216,7 @@ body {
 .logo-logged-in {
     position: relative;
     left: 200px;
-    top: 20px;
+    top: -5px;
     height: 35px;
     width: 35px;
     border-radius: 8%;
@@ -246,8 +246,8 @@ body {
 
 .fa-search {
     position: absolute;
-    top: 39px;
-    left: 573px;
+    top: 17px;
+    left: 579px;
     width: 30px;
 }
 

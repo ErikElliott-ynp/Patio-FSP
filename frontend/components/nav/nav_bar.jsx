@@ -70,7 +70,15 @@ class NavBar extends React.Component {
             const el = document.getElementById('demo');
             if (el) el.classList.add('hidden');
         }
+
+        if (this.props.loggedIn) {
+            let ele = document.getElementById('navigation');
+            ele.style.height = "45px";
+        }
+
     }
+
+
 
     render () {
         const errors = this.props.errors.map( error => {
@@ -85,12 +93,23 @@ class NavBar extends React.Component {
             const el = document.getElementById('demo');
             if (el) el.classList.add('hidden');
         }
+
+        if (this.props.loggedIn) {
+            let ele = document.getElementById('navigation');
+
+            if (ele) ele.style.height = "45px";
+        } else {
+            let ele = document.getElementById('navigation')
+            if (ele) ele.style.height = "80px";
+
+        }
+
        
         return (
             <div>
                 <button onClick={() => this.handleDemo()} className="sign-up-button demo" id="demo">Demo User</button>
            
-                <div className="nav-bar">
+                <div className="nav-bar" id="navigation">
                     <div className="nav-flex">
                         {
                             this.props.loggedIn ? (
