@@ -86,7 +86,10 @@ class NavBar extends React.Component {
         });
         if (this.props.errors[0] === "Invalid Username or Password") {
             const navErrorsBox = document.getElementsByClassName('errors')[0];
-            navErrorsBox.classList.remove('hidden');
+            if (navErrorsBox) navErrorsBox.classList.remove('hidden');
+        } else {
+            const navErrorsBox = document.getElementsByClassName('errors')[0];
+            if (navErrorsBox) navErrorsBox.classList.add('hidden');
         }
 
         if (this.props.loggedIn) {
