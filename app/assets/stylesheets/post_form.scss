@@ -116,5 +116,17 @@ input[type="submit"]:hover {
 }
 
 .post-form-footer {
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fa-photo-video {
+    margin: 7px 0 0 20px;
+    cursor: pointer;
+}
+
+.post-submit-btn {
+    margin: 7px 25px 0 0;
+
 }

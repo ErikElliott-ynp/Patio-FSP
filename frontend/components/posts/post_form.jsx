@@ -44,7 +44,7 @@ class PostForm extends React.Component {
                     </div>
                     <div className="post-form-footer">
                         <i className="fas fa-photo-video">Upload Photo</i>
-                        <input type="submit" value="Post" className="post-submit-button"/>
+                        <input type="submit" value="Post" className="post-submit-btn"/>
                     </div>
                 </form>
             </div>
