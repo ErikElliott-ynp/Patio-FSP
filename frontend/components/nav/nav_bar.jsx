@@ -12,12 +12,13 @@ class NavBar extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.resetState = this.resetState.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
         this.hideErrors();
-        this.props.login(this.state).then((user) => this.props.history.push(`/users/${user.id}`)).then(() => this.setState({
+        this.props.login(this.state).then((user) => this.props.history.push(`/feed`)).then(() => this.setState({
             email: "",
             password: ""
         }))
@@ -49,6 +50,13 @@ class NavBar extends React.Component {
                 password: ""
             }));
         }
+    }
+
+    resetState() {
+        this.setState({
+            email: "",
+            password: ""
+        });
     }
 
     handleDemo() {
@@ -156,7 +164,7 @@ class NavBar extends React.Component {
                                         <p>{errors}</p>
                                     </div>
                                     <div className="logo-box clearfix">
-                                        <Link to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
+                                        <Link onClick={this.resetState} to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
                                     </div>
                                     <div className="submission-form clearfix">
                                         <form onSubmit={this.handleSubmit}>
