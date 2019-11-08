@@ -69,8 +69,8 @@ class NavBar extends React.Component {
     }
 
     handleLogout() {
-        this.props.logout().then(document.getElementById('demo').classList.remove('hidden')
-        );
+        this.props.logout()
+            .then(document.getElementById('demo').classList.remove('hidden') )
     }
 
     componentDidMount () {

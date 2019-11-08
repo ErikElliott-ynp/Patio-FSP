@@ -98,9 +98,9 @@ class SignupForm extends React.Component{
                         </label>
                         <div className="gender-buttons">
                             <h4 className="outline">Sex:</h4>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="male" id="male" /><p className="outline">Male</p><br/>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="female" id="female" /><p className="outline">Female</p><br/>
-                            <input onClick={this.handleRadio} name="gender" type="radio" value="other" id="other" /><p className="outline">Other</p>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="male" /><p className="outline">Male</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="female" /><p className="outline">Female</p><br/>
+                            <input onClick={this.handleRadio} name="gender" type="radio" value="other" /><p className="outline">Other</p>
                         </div>
                         <input className="sign-up-button" type="submit" value="Sign Up!"/>
                     </form>

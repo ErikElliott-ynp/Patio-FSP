@@ -15,7 +15,7 @@ const App = () => {
             <Switch>
                 <ProtectedRoute path="/users/:userId" component={Profile}/>
                 <ProtectedRoute path="/feed" component={NewsFeed} />
-                <Route exact path="/" component={SignupContainer} />
+                <AuthRoute exact path="/" component={SignupContainer} />
                 <Redirect to="/feed" />
             </Switch>
             
