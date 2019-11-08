@@ -6,7 +6,8 @@ const mSTP = state => {
     return {
         posts: Object.values(state.entities.posts),
         errors: state.errors.posts,
-        users: state.entities.users
+        users: state.entities.users,
+        currentUserId: state.session.id
     }
 }
 
