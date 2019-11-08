@@ -65,12 +65,11 @@ input[type="submit"]:hover {
 
 .feed-side-main {
     display: flex;
-    // position: relative;
-    // left: 200px;
     width: 200px;
     height: 400px;
     background-color: rgb(236, 222, 222);
     margin-right: 25px;
+    margin-left: 100px;
 }
 
 .scroll-feeds {
