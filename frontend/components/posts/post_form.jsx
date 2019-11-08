@@ -51,7 +51,7 @@ class PostForm extends React.Component {
                         </textarea>
                     </div>
                     <div className="post-form-footer">
-                        <i className="fas fa-photo-video">Upload Photo</i>
+                        <i className="fas fa-photo-video"> <span> Upload Photo</span> </i>
                         <input type="submit" value="Post" className="post-submit-btn"/>
                     </div>
                 </form>

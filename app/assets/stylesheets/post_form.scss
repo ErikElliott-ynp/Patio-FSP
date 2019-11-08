@@ -22,15 +22,14 @@ input[type="text"], input[type="password"], textarea, select {
 }
 
 .post-form-wide {
-    height: 165px;
+    height: 195px;
     width: 530px;
     line-height: 16px;
     font-size: 12px;
     background-color: rgb(248, 242, 242);   
     margin-top: 20px; 
     border-radius: 3px;
-    border: 1px solid gray;
-    box-shadow: .5px .5px gray;
+    border: .75px solid gray;
 }
 .post-form-header {
     padding: 10px 0 10px 0;
@@ -77,13 +76,15 @@ input[type="submit"]:hover {
     border-bottom: 2px grey solid;
     font-size: 16px;
     letter-spacing: .5px;
-    padding: 10px 0 0 10px;
+    padding: 20px 0 0 20px;
 }
 
 .text-a-post::placeholder {
     font-family: 'Fira Sans', sans-serif;
     padding: 10px 0 0 10px;
 }
+
+
 
 .post-delete-button {
 }
@@ -163,6 +164,16 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+}
+
+.fa-photo-video {
+    margin-bottom: 18px;
+}
+
+.fa-photo-video span {
+    margin-left: 4px;
 }
 
 .fa-photo-video {
@@ -171,11 +182,17 @@ input[type="submit"]:hover {
 }
 
 .post-submit-btn {
-    margin: 7px 25px 0 0;
+    margin: 25px 35px 0 0;
+    border-radius: 2px;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #36C5F0;   
+    height: 30px;
+    width: 55px; 
+    font-size: 16px;
 }
 
 .post-item-wide {
-    background-color: rgb(241, 229, 229);
+    background-color: rgb(248, 242, 242);
     border-radius: 3px;
     margin: 20px 0 20px ;
 }
