@@ -23,6 +23,7 @@ class PostForm extends React.Component {
         this.props.createPost(this.state).then(() => this.setState( { body: "" } ))
     } 
 
+
     render () {
         return (
             <div className="post-form-wide">
@@ -34,7 +35,7 @@ class PostForm extends React.Component {
                         <div className="post-prof-img">
                             <img src="#" alt="#"/>
                         </div>
-                        <textarea 
+                        <textarea onKeyPress={(e) => {e.target.keyCode === 13  && e.preventDefault()}}
                             placeholder={`What's on your mind, ${this.props.user.firstName}`}
                             id="post-ta" value={this.state.body} className="text-a-post"
                             onChange={this.handleChange('body')}>

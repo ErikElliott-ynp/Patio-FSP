@@ -16,8 +16,10 @@ class PostFeedItem extends React.Component{
                     </div>
 
                     { this.props.post.authorId === this.props.user.id ? (
-                        <div className="post-delete-button">
-                            <button onClick={() => this.props.deletePost(this.props.post.id)}></button>
+                        <div className="post-delete-button clearfix">
+                            <button onClick={() => this.props.deletePost(this.props.post.id)}>
+                                <i className="fa fa-trash" aria-hidden="true"></i>
+                            </button>
                         </div>
                         
                         ) : ( <br/>)
