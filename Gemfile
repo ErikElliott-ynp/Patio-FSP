@@ -41,7 +41,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate', '~> 2.7.5'
-  gem 'bcrypt'
   
 end
 
