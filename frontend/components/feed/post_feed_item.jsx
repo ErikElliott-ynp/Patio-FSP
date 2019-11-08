@@ -13,6 +13,9 @@ class PostFeedItem extends React.Component{
                 <li className="list-item-post"> 
                     <div className="post-item-img">
                         <img src="#" alt=""/>
+                        <div className="full-name">
+                            <span>{this.props.user.firstName}  {this.props.user.lastName}</span>
+                        </div> 
                     </div>
 
                     { this.props.post.authorId === this.props.user.id ? (
@@ -24,9 +27,7 @@ class PostFeedItem extends React.Component{
                         
                         ) : ( <br/>)
                     }
-                    <div className="full-name">
-                        <span>{this.props.user.firstName}  {this.props.user.lastName}</span>
-                    </div> 
+                   
                     <p>{this.props.post.body}</p>
                     <div className="post-item-footer">
                         <div className="post-item-like">

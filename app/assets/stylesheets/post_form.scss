@@ -147,12 +147,10 @@ input[type="submit"]:hover {
 .post-delete-button {
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 0px;
 }
 
-.list-item-post {
-    position: relative;
-}
+
 
 .fa-trash {
     position: absolute;
@@ -195,9 +193,46 @@ input[type="submit"]:hover {
     background-color: rgb(248, 242, 242);
     border-radius: 3px;
     margin: 20px 0 20px ;
+    max-width: 530px;
 }
 
 .active-news-feed {
     background-color: white;
     border-radius: 3px;
+}
+
+.post-item-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.list-item-post {
+    position: relative;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.list-item-post p {
+    margin: 0 0 15px 22px;
+    word-wrap: break-word;
+    width: 90%;
+    line-height: 7px;
+    line-height: 25px;
+    letter-spacing: .5px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.post-item-comment {
+    border-left
+}
+
+.post-item-header {
+     
+}
+
+.post-item-img {
+    display: inline-block;
+    margin: 5px 0 15px 15px;
 }
