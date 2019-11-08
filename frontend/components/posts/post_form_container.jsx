@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { createPost } from "../../actions/post_actions";
 import PostForm from "./post_form";

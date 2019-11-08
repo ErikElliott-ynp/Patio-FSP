@@ -10,27 +10,40 @@ class PostForm extends React.Component {
             profileId: this.props.profile,
             body: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(field) {
         return (e) => this.setState( { [field]: e.target.value } );
     }
 
+    handleSubmit(e) {
+       
+        e.preventDefault;
+        this.props.createPost(this.state).then(() => this.setState( { body: "" } ))
+    } 
+
     render () {
         return (
             <div className="post-form-wide">
-                <form className="post-form-21">
-                    <div className="">
+                <form className="post-form-21" onSubmit={this.handleSubmit}>
+                    <div className="post-form-header">
                         <span>Create Post</span>
                     </div>
-                    <div className="form-cont">
+                    <div className="form-body">
+                        <div className="post-prof-img">
+                            <img src="#" alt="#"/>
+                        </div>
                         <textarea 
                             placeholder={`What's on your mind, ${this.props.user.firstName}`}
                             id="post-ta" value={this.state.body} className="text-a-post"
                             onChange={this.handleChange('body')}>
                         </textarea>
                     </div>
-                    <input type="submit" value="Post" className="post-submit-button"/>
+                    <div className="post-form-footer">
+                        <i className="fas fa-photo-video"></i>
+                        <input type="submit" value="Post" className="post-submit-button"/>
+                    </div>
                 </form>
             </div>
         )
