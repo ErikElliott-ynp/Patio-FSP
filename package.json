@@ -25,6 +25,10 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "start": "webpack -w --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -40,9 +44,5 @@
   "bugs": {
     "url": "https://github.com/ErikElliott-ynp/ThePatio-FSP/issues"
   },
-  "homepage": "https://github.com/ErikElliott-ynp/ThePatio-FSP#readme",
-  "engines": {
-    "node": "10.13.0",
-    "npm": "6.4.1"
-  }
+  "homepage": "https://github.com/ErikElliott-ynp/ThePatio-FSP#readme"
 }
