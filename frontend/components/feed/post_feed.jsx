@@ -5,19 +5,21 @@ import PostFeedItem from "./post_feed_item";
 class PostFeed extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.posts;
+        this.state = {
+            posts: this.props.posts
+        }
     }
 
     componentDidMount () {
         this.props.fetchPosts();
     }
 
-    shouldComponentUpdate(nextProps, prevProps) {
-        
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.posts.length !== nextProps.posts.length;
     }
 
     render () {
-        const postsList = this.props.posts.map( (post, i) => {
+        const postsList = this.props.posts.reverse().map( (post, i) => {
             return <PostFeedItem 
                         post={post}
                         key={i}

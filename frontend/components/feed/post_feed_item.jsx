@@ -12,7 +12,7 @@ class PostFeedItem extends React.Component{
             <div>
                 <li>
                     <div className="post-item-img">
-                        <img src="#" alt="#"/>
+                        <img src="#" alt=""/>
                     </div>
 
                     { this.props.post.authorId === this.props.user.id ? (

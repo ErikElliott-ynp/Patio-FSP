@@ -3,6 +3,10 @@
     height: 100vw;
 }
 
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+
 .news-feed-main {
     width: 100%;
     height: 100%;
@@ -16,6 +20,10 @@
     line-height: 16px;
     font-size: 12px;
     background-color: rgb(236, 222, 222);    
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 .form-body {
@@ -36,6 +44,26 @@
     background-color: rgb(236, 222, 222);
     border: none;
     border-bottom: 2px grey solid;
-    color: white;
 }
 
+.post-delete-button {
+    display: inline-block;
+}
+
+.post-delete-button button {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    
+}
+
+.post-delete-button:hover button {
+    cursor: pointer;
+}
+
+.feed-side-main {
+    display: inline-block;
+    width: 200px;
+    height: 400px;
+    background-color: rgb(236, 222, 222);
+}
