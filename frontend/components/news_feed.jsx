@@ -9,11 +9,13 @@ const NewsFeed = (props) => {
             <div className="left-side-info">
                 <SidebarContainer />
             </div>
-            <div className="post-form-primary">
-                <PostFormContainer />
-            </div>
-            <div className="feed-primary">
-                <PostFeedContainer />
+            <div className="scroll-feed">
+                <div className="post-form-primary">
+                    <PostFormContainer />
+                </div>
+                <div className="feed-primary">
+                    <PostFeedContainer />
+                </div>
             </div>
         </div>
     )

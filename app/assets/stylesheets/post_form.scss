@@ -12,6 +12,8 @@ input[type="text"], input[type="password"], textarea, select {
     height: 100%;
     position: relative;
     top: 46px;
+    display: flex;
+    justify-content: right;
 }
 
 .post-form-wide {
@@ -62,8 +64,16 @@ input[type="submit"]:hover {
 }
 
 .feed-side-main {
-    display: inline-block;
+    display: flex;
+    // position: relative;
+    // left: 200px;
     width: 200px;
     height: 400px;
     background-color: rgb(236, 222, 222);
+    margin-right: 25px;
+}
+
+.scroll-feeds {
+    display: flex;
+    flex-direction: column;
 }
