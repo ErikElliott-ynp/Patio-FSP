@@ -12,7 +12,7 @@ const NewsFeed = (props) => {
                 <PostFormContainer />
             </div>
             <div className="feed-primary">
-                {/* <FeedContainer /> */}
+                {/* <PostFeedContainer /> */}
             </div>
         </div>
     )
