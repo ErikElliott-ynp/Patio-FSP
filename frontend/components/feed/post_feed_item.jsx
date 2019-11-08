@@ -9,8 +9,8 @@ class PostFeedItem extends React.Component{
     render() {
 
         return (
-            <div>
-                <li>
+            <div className="post-item-wide">
+                <li className="list-item-post"> 
                     <div className="post-item-img">
                         <img src="#" alt=""/>
                     </div>
