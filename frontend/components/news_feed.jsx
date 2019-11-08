@@ -1,6 +1,6 @@
 import React from "react";
-import PostFormContainer from "./posts/post_form_container"
-
+import PostFormContainer from "./posts/post_form_container";
+import PostFeedContainer from "./feed/post_feed_container";
 
 const NewsFeed = (props) => {
     return (
@@ -12,7 +12,7 @@ const NewsFeed = (props) => {
                 <PostFormContainer />
             </div>
             <div className="feed-primary">
-                {/* <PostFeedContainer /> */}
+                <PostFeedContainer />
             </div>
         </div>
     )

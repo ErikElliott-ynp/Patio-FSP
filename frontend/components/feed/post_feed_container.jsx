@@ -1,10 +1,12 @@
-import { connect } from 'react-react';
-import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions"
+import { connect } from 'react-redux';
+import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions";
+import PostFeed from "./post_feed";
 
 const mSTP = state => {
     return {
         posts: Object.values(state.entities.posts),
         errors: state.errors.posts,
+        users: state.entities.users
     }
 }
 
