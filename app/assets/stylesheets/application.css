@@ -12,7 +12,8 @@
  *
  *= require reset
  *= require nav_styles
- *= signup
+ *= require signup
+ *= require post_form
  *= require_tree .
  *= require_self
  */

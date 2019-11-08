@@ -26,10 +26,11 @@ class PostForm extends React.Component {
                     <div className="form-cont">
                         <textarea 
                             placeholder={`What's on your mind, ${this.props.user.firstName}`}
-                            id="post-ta" value={this.state.body}
+                            id="post-ta" value={this.state.body} className="text-a-post"
                             onChange={this.handleChange('body')}>
                         </textarea>
                     </div>
+                    <input type="submit" value="Post" className="post-submit-button"/>
                 </form>
             </div>
         )
