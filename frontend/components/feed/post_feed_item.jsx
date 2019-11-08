@@ -31,10 +31,10 @@ class PostFeedItem extends React.Component{
                     <p>{this.props.post.body}</p>
                     <div className="post-item-footer">
                         <div className="post-item-like">
-                            <span>Like</span>
+                            <i className="fas fa-thumbs-up"><span>Like</span></i>
                         </div>
                         <div className="post-item-comment">
-                            <span>Comment</span>
+                            <i className="fas fa-comment-alt"> <span>Comment</span></i>
                         </div>
                     </div>
                 </li>
