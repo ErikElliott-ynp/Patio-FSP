@@ -17,12 +17,28 @@ input[type="text"], input[type="password"], textarea, select {
 }
 
 .post-form-wide {
-    height: 155px;
+    height: 165px;
     width: 530px;
     line-height: 16px;
     font-size: 12px;
-    background-color: rgb(236, 222, 222);   
+    background-color: rgb(241, 229, 229);   
     margin-top: 20px; 
+    border-radius: 4px;
+}
+.post-form-header {
+    padding: 10px 0 10px 0;
+    border-bottom: 2px solid gray;
+}
+
+.post-form-header span {
+    font-size: 18px;
+    padding: 0 0 8px 7px;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: .5px;
+}
+
+.fa-pencil-alt {
+    padding-left: 15px;
 }
 
 input[type="submit"]:hover {
@@ -44,9 +60,14 @@ input[type="submit"]:hover {
     resize: none;
     width: 450px;
     height: 80px;
-    background-color: rgb(236, 222, 222);
+    background-color: inherit;
     border: none;
     border-bottom: 2px grey solid;
+}
+
+.text-a-post::placeholder {
+    font-family: 'Fira Sans', sans-serif;
+    padding: 10px 0 0 10px;
 }
 
 .post-delete-button {
@@ -73,7 +94,7 @@ input[type="submit"]:hover {
     display: flex;
     width: 200px;
     height: 400px;
-    background-color: rgb(236, 222, 222);
+    background-color: rgb(241, 229, 229);
     margin-right: 25px;
     margin-left: 289px;
 }
@@ -92,4 +113,8 @@ input[type="submit"]:hover {
 .fa-trash {
     position: absolute;
     font-size: 30px;
+}
+
+.post-form-footer {
+    
 }

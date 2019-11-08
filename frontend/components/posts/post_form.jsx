@@ -29,6 +29,7 @@ class PostForm extends React.Component {
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>
                     <div className="post-form-header">
+                        <i className="fas fa-pencil-alt"></i>
                         <span>Create Post</span>
                     </div>
                     <div className="form-body">
@@ -42,7 +43,7 @@ class PostForm extends React.Component {
                         </textarea>
                     </div>
                     <div className="post-form-footer">
-                        <i className="fas fa-photo-video"></i>
+                        <i className="fas fa-photo-video">Upload Photo</i>
                         <input type="submit" value="Post" className="post-submit-button"/>
                     </div>
                 </form>
