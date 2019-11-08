@@ -45,7 +45,7 @@ class NavBar extends React.Component {
             }, () => window.setTimeout(() => this.demoLogin(email, password), 100)
             )
         } else {
-            this.props.login(this.state).then(() => this.props.history.push(`/feed`)).then(() => this.setState({
+            this.props.login(this.state).then(() => this.setState({
                 email: "",
                 password: ""
             }));

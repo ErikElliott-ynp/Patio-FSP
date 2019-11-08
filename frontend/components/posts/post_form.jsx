@@ -25,9 +25,9 @@ class PostForm extends React.Component {
                     </div>
                     <div className="form-cont">
                         <textarea 
-                        placeholder={`What's on your mind, ${this.props.user.firstName}`}
-                         id="post-ta" cols="60" rows="15"
-                          value={this.state.body} onChange={this.handleChange('body')}>
+                            placeholder={`What's on your mind, ${this.props.user.firstName}`}
+                            id="post-ta" value={this.state.body}
+                            onChange={this.handleChange('body')}>
                         </textarea>
                     </div>
                 </form>
