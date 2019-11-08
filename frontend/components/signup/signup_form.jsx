@@ -22,14 +22,18 @@ class SignupForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.hideErrors();
-        this.props.signup(this.state).then(() => this.props.history.push(`/feed`)).then(() => this.setState({
+        this.props.signup(this.state)
+    }
+
+    componentWillUnmount() {
+        this.setState({
             email: "",
             password: "",
             firstName: "",
             lastName: "",
             dateOfBirth: "",
             sex: "",
-        }))
+        })
     }
 
     handleChange(field) {
