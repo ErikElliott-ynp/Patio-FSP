@@ -26,13 +26,20 @@ input[type="text"], input[type="password"], textarea, select {
     width: 530px;
     line-height: 16px;
     font-size: 12px;
-    background-color: rgb(241, 229, 229);   
+    background-color: rgb(248, 242, 242);   
     margin-top: 20px; 
-    border-radius: 4px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    box-shadow: .5px .5px gray;
 }
 .post-form-header {
     padding: 10px 0 10px 0;
     border-bottom: 2px solid gray;
+    background-color: #e9ebee;
+}
+
+.post-form-21 {
+    border-left: inherit;
 }
 
 .post-form-header span {
@@ -112,11 +119,15 @@ input[type="submit"]:hover {
 
 .feed-side-main i {
     padding-right: 8px;
-    margin: 5px 0;
+    margin: 7px 0;
 }
 
 .fa-github {
     margin-left: 6px;
+}
+
+.feed-side-main img {
+    padding-right: 5px;
 }
 
 
