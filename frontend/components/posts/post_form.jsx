@@ -23,6 +23,14 @@ class PostForm extends React.Component {
         this.props.createPost(this.state).then(() => this.setState( { body: "" } ))
     } 
 
+    componentWillUnmount() {
+        this.setState({
+            authorId: this.props.user.id,
+            profileId: this.props.profile,
+            body: ""
+        })
+    }
+
 
     render () {
         return (

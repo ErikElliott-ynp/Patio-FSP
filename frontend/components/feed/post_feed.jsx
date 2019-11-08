@@ -18,6 +18,8 @@ class PostFeed extends React.Component {
         return this.state.posts.length !== nextProps.posts.length;
     }
 
+    
+
     render () {
         const postsList = this.props.posts.reverse().map( (post, i) => {
             return <PostFeedItem 
