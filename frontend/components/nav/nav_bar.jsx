@@ -17,9 +17,14 @@ class NavBar extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+
+        const errorBoxes = Array.from(document.getElementsByClassName('i'));
+        errorBoxes.map(box => box.classList.add('hidden'))
+
+
         this.props.clearErrors();
         // this.hideErrors();
-        this.props.login(this.state).then((user) => this.props.history.push(`/feed`)).then(() => this.setState({
+        this.props.login(this.state).then(() => this.props.history.push(`/feed`)).then(() => this.setState({
             email: "",
             password: ""
         }))
@@ -78,14 +83,14 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             const el = document.getElementById('demo');
             if (el) el.classList.add('hidden');
+            let eleNav = document.getElementById('navigation');
+            eleNav.style.height = "45px";
         }
-
-        if (this.props.loggedIn) {
-            let ele = document.getElementById('navigation');
-            ele.style.height = "45px";
-        }
-
     }
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return this.props.errors[0] === nextProps.errors[0];
+    // }
 
 
 

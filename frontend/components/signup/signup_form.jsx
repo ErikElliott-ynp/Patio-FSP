@@ -21,6 +21,7 @@ class SignupForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearErrors()
         this.hideErrors();
         this.props.signup(this.state)
     }
@@ -48,6 +49,11 @@ class SignupForm extends React.Component{
     hideErrors() {
         const errorBoxes = Array.from(document.getElementsByClassName('i'));
         errorBoxes.map( box => box.classList.add('hidden'))
+        
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.errors.length !== this.props.errors
     }
 
 
