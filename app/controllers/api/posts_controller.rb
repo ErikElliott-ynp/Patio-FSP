@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find_by(id: params[:id])
+        @post = Post.with_attached_photo.find_by(id: params[:id])
         if @post
             render :show
         else

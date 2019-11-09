@@ -17,7 +17,8 @@ class NavBar extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.hideErrors();
+        this.props.clearErrors();
+        // this.hideErrors();
         this.props.login(this.state).then((user) => this.props.history.push(`/feed`)).then(() => this.setState({
             email: "",
             password: ""

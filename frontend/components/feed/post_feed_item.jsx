@@ -8,6 +8,8 @@ class PostFeedItem extends React.Component{
 
     render() {
 
+        const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null;
+
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 
@@ -28,6 +30,9 @@ class PostFeedItem extends React.Component{
                         ) : ( <br/>)
                     }
                    
+                   {photo};
+                      
+                
                     <p>{this.props.post.body}</p>
                     <div className="post-item-footer">
                         <div className="post-item-like">

@@ -7,5 +7,5 @@ class Post < ApplicationRecord
         foreign_key: :profile_id,
         class_name: :User
 
-    has_one_attached :photo    
+    has_one_attached :photo
 end
