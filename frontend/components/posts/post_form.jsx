@@ -6,21 +6,31 @@ class PostForm extends React.Component {
         super(props)
 
         this.state = {
-            authorId: this.props.user.id,
             profileId: this.props.profile,
-            body: ""
+            body: "",
+            photoFile: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     handleChange(field) {
         return (e) => this.setState( { [field]: e.target.value } );
     }
 
+    handleFile(e) {
+        this.setState( { photoFile: e.currentTarget.files[0]} )
+    }
+
     handleSubmit(e) {
        
         e.preventDefault;
-        this.props.createPost(this.state).then(() => this.setState( { body: "" } ))
+        const formData = new FormData();
+        formData.append('post[profileId]', this.state.profileId)
+        formData.append('post[body]', this.state.body);
+        formData.append('post[photo]', this.state.photoFile);
+
+        this.props.createPost(formData).then(() => this.setState( { body: "" } ))
     } 
 
     componentWillUnmount() {
@@ -52,6 +62,7 @@ class PostForm extends React.Component {
                     </div>
                     <div className="post-form-footer">
                         <i className="fas fa-photo-video"> <span> Upload Photo</span> </i>
+                        <input onChange={this.handleFile} type="file" name="" id="file-upload"/>
                         <input type="submit" value="Post" className="post-submit-btn"/>
                     </div>
                 </form>
