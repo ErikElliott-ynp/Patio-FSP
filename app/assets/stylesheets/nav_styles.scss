@@ -151,9 +151,9 @@ body {
 }
 
 .errors {
-    position: fixed;
-    top: 36px;
-    right: 645px;
+    position: absolute;
+    top: 20px;
+    left: -128px;
     height: 35px;
     width: 125px;
     background-color: rgb(201, 23, 23);

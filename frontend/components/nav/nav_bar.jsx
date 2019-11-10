@@ -166,9 +166,7 @@ class NavBar extends React.Component {
                                 
                             ) : (
                                 <div className="login-bar">
-                                    <div className="errors hidden">
-                                        <p>{errors}</p>
-                                    </div>
+                                    
                                     <div className="logo-box clearfix">
                                         <Link onClick={this.resetState} to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
                                     </div>
@@ -179,6 +177,9 @@ class NavBar extends React.Component {
                                                     <span className="pass-text outline">Password</span>
                                             </div>
                                             <div className="signin-inputs-cont clearfix">
+                                                    <div className="errors hidden">
+                                                        <p>{errors}</p>
+                                                    </div>
                                                 <input className="signin-input-box" onChange={this.handleChange('email')} type="text" value={this.state.email}/>
                                                 <input className="signin-input-box" onChange={this.handleChange('password')} type="password" value={this.state.password}/>                    
                                                 <input className="action-button" type="submit" value="Log In"/>

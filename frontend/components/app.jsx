@@ -7,6 +7,7 @@ import Profile from "./profile"
 import NewsFeed from "./news_feed";
 
 const App = () => {
+
     return (
         <div id="app">
             <NavBarContainer />
