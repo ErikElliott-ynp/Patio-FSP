@@ -22,7 +22,7 @@ input[type="text"], input[type="password"], textarea, select {
 }
 
 .post-form-wide {
-    height: 195px;
+    min-height: 195px;
     width: 530px;
     line-height: 16px;
     font-size: 12px;
@@ -245,6 +245,9 @@ input[type="submit"]:hover {
 .img-preview { 
     width: 150px;
     height: 150px;
+    position: relative;
+    bottom: 0px;
+    left: 15px;
 }
 
 .post-photo {

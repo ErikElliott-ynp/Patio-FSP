@@ -81,11 +81,13 @@ class PostForm extends React.Component {
                     </div>
 
                     
-                        {/* {preview} */}
+                        {preview}
                     
                     <div className="post-form-footer">
-                        <i className="fas fa-photo-video"> <span> Upload Photo</span> </i>
-                        <input onChange={this.handleFile} type="file" id="file-upload"/>
+                        <i className="fas fa-photo-video">
+                             <span> Upload Photo</span>
+                            <input onChange={this.handleFile} type="file" id="file-upload"/>
+                         </i>
                         <input type="submit" value="Post" className="post-submit-btn"/>
                     </div>
                 </form>

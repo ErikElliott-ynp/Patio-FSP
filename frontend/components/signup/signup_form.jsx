@@ -81,6 +81,9 @@ class SignupForm extends React.Component{
                 <div className="signup-info">
                    
 
+                    <div className="names signup-errors i First hidden" id="signup-names">
+                        <p>First Name can't be blank</p>
+                    </div>
                     <div className="lname signup-errors-left i Last hidden" id="lname">
                         <p>Last Name can't be blank</p>
                     </div>
@@ -97,15 +100,11 @@ class SignupForm extends React.Component{
                     <p className="outline">It's quick and easy</p>
                     <form onSubmit={this.handleSubmit}>
                         <div className="signup-names">
-                           <div>
-                                <div className="names signup-errors i First hidden" id="signup-names">
-                                    <p>First Name can't be blank</p>
-                                </div>
+                           
                                 
                                 <input className="fn-input-box" onChange={this.handleChange('firstName')} type="text" placeholder="   First Name" value={this.state.firstName}/>
                                 <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="   Last Name" value={this.state.lastName}/>
 
-                           </div>
                         </div>
                         <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="   Email" value={this.state.email}/>
                         <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="   New Password" value={this.state.password}/>
