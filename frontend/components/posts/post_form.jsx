@@ -37,14 +37,6 @@ class PostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault;
        
-        // if (this.props.errors[0] === "Invalid Username or Password") {
-        //     const navErrorsBox = document.getElementsByClassName('errors')[0];
-        //     if (navErrorsBox) navErrorsBox.classList.remove('hidden');
-        // } else {
-        //     const navErrorsBox = document.getElementsByClassName('errors')[0];
-        //     if (navErrorsBox) navErrorsBox.classList.add('hidden');
-        // }
-
         const formData = new FormData();
         formData.append('post[profileId]', this.state.profileId)
         formData.append('post[body]', this.state.body);
@@ -52,7 +44,8 @@ class PostForm extends React.Component {
             formData.append('post[photo]', this.state.photoFile);
         }
 
-        this.props.createPost(formData).then(() => this.setState( { body: "", photoFile: null, photoUrl: null } ))
+        this.props.createPost(formData);
+        this.setState( { body: "", photoFile: null, photoUrl: null } );
     } 
 
     componentWillUnmount() {
