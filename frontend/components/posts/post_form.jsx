@@ -8,7 +8,8 @@ class PostForm extends React.Component {
         this.state = {
             profileId: this.props.profile,
             body: "",
-            photoFile: null
+            photoFile: null,
+            photoUrl: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -20,7 +21,7 @@ class PostForm extends React.Component {
     }
 
     handleFile(e) {
-        const file = e.currentTarget.files[0];
+        let file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState( {photoFile: file, photoUrl: fileReader.result} );
@@ -29,18 +30,20 @@ class PostForm extends React.Component {
             fileReader.readAsDataURL(file);
         }
         this.setState( { photoFile: e.currentTarget.files[0]} )
+        let photoInput = document.getElementById("file-upload");
+        photoInput.value = ""
     }
 
     handleSubmit(e) {
         e.preventDefault;
        
-        if (this.props.errors[0] === "Invalid Username or Password") {
-            const navErrorsBox = document.getElementsByClassName('errors')[0];
-            if (navErrorsBox) navErrorsBox.classList.remove('hidden');
-        } else {
-            const navErrorsBox = document.getElementsByClassName('errors')[0];
-            if (navErrorsBox) navErrorsBox.classList.add('hidden');
-        }
+        // if (this.props.errors[0] === "Invalid Username or Password") {
+        //     const navErrorsBox = document.getElementsByClassName('errors')[0];
+        //     if (navErrorsBox) navErrorsBox.classList.remove('hidden');
+        // } else {
+        //     const navErrorsBox = document.getElementsByClassName('errors')[0];
+        //     if (navErrorsBox) navErrorsBox.classList.add('hidden');
+        // }
 
         const formData = new FormData();
         formData.append('post[profileId]', this.state.profileId)
@@ -49,25 +52,27 @@ class PostForm extends React.Component {
             formData.append('post[photo]', this.state.photoFile);
         }
 
-        this.props.createPost(formData).then(() => this.setState( { body: "" } ))
+        this.props.createPost(formData).then(() => this.setState( { body: "", photoFile: null, photoUrl: null } ))
     } 
 
     componentWillUnmount() {
         this.setState({
             authorId: this.props.user.id,
             profileId: this.props.profile,
-            body: ""
+            body: "",
+            photoFile: null,
+            photoUrl: null
         })
     }
 
-    handlePreviewCancel (e) {
-        this.setState( { photoFile: null } );
-        const prevImg =  document.getElementById('prev-cont');
-        prevImg.remove();
-
-
-
+    handlePreviewCancel () {
+        // const prevImg =  document.getElementById('prev-cont');
+        // if (prevImg) prevImg.remove();
+        this.setState( { photoFile: null, photoUrl: null } );
+        
     }
+
+
 
 
 
@@ -105,7 +110,7 @@ class PostForm extends React.Component {
                         </textarea>
                     </div>
 
-                <div>
+                <div id="prev-cont-wide">
                     
                     {preview}
 
