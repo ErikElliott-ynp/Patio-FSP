@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions";
+import { fetchUsers } from "../../actions/session_actions";
 import PostFeed from "./post_feed";
 
 const mSTP = (state, ownProps) => {
@@ -22,7 +23,8 @@ const mDTP = dispatch => {
     return {
         fetchPosts: (profileId) => dispatch(fetchPosts(profileId)),
         updatePost: post => dispatch(updatePost(post)),
-        deletePost: postId => dispatch(deletePost(postId))
+        deletePost: postId => dispatch(deletePost(postId)),
+        fetchUsers: () => dispatch(fetchUsers())
     }
 }
 

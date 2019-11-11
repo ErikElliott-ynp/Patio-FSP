@@ -2,13 +2,30 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
+export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_USERS = "RECEIVE_USERS";
 
+import * as UserAPTUtil from "../util/user_api_util";
 import * as SessionAPIUtil from "../util/session_api_util";
 
 const receiveCurrentUser = user => {
     return {
         type: RECEIVE_CURRENT_USER,
         user
+    }
+}
+
+const receiveUser = (user) => {
+    return {
+        type: RECEIVE_USER,
+        user
+    }
+}
+
+const receiveUsers = users => {
+    return {
+        type: RECEIVE_USERS,
+        users
     }
 }
 
@@ -49,4 +66,14 @@ export const logout = () => dispatch => {
 export const updateUser = (user) => dispatch => {
     return SessionAPIUtil.update(user)
         .then( user => dispatch(receiveCurrentUser(user)))
+}
+
+export const fetchUser = userId => dispatch => {
+    return UserAPTUtil.fetchUser(userId)
+        .then( user => dispatch(receiveUser(user)))
+}
+
+export const fetchUsers = () => dispatch => {
+    return UserAPTUtil.fetchUsers()
+        .then( users => dispatch(receiveUsers(users)))
 }

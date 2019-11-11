@@ -1,7 +1,12 @@
 class Api::UsersController < ApplicationController
 
-    before_action :require_login, only: :update
+    before_action :require_login, only: [:update, :index]
     before_action :underscore_params!, only: [:create, :update]
+
+    def index
+        @users = User.all
+        render :index
+    end
 
     def create
         

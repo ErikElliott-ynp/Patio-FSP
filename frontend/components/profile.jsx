@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <div className="profile-main">
             {/* <ProfileHeader props={props}/> */}
-            {/* <ProfileInfoContainer props={props.match.params} /> */}
+            <ProfileInfoContainer params={props.match.params} />
             <div className="scroll-feed">
                 <PostFormContainer params={props.match.params}/>
                 <PostFeedContainer params={props.match.params}/>
