@@ -213,8 +213,11 @@ input[type="submit"]:hover {
     padding:10px 0 20px 0;
 }
 
-.post-item-footer span {
+.post-item-footer strong {
     margin-left: 7px;
+    font-weight: inherit;
+    font-size: inherit;
+    text-shadow: inherit;
 }
 
 .list-item-post {
@@ -245,7 +248,14 @@ input[type="submit"]:hover {
 }
 
 .post-item-comment {
+    display: block;
     cursor: pointer;
+    height: 15px;
+}
+
+.post-item-comment:hover {
+    display: block;
+    background-color: gray;
 }
 
 .post-item-like{
