@@ -210,7 +210,7 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    padding-bottom: 20px;
+    padding:10px 0 20px 0;
 }
 
 .post-item-footer span {
@@ -236,7 +236,7 @@ input[type="submit"]:hover {
     line-height: 7px;
     line-height: 25px;
     letter-spacing: .5px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     
 }
 
@@ -245,11 +245,11 @@ input[type="submit"]:hover {
 }
 
 .post-item-comment {
-
+    cursor: pointer;
 }
 
-.post-item-header {
-     
+.post-item-like{
+     cursor: pointer;
 }
 
 .post-item-img {
@@ -353,5 +353,3 @@ a.boxclose{
     margin: 15px 0 0 15px;
     border-bottom: none;
 }
-
-

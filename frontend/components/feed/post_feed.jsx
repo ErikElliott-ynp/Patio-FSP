@@ -21,16 +21,20 @@ class PostFeed extends React.Component {
     
 
     render () {
-        const postsList = this.props.posts.reverse().map( (post, i) => {
-            return <PostFeedItem 
-                        post={post}
-                        key={i}
-                        user={this.props.users[post.authorId]}
-                        userId={this.props.currentUserId}
-                        deletePost={this.props.deletePost}
-                        updatePost={this.props.updatePost}
-                    />
-        })
+        let items;
+        if (this.props.posts.length > 0) {
+            items = this.props.posts.reverse().map( (post, i) => {
+                return <PostFeedItem 
+                            post={post}
+                            key={i}
+                            user={this.props.users[post.authorId]}
+                            userId={this.props.currentUserId}
+                            deletePost={this.props.deletePost}
+                            updatePost={this.props.updatePost}
+                        />
+            })
+        }
+        let postsList = items ? items : null;
         return (
             <div className="posts-feed">
                 <ul className="posts-list">
