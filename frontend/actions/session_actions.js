@@ -45,3 +45,8 @@ export const logout = () => dispatch => {
     return SessionAPIUtil.logout()
         .then(() => dispatch(logoutCurrentUser()), errors => dispatch(receiveSessionErrors(errors)) )
 }
+
+export const updateUser = (user) => dispatch => {
+    return SessionAPIUtil.update(user)
+        .then( user => dispatch(receiveCurrentUser(user)))
+}

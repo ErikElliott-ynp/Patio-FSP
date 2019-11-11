@@ -141,7 +141,7 @@ class NavBar extends React.Component {
                                         <i className="fa fa-search"></i>
                                     </div>
                                     <div className="right-logged-in clearfix">
-                                        <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
+                                        <Link to={`/users/${this.props.currentUser.id}`} className="info-blip-a" style={{ textDecoration: 'none' }}>
                                             <div className="info-blip">
                                                 <img src={this.props.currentUser.profilePicture} className="profile-photo"/>
                                                 <p>
@@ -149,7 +149,7 @@ class NavBar extends React.Component {
                                                 </p>
                                             </div>
                                         </Link>
-                                        <Link to="/feed" style={{ textDecoration: 'none' }}>
+                                        <Link to="/feed" style={{ textDecoration: 'none' }} className="home-a">
                                             <div className="home">
                                                 Home
                                             </div>

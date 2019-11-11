@@ -1,3 +1,8 @@
 import React from 'react';
 
-class
+class ProfileInfo extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+}
