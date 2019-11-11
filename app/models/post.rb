@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+
+    validate :ensure_photo_or_body
+
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
@@ -8,4 +11,12 @@ class Post < ApplicationRecord
         class_name: :User
 
     has_one_attached :photo
+
+    def ensure_photo_or_body
+        unless self.photo.attached? || self.body.length > 0
+            errors[:post] << "Please Add a Photo or a Status"
+        end
+    end
+
+
 end

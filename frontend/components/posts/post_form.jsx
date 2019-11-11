@@ -44,7 +44,9 @@ class PostForm extends React.Component {
         const formData = new FormData();
         formData.append('post[profileId]', this.state.profileId)
         formData.append('post[body]', this.state.body);
-        formData.append('post[photo]', this.state.photoFile);
+        if (this.state.photoFile) {
+            formData.append('post[photo]', this.state.photoFile);
+        }
 
         this.props.createPost(formData).then(() => this.setState( { body: "" } ))
     } 
@@ -57,12 +59,6 @@ class PostForm extends React.Component {
         })
     }
 
-    handleFileClick() {
-        const ele = document.getElementsByClassName('file-btn')[0];
-
-    }
-
-    
 
 
     render () {
@@ -78,6 +74,7 @@ class PostForm extends React.Component {
                         <div className="post-prof-img">
                             <img src={this.props.user.profilePicture} className="post-prof-pic"/>
                         </div>
+
                         <textarea onKeyPress={(e) => {e.target.keyCode === 13  && e.preventDefault()}}
                             placeholder={`What's on your mind, ${this.props.user.firstName}`}
                             id="post-ta" value={this.state.body} className="text-a-post"
@@ -85,8 +82,8 @@ class PostForm extends React.Component {
                         </textarea>
                     </div>
 
-                    
                         {preview}
+                    
                     
                     <div className="post-form-footer">
                         <label>
