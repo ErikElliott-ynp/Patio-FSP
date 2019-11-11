@@ -5,7 +5,8 @@ import { updateUser } from "../../actions/session_actions";
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        profile: state.entities.users[ownProps.props.match.params.userId]
+        profile: state.entities.users[ownProps.props.match.params.userId],
+        
     }
 }
 

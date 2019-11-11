@@ -2,8 +2,10 @@
     height: 550px;
     width: 325px;
     background-color: white;
-    margin: 25px 20px 0 250px;
+    margin: 25px 20px 0 289px;
     display: inline-block;
+    font-family: 'Fira Sans', sans-serif;
+
 }
 
 .profile-main {
@@ -15,4 +17,47 @@
     display: flex;
     -webkit-box-pack: right;
     justify-content: right;
+}
+
+.prof-info-header {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.prof-info-header h3 {
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.fa-globe-americas {
+    font-size: 32px;
+    padding: 0 20px ; 
+}
+
+.bio-basic {
+    opacity: .5;
+    font-size: 12px
+}
+
+.about-me-bio h3 {
+    padding: 20px 0 10px 0;
+}
+
+.about-me-bio  {
+    text-align: center;
+}
+
+.add-bio {
+    color: blue;
+    font-size: 14px;
+    padding-top: 7px; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+.add-bio:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
