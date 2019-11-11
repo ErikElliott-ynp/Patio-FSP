@@ -4,15 +4,15 @@ import { updateUser } from "../../actions/session_actions";
 
 const mSTP = (state, ownProps) => {
     return {
-        currentUser: state.users[state.session.id],
-        profile: state.users[ownProps.match.params.userId]
+        currentUser: state.entities.users[state.session.id],
+        profile: state.entities.users[ownProps.props.match.params.userId]
     }
 }
 
 const mDTP = dispatch => {
     return {
-        updateUser: (user) => dispatch(updateUser())
+        updateUser: (user) => dispatch(updateUser(user))
     }
 }
 
-export default connect(mSTP, mDTP)(ProfileInfo);
+export default connect(mSTP, mDTP)(ProfileInfo);   
