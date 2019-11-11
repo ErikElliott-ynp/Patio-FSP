@@ -11,6 +11,10 @@ class ProfileInfo extends React.Component {
         }
     }
 
+    componentDidMount() {
+        fetch
+    }
+
     handleEdit() {
 
     }
@@ -44,7 +48,6 @@ class ProfileInfo extends React.Component {
                     <div className="about-me-bio" id="add-bio">
                         <h3>About Me:</h3>
                         {bio}
-                        
                     </div>
 
                 </div>

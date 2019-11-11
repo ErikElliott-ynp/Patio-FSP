@@ -8,9 +8,10 @@ export const createPost = post => {
     })
 }
 
-export const fetchPosts = () => {
+export const fetchPosts = (profileId) => {
     return $.ajax({
         url: `/api/posts`,
+        data: {user: profileId}
     })
 }
 

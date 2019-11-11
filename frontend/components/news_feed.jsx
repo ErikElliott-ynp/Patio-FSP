@@ -11,10 +11,10 @@ const NewsFeed = (props) => {
             </div>
             <div className="scroll-feed">
                 <div className="post-form-primary">
-                    <PostFormContainer />
+                    <PostFormContainer params={props.match.params}/>
                 </div>
                 <div className="feed-primary">
-                    <PostFeedContainer />
+                    <PostFeedContainer params={props.match.params}/>
                 </div>
             </div>
         </div>

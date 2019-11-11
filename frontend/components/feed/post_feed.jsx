@@ -11,11 +11,15 @@ class PostFeed extends React.Component {
     }
 
     componentDidMount () {
-        this.props.fetchPosts();
+        this.props.fetchPosts(this.props.profile);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return this.state.posts.length !== nextProps.posts.length;
+        if (this.state.posts.length !== nextProps.posts.length || this.props.profile !== nextProps.profile) {
+            return true;
+        }   else {
+            return false;
+        }
     }
 
     

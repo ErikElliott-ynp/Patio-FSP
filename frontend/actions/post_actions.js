@@ -32,8 +32,8 @@ const receivePostErrors = errors => {
     }
 }
 
-export const fetchPosts = () => dispatch => {
-    return PostAPIUtil.fetchPosts()
+export const fetchPosts = (profileId) => dispatch => {
+    return PostAPIUtil.fetchPosts(profileId)
         .then( posts => dispatch(receivePosts(posts)),
             errors => dispatch(receivePostErrors(errors)))
 }

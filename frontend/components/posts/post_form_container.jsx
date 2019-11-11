@@ -3,13 +3,10 @@ import { createPost } from "../../actions/post_actions";
 import PostForm from "./post_form";
 
 const mSTP = (state, ownProps) => {
-    let profileId;
-    if (ownProps.match) {
-        profileId = ownProps.match.params.id
-    } else {
-        profileId = state.session.id
+    let profileId = state.session.id;
+    if (ownProps.params.userId) {
+        profileId = ownProps.params.userId
     }
-
     return {
         user: state.entities.users[state.session.id],
         errors: state.errors.posts,
