@@ -15,10 +15,9 @@ class PostFeedItem extends React.Component{
             <div className="post-item-wide">
                 <li className="list-item-post"> 
                     <div className="post-item-img">
-                        <img src="#" alt=""/>
                         <Link to={`/users/${this.props.user.id}`}>
                             <div className="full-name">
-                                <img src={this.props.user.profilePicture} />
+                                <img src={this.props.user.profilePicture} className="post-item-pic" />
                                 <span>{this.props.user.firstName}  {this.props.user.lastName}</span>
                             </div> 
                         </Link>
@@ -33,11 +32,11 @@ class PostFeedItem extends React.Component{
                         
                         ) : ( <br/>)
                     }
-                   
+                    <span className="post-body">{this.props.post.body}</span>
                    {photo}
                       
                 
-                    <p>{this.props.post.body}</p>
+                    <p></p>
                     <div className="post-item-footer">
                         <div className="post-item-like">
                             <i className="fas fa-thumbs-up"><span>Like</span></i>

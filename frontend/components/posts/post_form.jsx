@@ -12,6 +12,7 @@ class PostForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handlePreviewCancel = this.handlePreviewCancel.bind(this);
     }
 
     handleChange(field) {
@@ -59,11 +60,24 @@ class PostForm extends React.Component {
         })
     }
 
+    handlePreviewCancel (e) {
+        this.setState( { photoFile: null } );
+        const prevImg =  document.getElementById('prev-cont');
+        prevImg.remove();
+
+
+
+    }
+
 
 
 
     render () {
-        const preview = this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
+        const preview = this.state.photoUrl ?
+        (<div className="prev-cont" id="prev-cont">
+            <a onClick={this.handlePreviewCancel} className="boxclose" id="boxclose"></a>
+            <img className="img-preview" src={this.state.photoUrl} /> 
+        </div> ) : null
 
         let btn = document.getElementsByClassName("post-submit-btn")[0];
         if (this.state.body || this.state.photoFile) {
@@ -91,7 +105,11 @@ class PostForm extends React.Component {
                         </textarea>
                     </div>
 
-                        {preview}
+                <div>
+                    
+                    {preview}
+
+                </div>
                     
                     
                     <div className="post-form-footer">
