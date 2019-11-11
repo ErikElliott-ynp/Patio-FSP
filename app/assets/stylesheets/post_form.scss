@@ -141,6 +141,10 @@ input[type="submit"]:hover {
     margin-bottom: 150px;
 }
 
+.info-links a:hover{
+    background-color: lightgray;
+}
+
 .scroll-feeds {
     display: flex;
     flex-direction: column;
@@ -255,4 +259,25 @@ input[type="submit"]:hover {
     height: 300px;
     position: relative;
     left: 20%
+}
+
+.file-btn {
+    cursor: pointer;
+    -webkit-appearance: initial;
+}
+.sidebar-prof {
+    cursor: pointer;
+}
+
+.sidebar-prof:hover {
+    background-color: lightgray;
+}
+
+.sidebar-prof * {
+
+    
+}
+
+img:hover {
+    border: none;
 }

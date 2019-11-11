@@ -143,7 +143,7 @@ class NavBar extends React.Component {
                                     <div className="right-logged-in clearfix">
                                         <Link to={`/users/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }}>
                                             <div className="info-blip">
-                                                <img src="#" className="profile-photo"/>
+                                                <img src={this.props.currentUser.profilePicture} className="profile-photo"/>
                                                 <p>
                                                     {this.props.currentUser.firstName}
                                                 </p>
