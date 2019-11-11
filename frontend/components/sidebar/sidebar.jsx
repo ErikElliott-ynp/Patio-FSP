@@ -22,7 +22,8 @@ const Sidebar = (props) => {
                 </a>
 
             </div>
-           
+            <p className="sidebar-footer">© 2019 Erik Elliott. <br/>
+             Inspired by Facebook.</p>
         </div>
     )
 }

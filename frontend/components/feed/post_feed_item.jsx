@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-
+    
 class PostFeedItem extends React.Component{
     constructor(props) {
         super(props)
@@ -30,7 +30,7 @@ class PostFeedItem extends React.Component{
                             </button>
                         </div>
                         
-                        ) : ( <br/>)
+                        ) : ( <script></script>)
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}

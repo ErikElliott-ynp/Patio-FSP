@@ -152,7 +152,7 @@ input[type="submit"]:hover {
 
 .post-delete-button {
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 0px;
 }
 
@@ -196,7 +196,7 @@ input[type="submit"]:hover {
 
 .post-item-wide {
     background-color: rgb(248, 242, 242);
-    border-radius: 3px;
+    border-radius: 14px;
     margin: 20px 0 20px ;
     max-width: 530px;
 }
@@ -250,13 +250,13 @@ input[type="submit"]:hover {
 .post-item-comment {
     display: block;
     cursor: pointer;
-    height: 15px;
+
 }
 
-.post-item-comment:hover {
-    display: block;
-    background-color: gray;
-}
+    // .post-item-comment:hover {
+    //     display: block;
+    //     background-color: gray;
+    // }
 
 .post-item-like{
      cursor: pointer;
@@ -362,4 +362,13 @@ a.boxclose{
 .post-body {
     margin: 15px 0 0 15px;
     border-bottom: none;
+}
+
+
+.sidebar-footer {
+    font-size: 12px;
+    color: gray;
+    position: relative;
+    bottom: 162px;
+    left: 12px;
 }
