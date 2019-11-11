@@ -66,10 +66,7 @@ class PostForm extends React.Component {
     }
 
     handlePreviewCancel () {
-        // const prevImg =  document.getElementById('prev-cont');
-        // if (prevImg) prevImg.remove();
         this.setState( { photoFile: null, photoUrl: null } );
-        
     }
 
 

@@ -21,8 +21,8 @@ class PostFeed extends React.Component {
     
 
     render () {
-        let items;
-        if (this.props.posts.length > 0) {
+        let items = null;
+        if (this.props.posts) {
             items = this.props.posts.reverse().map( (post, i) => {
                 return <PostFeedItem 
                             post={post}
