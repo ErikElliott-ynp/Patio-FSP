@@ -222,14 +222,25 @@ input[type="submit"]:hover {
     font-family: 'Fira Sans', sans-serif;
 }
 
+.full-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
 .list-item-post p {
-    margin: 0 0 15px 22px;
+    margin: 0 0 10px 50px;
     word-wrap: break-word;
     width: 90%;
     line-height: 7px;
     line-height: 25px;
     letter-spacing: .5px;
     padding-bottom: 20px;
+    
+}
+
+.line {
     border-bottom: 1px solid gray;
 }
 
@@ -243,14 +254,21 @@ input[type="submit"]:hover {
 
 .post-item-img {
     float: left;
-    display: inline-block;
+    display: flex;
+    justify-content: start;
     margin: 30px 0 15px 20px;
+    width: 100%;
 }
 
 .img-preview { 
     width: 150px;
     height: 150px;
    
+}
+
+.item-username {
+    margin: 22px 0 0 17px;
+    font-size: 20px;
 }
 
 .prev-cont {
@@ -330,3 +348,10 @@ a.boxclose{
     content: "x";
     font-family: sans-serif;
 }
+
+.post-body {
+    margin: 15px 0 0 15px;
+    border-bottom: none;
+}
+
+
