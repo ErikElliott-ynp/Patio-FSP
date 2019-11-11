@@ -4,7 +4,9 @@ import { Link } from "react-router-dom"
 const Sidebar = (props) => {
     return (
         <div className="feed-side-main">
-            <span className="sidebar-prof"> <img src={props.currentUser.profilePicture} className="profile-photo"/> {props.currentUser.firstName}  {props.currentUser.lastName}</span>
+            <Link to={`/users/${props.currentUser.id}`} className="sidebar-prof">
+                <span> <img src={props.currentUser.profilePicture} className="profile-photo"/> {props.currentUser.firstName}  {props.currentUser.lastName}</span>
+            </Link>
             <Link to="/feed" className="active-news-feed">
                 <span><i className="fas fa-newspaper"></i> News Feed</span>
             </Link>

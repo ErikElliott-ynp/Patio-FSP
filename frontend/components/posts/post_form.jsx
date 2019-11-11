@@ -57,6 +57,11 @@ class PostForm extends React.Component {
         })
     }
 
+    handleFileClick() {
+        const ele = document.getElementsByClassName('file-btn')[0];
+
+    }
+
     
 
 
@@ -71,7 +76,7 @@ class PostForm extends React.Component {
                     </div>
                     <div className="form-body">
                         <div className="post-prof-img">
-                            <img src="#" alt="#"/>
+                            <img src={this.props.user.profilePicture} className="post-prof-pic"/>
                         </div>
                         <textarea onKeyPress={(e) => {e.target.keyCode === 13  && e.preventDefault()}}
                             placeholder={`What's on your mind, ${this.props.user.firstName}`}
@@ -84,12 +89,15 @@ class PostForm extends React.Component {
                         {preview}
                     
                     <div className="post-form-footer">
-                        <i className="fas fa-photo-video">
-                             <span> 
-                                 Upload Photo
-                                <input onChange={this.handleFile} className="file-btn" type="file" id="file-upload"/>
-                             </span>
-                         </i>
+                        <label>
+                            <i className="fas fa-photo-video">
+                                <span> 
+                                    Upload Photo
+                                    <input onChange={this.handleFile} className="file-btn" type="file" id="file-upload"/>
+                                </span>
+                            </i>
+
+                        </label>
                         <input type="submit" value="Post" className="post-submit-btn"/>
                     </div>
                 </form>

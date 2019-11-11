@@ -263,21 +263,28 @@ input[type="submit"]:hover {
 
 .file-btn {
     cursor: pointer;
-    -webkit-appearance: initial;
+    opacity: 0;
 }
+
 .sidebar-prof {
     cursor: pointer;
+    font-size: 20px;
+
+}
+
+.sidebar-prof span {
+    margin-bottom: 10px;
 }
 
 .sidebar-prof:hover {
     background-color: lightgray;
 }
 
-.sidebar-prof * {
+.post-prof-pic {
+    float: left;
+    margin: 10px 0 0 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
 
-    
-}
-
-img:hover {
-    border: none;
 }
