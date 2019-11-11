@@ -61,8 +61,17 @@ class PostForm extends React.Component {
 
 
 
+
     render () {
         const preview = this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
+
+        let btn = document.getElementsByClassName("post-submit-btn")[0];
+        if (this.state.body || this.state.photoFile) {
+            btn.removeAttribute("disabled");
+        } else if (!(this.state.body || this.state.photoFile)) {
+            if (btn) btn.setAttribute("disabled", "disabled")
+            
+        }
         return (
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>
@@ -95,7 +104,7 @@ class PostForm extends React.Component {
                             </i>
 
                         </label>
-                        <input type="submit" value="Post" className="post-submit-btn"/>
+                        <input type="submit" value="Post" className="post-submit-btn" disabled="disabled"/>
                     </div>
                 </form>
             </div>
