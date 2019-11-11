@@ -21,25 +21,30 @@ input[type="text"], input[type="password"], textarea, select {
     justify-content: right;
 }
 
+.posts-feed {
+    display: inline-block;
+    width: 545px;
+}
+
 .post-form-wide {
     min-height: 195px;
     width: 530px;
     line-height: 16px;
     font-size: 12px;
     background-color: rgb(248, 242, 242);   
-    margin-top: 20px; 
+    margin-top: 48px; 
     border-radius: 4px;
     border: 1px solid gray;
+    display: inline-block;
 }
 .post-form-header {
     padding: 10px 0 10px 0;
     border-bottom: 2px solid gray;
+    border-top: 1px solid gray;
     background-color: #e9ebee;
+    
 }
 
-.post-form-21 {
-    border-left: inherit;
-}
 
 .post-form-header span {
     font-size: 18px;
@@ -86,10 +91,6 @@ input[type="submit"]:hover {
     text-indent: 0;
 }
 
-
-
-.post-delete-button {
-}
 
 .post-delete-button button {
     size: 100%;

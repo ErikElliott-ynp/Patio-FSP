@@ -6,9 +6,11 @@ const Profile = (props) => {
     return (
         <div className="profile-main">
             {/* <ProfileHeader props={props}/> */}
-            <PostFormContainer />
-            <PostFeedContainer />
             <ProfileInfoContainer props={props} />
+            <div className="scroll-feed">
+                <PostFormContainer />
+                <PostFeedContainer />
+            </div>
         </div>
     )
 }
