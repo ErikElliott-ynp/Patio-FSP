@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { updateUser } from "../../actions/session_actions";
 import ProfileHeader from "./profile_header";
+import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => {
     let id = ownProps.params.userId;
@@ -16,7 +17,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        updateUser: user => dispatch(updateUser(user))
+        updateUser: user => dispatch(updateUser(user)),
+        openModal: modal => dispatch(openModal(modal))
     }
 }
 

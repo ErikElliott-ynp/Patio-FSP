@@ -230,7 +230,10 @@
 
 .prof-up-label {
     display: flex;
+}
 
+.prof-label span {
+    cursor: pointer;
 }
 
 .fa-camera {

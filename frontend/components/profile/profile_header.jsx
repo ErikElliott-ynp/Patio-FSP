@@ -43,7 +43,7 @@ class ProfileHeader extends React.Component {
                 {coverPhoto}
                 {profilePic}
                 <h3 className="prof-name">{this.props.user.firstName} {this.props.user.lastName}</h3>
-                <button className="edit-prof-btn">Update Profile</button>
+                <button onClick={() => this.props.openModal("updateProfile")} className="edit-prof-btn">Update Profile</button>
                 <div className="prof-photo-update" id="update-prof-pic">
                     <form>
                         <label className="prof-label">
