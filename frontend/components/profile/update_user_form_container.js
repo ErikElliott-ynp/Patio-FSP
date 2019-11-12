@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import { updateUser } from "../../actions/session_actions";
+import { updateUserInfo } from "../../actions/session_actions";
 import UpdateUserForm from "./update_user_form";
 import { withRouter } from "react-router";
 
@@ -13,7 +13,7 @@ const mSTP = ({ entities, session }) => {
 
 const mDTP = dispatch => {
     return {
-        updateUser: user => dispatch(updateUser(user)),
+        updateUserInfo: user => dispatch(updateUserInfo(user)),
         closeModal: () => dispatch(closeModal())
     }
 }

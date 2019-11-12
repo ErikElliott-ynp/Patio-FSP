@@ -6,15 +6,6 @@ export const signup = user => {
     })
 }
 
-export const update = (user) => {
-    return $.ajax({
-        url: `/api/users/${user.id}`,
-        method: 'PATCH',
-        data:  user,
-        contentType: false,
-        processData: false
-    })
-}
 
 export const login = user => {
     return $.ajax({
@@ -28,5 +19,23 @@ export const logout = () => {
     return $.ajax({
         url: `/api/session`,
         method: 'DELETE'
+    })
+}
+
+export const update = (user) => {
+    return $.ajax({
+        url: `/api/users/${user.id}`,
+        method: 'PATCH',
+        data:   user ,
+        contentType: false,
+        processData: false
+    })
+}
+
+export const updateInfo = user => {
+    return $.ajax({
+        url: `/api/users/${user.id}`,
+        method: 'PATCH',
+        data: { user }
     })
 }

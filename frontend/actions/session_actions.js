@@ -68,6 +68,11 @@ export const updateUser = (user) => dispatch => {
         .then( user => dispatch(receiveCurrentUser(user)))
 }
 
+export const updateUserInfo = user => dispatch => {
+    return SessionAPIUtil.updateInfo(user)
+        .then( user => dispatch(receiveCurrentUser(user)))
+}
+
 export const fetchUser = userId => dispatch => {
     return UserAPTUtil.fetchUser(userId)
         .then( user => dispatch(receiveUser(user)))
