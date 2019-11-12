@@ -9,7 +9,7 @@ const Sidebar = (props) => {
     return (
         <div className="feed-side-main">
             <Link to={`/users/${props.currentUser.id}`} className="sidebar-prof">
-                <span> {photo} {props.currentUser.firstName}  {props.currentUser.lastName}</span>
+                {photo}  <span> {props.currentUser.firstName}  {props.currentUser.lastName}</span>
             </Link>
             <Link to="/feed" className="active-news-feed">
                 <span><i className="fas fa-newspaper"></i> News Feed</span>
