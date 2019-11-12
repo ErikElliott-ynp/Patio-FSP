@@ -61,3 +61,34 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.location {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.work {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.education {
+    display: flex;
+}
+
+.loc-work-ed {
+    margin: 25px 0 0 15px;
+}
+
+.fa-home {
+    padding-right: 10px;
+}
+
+.fa-briefcase {
+    padding-right: 10px;
+
+}
+
+.fa-graduation-cap {
+    padding-right: 7px;
+}

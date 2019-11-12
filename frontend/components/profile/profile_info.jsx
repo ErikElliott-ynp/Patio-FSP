@@ -14,22 +14,17 @@ class ProfileInfo extends React.Component {
     componentDidMount() {
         fetch
     }
-
-    handleEdit() {
-
-    }
-
     
 
     render() {
-
         let aboutMeBtn = this.props.currentUser === this.props.profile ? 
-            <div className="bio-basic">
+            <div className="bio-basic" id="bio-basic">
                 Add a short bio to tell people about yourself
-                <div onClick={this.handlEdit} className="add-bio" >
-                    Add Bio
-                </div>
             </div> : null;
+
+        let home = this.props.currentUser.location ? <div className="location"><i className="fas fa-home"></i> <p>Lives in {this.props.currentUser.location}</p></div> : null;
+        let work = this.props.currentUser.work ? <div className="work"><i className="fas fa-briefcase"></i> <p> Works at {this.props.currentUser.work}</p></div> : null;
+        let education = this.props.currentUser.education ? <div className="education"><i className="fas fa-graduation-cap"></i> <p>Went to school at {this.props.currentUser.education}</p></div> : null;   
 
 
         let bio = this.props.currentUser.aboutMe ? 
@@ -48,6 +43,11 @@ class ProfileInfo extends React.Component {
                     <div className="about-me-bio" id="add-bio">
                         <h3>About Me:</h3>
                         {bio}
+                    </div>
+                    <div className="loc-work-ed">
+                        {home}
+                        {work}
+                        {education}
                     </div>
 
                 </div>

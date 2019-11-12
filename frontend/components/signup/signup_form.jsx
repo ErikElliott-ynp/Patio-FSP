@@ -34,7 +34,8 @@ class SignupForm extends React.Component{
             lastName: "",
             dateOfBirth: "",
             sex: "",
-        })
+        });
+        this.props.fetchUsers();
     }
 
 
