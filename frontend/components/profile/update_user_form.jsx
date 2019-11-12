@@ -35,7 +35,6 @@ class UpdateUserForm extends React.Component {
         if (e.charCode == 13) {
             e.preventDefault();
         }
-        // return (e) => {e.curretTarget.keyCode === 13 && e.preventDefault() }
     }
 
     render () {

@@ -42,6 +42,22 @@ font-family: 'Fira Sans', sans-serif;
     align-items: center;
 }
 
+.update-form input, textarea {
+    border-radius: 8px;
+    border: 1px solid #4A154B;
+}
+
+.update-form h3 {
+    font-size: 24px;
+    color: white;
+    text-shadow:
+		-1px -1px 0 rgb(112, 112, 112),
+		1px -1px 0 rgb(112, 112, 112),
+		-1px 1px 0 rgb(112, 112, 112),
+		1px 1px 0 rgb(112, 112, 112);
+
+}
+
 .update-TA {
     resize: none;
     height: 45px;
