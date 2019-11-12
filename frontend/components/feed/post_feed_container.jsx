@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.posts,
         users: state.entities.users,
         currentUserId: state.session.id,
-        profile: profileId
+        profileId: profileId
     }
 }
 

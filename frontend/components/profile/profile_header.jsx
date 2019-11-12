@@ -44,6 +44,7 @@ class ProfileHeader extends React.Component {
         let firstName;
         let lastName;
         let updateCover;
+        let profilePicUpdate;
         if (this.props.user) {
              coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
              profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" />
@@ -63,6 +64,17 @@ class ProfileHeader extends React.Component {
                             </div>
                         </label>
                     </div>) : null;
+            profilePicUpdate = this.props.currentUser === this.props.user ? (<div className="prof-photo-update" id="update-prof-pic">
+                                <form>
+                                    <label className="prof-label">
+                                        <i className="fas fa-camera"></i>
+                                        <span>
+                                            Update
+                                                <input onChange={this.handleFile("profilePicture")} type="file" className="prof-upload-input" id="prof-up" />
+                                        </span>
+                                    </label>
+                                </form>
+                            </div>) : null
         }
         return (
             <div className="prof-header-main">
@@ -70,17 +82,7 @@ class ProfileHeader extends React.Component {
                 {profilePic}
                 <h3 className="prof-name">{ firstName } {lastName}</h3>
                 {updateBtn}
-                <div className="prof-photo-update" id="update-prof-pic">
-                    <form>
-                        <label className="prof-label">
-                            <i className="fas fa-camera"></i>
-                            <span>
-                                Update
-                                <input onChange={this.handleFile("profilePicture")} type="file" className="prof-upload-input" id="prof-up"/>
-                            </span>
-                        </label>
-                   </form>
-                </div>
+                {profilePicUpdate}
                 {updateCover}
             </div>
         )

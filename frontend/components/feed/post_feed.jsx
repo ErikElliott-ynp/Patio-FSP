@@ -12,18 +12,21 @@ class PostFeed extends React.Component {
 
     componentDidMount () {
        
-        this.props.fetchPosts(this.props.profile);
+        this.props.fetchPosts(this.props.profileId);
         
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.posts.length !== nextProps.posts.length || this.props.profile !== nextProps.profile) {
+        if (this.props.posts.length !== nextProps.posts.length || this.props.profileId !== nextProps.profileId) {
             return true;
-        }   else {
+        }  else {
             return false;
         }
     }
 
+    componentDidUpdate () {
+        this.props.fetchPosts(this.props.profileId);
+    }
     
 
     render () {
