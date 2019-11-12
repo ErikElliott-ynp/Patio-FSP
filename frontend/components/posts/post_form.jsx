@@ -58,6 +58,22 @@ class PostForm extends React.Component {
         })
     }
 
+    shouldComponentUpdate(nextProps, _nextState) {
+        debugger
+        if (this.props.profileId !== nextProps.profileId) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // componentDidUpdate() {
+    //     debugger
+    //     this.setState({
+    //         profileId: this.props.profile
+    //     })
+    // }
+
   
 
     handlePreviewCancel () {

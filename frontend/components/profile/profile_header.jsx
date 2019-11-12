@@ -80,7 +80,7 @@ class ProfileHeader extends React.Component {
             <div className="prof-header-main">
                 {coverPhoto}
                 {profilePic}
-                <h3 className="prof-name">{ firstName } {lastName}</h3>
+                <h3 className="prof-name">{firstName} {lastName}</h3>
                 {updateBtn}
                 {profilePicUpdate}
                 {updateCover}

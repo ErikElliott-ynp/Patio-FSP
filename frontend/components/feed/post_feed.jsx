@@ -16,7 +16,7 @@ class PostFeed extends React.Component {
         
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps, _nextState) {
         if (this.props.posts.length !== nextProps.posts.length || this.props.profileId !== nextProps.profileId) {
             return true;
         }  else {

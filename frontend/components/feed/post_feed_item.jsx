@@ -15,6 +15,7 @@ class PostFeedItem extends React.Component{
         const profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
             : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
 
+        
 
         return (
             <div className="post-item-wide">
@@ -28,7 +29,7 @@ class PostFeedItem extends React.Component{
                         </Link>
                     </div>
 
-                    { this.props.post.authorId === this.props.user.id ? (
+                    { this.props.post.authorId === this.props.userId ? (
                         <div className="post-delete-button clearfix">
                             <button onClick={() => this.props.deletePost(this.props.post.id)}>
                                 <i className="fa fa-trash" aria-hidden="true"></i>
