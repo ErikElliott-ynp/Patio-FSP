@@ -52,7 +52,7 @@ class ProfileInfo extends React.Component {
 
                 </div>
                 <div className="friends">
-
+                    <h3>Friends:</h3>
                 </div>
             </div>
         )

@@ -97,6 +97,8 @@
     width: 845px;
     height: 370px;
     text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+
 
 }
 
@@ -116,8 +118,19 @@
 
 .prof-photo-profile {
     border-radius: 100%;
-    width: 100px;
-    height: 10px;
+    width: 180px;
+    height: 180px;
     position: relative;
-    
+    border: 5px white solid;
+    left: -313px;
+    bottom: -201px;
+    display: inline-block
+}
+
+.prof-name {
+    position: relative;
+    color: white;
+    font-size: 28px;
+    left: -135px;
+    bottom: -138px;
 }
