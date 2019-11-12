@@ -15,8 +15,16 @@
   transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  background-color: rgb(145, 139, 132);
+  background-color: rgb(147, 223, 247);
   border-radius: 10px;
+font-family: 'Fira Sans', sans-serif;
+
+}
+
+.update-wide {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .update-sub.disabled {
@@ -36,10 +44,15 @@
 
 .update-TA {
     resize: none;
-    min-height: 40px;
-    width: 80px;
+    height: 45px;
+    width: 267px;
+    text-align: center;
+    padding: 20px 10px 5px 10px;
 }
 
 .update-info {
-
+    width: 142px;
+    height: 21px;
+    text-align: center;
+    word-wrap: break-word;
 }
