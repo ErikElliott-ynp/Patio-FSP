@@ -3,10 +3,15 @@ import ProfileInfo from "./profile_info";
 import { updateUser, fetchUser } from "../../actions/session_actions";
 
 const mSTP = (state, ownProps) => {
+    let id = ownProps.params.userId;
+    let profileId = state.session.id;
+    if (id) {
+        profileId = id;
+    }
     return {
         currentUser: state.entities.users[state.session.id],
-        profile: state.entities.users[ownProps.params.userId],
-
+        profile: state.entities.users[profileId],
+        profileId
     }
 }
 

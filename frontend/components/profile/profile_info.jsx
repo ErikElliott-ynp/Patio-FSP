@@ -5,32 +5,47 @@ class ProfileInfo extends React.Component {
         super(props)
 
         this.state = {
-            work: this.props.currentUser.work,
-            education: this.props.currentUser.education,
-            aboutMe: this.props.currentUser.aboutMe
+            work: null,
+            education: null,
+            aboutMe: null
         }
     }
 
     componentDidMount() {
-        fetch
+        this.props.fetchUser(this.props.profileId)
+            .then( () => this.setState({
+                work: this.props.profile.work,
+                education: this.props.profile.education,
+                aboutMe: this.props.profile.aboutMe
+                }) 
+            )
     }
     
 
     render() {
-        let aboutMeBtn = this.props.currentUser === this.props.profile ? 
-            <div className="bio-basic" id="bio-basic">
-                Add a short bio to tell people about yourself
-            </div> : null;
+        let aboutMeBtn;
+        let home; 
+        let work; 
+        let education;
+        let bio;
 
-        let home = this.props.currentUser.location ? <div className="location"><i className="fas fa-home"></i> <p>Lives in {this.props.currentUser.location}</p></div> : null;
-        let work = this.props.currentUser.work ? <div className="work"><i className="fas fa-briefcase"></i> <p> Works at {this.props.currentUser.work}</p></div> : null;
-        let education = this.props.currentUser.education ? <div className="education"><i className="fas fa-graduation-cap"></i> <p>Went to school at {this.props.currentUser.education}</p></div> : null;   
+        if (this.props.profile) {
+            aboutMeBtn = this.props.profile === this.props.profile ? 
+                <div className="bio-basic" id="bio-basic">
+                    Add a short bio to tell people about yourself
+                </div> : null;
+
+            home = this.props.profile.location ? <div className="location"><i className="fas fa-home"></i> <p>Lives in {this.props.profile.location}</p></div> : null;
+            work = this.props.profile.work ? <div className="work"><i className="fas fa-briefcase"></i> <p> Works at {this.props.profile.work}</p></div> : null;
+            education = this.props.profile.education ? <div className="education"><i className="fas fa-graduation-cap"></i> <p>Went to school at {this.props.profile.education}</p></div> : null;   
 
 
-        let bio = this.props.currentUser.aboutMe ? 
-            <div className="bio-div">
-                <p className="bio-p">{this.props.currentUser.aboutMe}</p> 
-            </div> : aboutMeBtn;
+            bio = this.props.profile.aboutMe ? 
+                <div className="bio-div">
+                    <p className="bio-p">{this.props.profile.aboutMe}</p> 
+                </div> : aboutMeBtn;
+
+        }
            
         
         return (

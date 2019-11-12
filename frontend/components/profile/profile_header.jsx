@@ -1,4 +1,5 @@
 import React from "react"
+import { isNull } from "util";
 
 class ProfileHeader extends React.Component {
     constructor(props) {
@@ -9,6 +10,10 @@ class ProfileHeader extends React.Component {
             photoUrl: null
         }
         this.handleFile = this.handleFile.bind(this);
+    }
+
+    componentDidMount () {
+        this.props.fetchUser(this.props.profileId)
     }
 
     handleFile(field) {
@@ -33,17 +38,38 @@ class ProfileHeader extends React.Component {
 
 
     render() {
-        let coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
-        let profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" />
-            : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="prof-photo-profile" />;
-
-      
+        let coverPhoto;
+        let profilePic;
+        let updateBtn;
+        let firstName;
+        let lastName;
+        let updateCover;
+        if (this.props.user) {
+             coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
+             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" />
+                : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="prof-photo-profile" />;
+            updateBtn = this.props.currentUser === this.props.user ? <button onClick={() => this.props.openModal("updateProfile")} className="edit-prof-btn">Update Profile</button>
+                : null;
+            firstName = this.props.user.firstName;
+            lastName = this.props.user.lastName;
+            updateCover = this.props.currentUser === this.props.user ? (<div className="outer-cover">
+                        <label className="prof-up-label">
+                        <i className="fas fa-camera cover"></i>
+                            <div className="cover-photo-update" id="update-cover-pic">
+                                <span>
+                                    Update Cover Photo
+                                    <input onChange={this.handleFile("coverPhoto")} type="file" className="prof-upload-input" id="cover-up" />
+                                </span>
+                            </div>
+                        </label>
+                    </div>) : null;
+        }
         return (
             <div className="prof-header-main">
                 {coverPhoto}
                 {profilePic}
-                <h3 className="prof-name">{this.props.user.firstName} {this.props.user.lastName}</h3>
-                <button onClick={() => this.props.openModal("updateProfile")} className="edit-prof-btn">Update Profile</button>
+                <h3 className="prof-name">{ firstName } {lastName}</h3>
+                {updateBtn}
                 <div className="prof-photo-update" id="update-prof-pic">
                     <form>
                         <label className="prof-label">
@@ -55,17 +81,7 @@ class ProfileHeader extends React.Component {
                         </label>
                    </form>
                 </div>
-                <div className="outer-cover">
-                    <label className="prof-up-label">
-                        <i className="fas fa-camera cover"></i>
-                        <div className="cover-photo-update" id="update-cover-pic">
-                            <span>
-                                Update Cover Photo
-                                <input onChange={this.handleFile("coverPhoto")} type="file" className="prof-upload-input" id="cover-up"/>
-                            </span>
-                        </div>
-                    </label>
-                </div>
+                {updateCover}
             </div>
         )
     }

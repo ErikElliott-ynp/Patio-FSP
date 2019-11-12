@@ -11,7 +11,7 @@ class PostFeed extends React.Component {
     }
 
     componentDidMount () {
-        this.props.fetchUsers();
+       
         this.props.fetchPosts(this.props.profile);
         
     }

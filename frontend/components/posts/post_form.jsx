@@ -58,6 +58,8 @@ class PostForm extends React.Component {
         })
     }
 
+  
+
     handlePreviewCancel () {
         this.setState( { photoFile: null, photoUrl: null } );
     }
