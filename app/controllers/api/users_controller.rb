@@ -47,7 +47,7 @@ class Api::UsersController < ApplicationController
     end
 
     def change_params
-        params.require(:user).permit(:work, :education, :about_me)
+        params.require(:user).permit(:work, :education, :about_me, :profile_picture, :cover_photo)
     end
 
 
