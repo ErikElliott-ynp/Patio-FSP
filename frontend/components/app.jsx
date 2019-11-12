@@ -5,6 +5,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SignupContainer from "../components/signup/signup_container"
 import Profile from "./profile"
 import NewsFeed from "./news_feed";
+import Modal from "./modal/modal"
 
 const App = () => {
 
