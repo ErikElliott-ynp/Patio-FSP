@@ -6,7 +6,6 @@ class PostForm extends React.Component {
         super(props)
 
         this.state = {
-            profileId: this.props.profile,
             body: "",
             photoFile: null,
             photoUrl: null
@@ -14,6 +13,10 @@ class PostForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handlePreviewCancel = this.handlePreviewCancel.bind(this);
+    }
+
+    componentDidMount () {
+        this.props.fetchUsers();
     }
 
     handleChange(field) {
@@ -38,7 +41,7 @@ class PostForm extends React.Component {
         e.preventDefault;
        
         const formData = new FormData();
-        formData.append('post[profileId]', this.state.profileId)
+        formData.append('post[profileId]', this.props.params.userId)
         formData.append('post[body]', this.state.body);
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
@@ -51,28 +54,11 @@ class PostForm extends React.Component {
     componentWillUnmount() {
         this.setState({
             authorId: this.props.user.id,
-            profileId: this.props.profile,
             body: "",
             photoFile: null,
             photoUrl: null
         })
     }
-
-    shouldComponentUpdate(nextProps, _nextState) {
-        debugger
-        if (this.props.profileId !== nextProps.profileId) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // componentDidUpdate() {
-    //     debugger
-    //     this.setState({
-    //         profileId: this.props.profile
-    //     })
-    // }
 
   
 

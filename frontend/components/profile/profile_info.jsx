@@ -30,7 +30,7 @@ class ProfileInfo extends React.Component {
         let bio;
 
         if (this.props.profile) {
-            aboutMeBtn = this.props.profile === this.props.profile ? 
+            aboutMeBtn = this.props.profile === this.props.currentUser ? 
                 <div className="bio-basic" id="bio-basic">
                     Add a short bio to tell people about yourself
                 </div> : null;

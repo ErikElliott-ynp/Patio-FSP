@@ -187,7 +187,8 @@
 
 .outer-cover:hover .cover {
     font-size: 14px;
-    transition-delay: 100ms
+    transition-delay: 100ms;
+    color: white;
 }
 
 .outer-cover:hover .cover-photo-update {
@@ -242,8 +243,4 @@
 .fa-camera {
     cursor: pointer;
     color: black;
-}
-
-.fa-camera:hover {
-    color: white;
 }

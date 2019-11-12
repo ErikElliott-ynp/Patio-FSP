@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { createPost } from "../../actions/post_actions";
+import { fetchUsers } from "../../actions/session_actions";
 import PostForm from "./post_form";
 
 const mSTP = (state, ownProps) => {
@@ -16,7 +17,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        createPost: post => dispatch(createPost(post))
+        createPost: post => dispatch(createPost(post)),
+        fetchUsers: () => dispatch(fetchUsers())
     }
 }
 
