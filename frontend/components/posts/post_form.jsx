@@ -79,8 +79,8 @@ class PostForm extends React.Component {
             btn.removeAttribute("disabled");
         } else if (!(this.state.body || this.state.photoFile)) {
             if (btn) btn.setAttribute("disabled", "disabled")
-            
         }
+        
         return (
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>

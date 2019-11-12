@@ -8,26 +8,35 @@ class ProfileHeader extends React.Component {
             photoFile: null,
             photoUrl: null
         }
+        this.handleFileSubmit = this.handleFileSubmit.bind(this);
     }
 
-    handleFile(e) {
+    handleFileSubmit(e) {
         let file = e.currentTarget.files[0];
+    
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: file, photoUrl: fileReader.result });
+            this.setState({ photoFile: file, photoUrl: null });
         }
         if (file) {
             fileReader.readAsDataURL(file);
         }
-        this.setState({ photoFile: e.currentTarget.files[0] })
-        let photoInput = document.getElementById("prof-upload-input");
-        photoInput.value = ""
+        
+        this.setState({ photoFile: null, photoUrl: null});
+        document.getElementById('prof-up').value = "";
     }
+
+    handleSubmit(e) {
+        e.preventDefault();
+    }
+
+
 
 
     render() {
         let coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
-        let profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" /> : null;
+        let profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" />
+            : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="prof-photo-profile" />;
         return (
             <div className="prof-header-main">
                 {coverPhoto}
@@ -35,10 +44,15 @@ class ProfileHeader extends React.Component {
                 <h3 className="prof-name">{this.props.user.firstName} {this.props.user.lastName}</h3>
                 <button className="edit-prof-btn">Update Profile</button>
                 <div className="prof-photo-update" id="update-prof-pic">
-                    <label className="prof-up-label">
-                        <i class="fas fa-camera"> Update</i>
-                        <input type="file" className="prof-upload-input"/>
-                    </label>
+                    <form >
+                        <label className="prof-up-label">
+                            <i className="fas fa-camera"></i>
+                            <span>
+                                Update
+                                <input onChange={this.handleFileSubmit} type="file" className="prof-upload-input" id="prof-up"/>
+                            </span>
+                        </label>
+                   </form>
                 </div>
             </div>
         )
