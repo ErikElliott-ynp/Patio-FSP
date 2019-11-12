@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 const Sidebar = (props) => {
+    const photo = props.currentUser.profilePicture ? <img src={props.currentUser.profilePicture} className="profile-photo" />
+        : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="profile-photo
+        " /> 
+
     return (
         <div className="feed-side-main">
             <Link to={`/users/${props.currentUser.id}`} className="sidebar-prof">
-                <span> <img src={props.currentUser.profilePicture} className="profile-photo"/> {props.currentUser.firstName}  {props.currentUser.lastName}</span>
+                <span> {photo} {props.currentUser.firstName}  {props.currentUser.lastName}</span>
             </Link>
             <Link to="/feed" className="active-news-feed">
                 <span><i className="fas fa-newspaper"></i> News Feed</span>

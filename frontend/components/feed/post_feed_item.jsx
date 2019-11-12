@@ -11,13 +11,18 @@ class PostFeedItem extends React.Component{
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
 
+
+        const profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
+            : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
+
+
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 
                     <div className="post-item-img">
                         <Link to={`/users/${this.props.user.id}`}>
                             <div className="full-name">
-                                <img src={this.props.user.profilePicture} className="post-item-pic" />
+                                {profilePic}
                                 <span className="item-username">{this.props.user.firstName}  {this.props.user.lastName}</span>
                             </div> 
                         </Link>

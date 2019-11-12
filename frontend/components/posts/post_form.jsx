@@ -81,6 +81,9 @@ class PostForm extends React.Component {
             if (btn) btn.setAttribute("disabled", "disabled")
         }
         
+        const photo = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-prof-pic" />
+            : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-prof-pic" />
+
         return (
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>
@@ -90,7 +93,7 @@ class PostForm extends React.Component {
                     </div>
                     <div className="form-body">
                         <div className="post-prof-img">
-                            <img src={this.props.user.profilePicture} className="post-prof-pic"/>
+                            {photo}
                         </div>
 
                         <textarea onKeyPress={(e) => {e.target.keyCode === 13  && e.preventDefault()}}

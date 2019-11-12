@@ -120,7 +120,11 @@ class NavBar extends React.Component {
             if (ele) ele.style.height = "80px";
 
         }
-
+        let photo;
+        if (this.props.currentUser) {
+            photo = this.props.currentUser.profilePicture ? <img src={this.props.currentUser.profilePicture} className="profile-photo" /> 
+                : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="profile-photo" />
+        }
        
         return (
             <div>
@@ -143,7 +147,7 @@ class NavBar extends React.Component {
                                     <div className="right-logged-in clearfix">
                                         <Link to={`/users/${this.props.currentUser.id}`} className="info-blip-a" style={{ textDecoration: 'none' }}>
                                             <div className="info-blip">
-                                                <img src={this.props.currentUser.profilePicture} className="profile-photo"/>
+                                                {photo}
                                                 <p>
                                                     {this.props.currentUser.firstName}
                                                 </p>
