@@ -11,6 +11,8 @@ class UpdateUserForm extends React.Component {
             location: this.props.user.location,
             aboutMe: this.props.user.aboutMe
         }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(field) {
@@ -29,7 +31,7 @@ class UpdateUserForm extends React.Component {
     render () {
         return (
             <div className="update-wide">
-                <form className="update-form">
+                <form onSubmit={this.handleSubmit} className="update-form">
                     <textarea onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA">{this.state.aboutMe}</textarea>
                     <input onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
                     <input onChange={this.handleChange("work")} type="text" className="update-info work" value={this.state.work}/>
@@ -39,3 +41,5 @@ class UpdateUserForm extends React.Component {
         )
     }
 }
+
+export default withRouter(UpdateUserForm);

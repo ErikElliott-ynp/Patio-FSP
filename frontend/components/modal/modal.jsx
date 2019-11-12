@@ -1,6 +1,7 @@
 import React from "react";
 import { closeModal} from '../../actions/modal_actions';
 import { connect } from "react-redux";
+import UpdateUserFormContainer from "../profile/update_user_form_container";
 
 
 function Modal({modal, closeModal}) {
@@ -10,7 +11,8 @@ function Modal({modal, closeModal}) {
     let component;
      switch (modal) {
         case 'updateProfile':
-            // component = <UpdateUser />
+            component = <UpdateUserFormContainer />
+            break;
         default:
             return null; 
      }
