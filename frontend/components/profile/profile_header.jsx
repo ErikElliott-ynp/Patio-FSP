@@ -11,7 +11,8 @@ class ProfileHeader extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
-    handleFile(e) {
+    handleFile(field) {
+        return (e) => {
         let file = e.currentTarget.files[0];
     
         const fileReader = new FileReader();
@@ -22,9 +23,9 @@ class ProfileHeader extends React.Component {
             fileReader.readAsDataURL(file);
         }
         const formData = new FormData();
-        formData.append('user[profilePicture]', file);
+        formData.append(`user[${field}]`, file);
         this.props.updateUser(formData);
-     
+        }
     }
 
 
@@ -49,7 +50,7 @@ class ProfileHeader extends React.Component {
                             <i className="fas fa-camera"></i>
                             <span>
                                 Update
-                                <input onChange={this.handleFile} type="file" className="prof-upload-input" id="prof-up"/>
+                                <input onChange={this.handleFile("profilePicture")} type="file" className="prof-upload-input" id="prof-up"/>
                             </span>
                         </label>
                    </form>
@@ -60,7 +61,7 @@ class ProfileHeader extends React.Component {
                         <div className="cover-photo-update" id="update-cover-pic">
                             <span>
                                 Update Cover Photo
-                                <input onChange={this.handleFile} type="file" className="prof-upload-input" id="cover-up"/>
+                                <input onChange={this.handleFile("coverPhoto")} type="file" className="prof-upload-input" id="cover-up"/>
                             </span>
                         </div>
                     </label>
