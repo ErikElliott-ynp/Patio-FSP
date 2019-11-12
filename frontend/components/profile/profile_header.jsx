@@ -54,13 +54,15 @@ class ProfileHeader extends React.Component {
                         </label>
                    </form>
                 </div>
-                <div className="cover-photo-update" id="update-cover-pic">
+                <div className="outer-cover">
                     <label className="prof-up-label">
-                        <i className="fas fa-camera"></i>
-                        <span>
-                            Update
-                            <input onChange={this.handleFile} type="file" className="prof-upload-input" id="cover-up"/>
-                        </span>
+                        <i className="fas fa-camera cover"></i>
+                        <div className="cover-photo-update" id="update-cover-pic">
+                            <span>
+                                Update Cover Photo
+                                <input onChange={this.handleFile} type="file" className="prof-upload-input" id="cover-up"/>
+                            </span>
+                        </div>
                     </label>
                 </div>
             </div>
