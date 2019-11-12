@@ -46,7 +46,7 @@ class ProfileHeader extends React.Component {
                 <button className="edit-prof-btn">Update Profile</button>
                 <div className="prof-photo-update" id="update-prof-pic">
                     <form>
-                        <label className="prof-up-label">
+                        <label className="prof-label">
                             <i className="fas fa-camera"></i>
                             <span>
                                 Update

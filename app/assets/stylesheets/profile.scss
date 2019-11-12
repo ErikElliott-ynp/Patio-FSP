@@ -154,6 +154,7 @@
     bottom: -107px;
     letter-spacing: .5px;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .prof-photo-update {
@@ -209,7 +210,7 @@
     margin-top: 8px;
     font-size: 18px;
     opacity: .9;
-    color: white;
+    color: rgb(228, 228, 228);
     z-index: 3;
     cursor: pointer;
 }
@@ -232,3 +233,6 @@
 
 }
 
+.fa-camera {
+    cursor: pointer;
+}
