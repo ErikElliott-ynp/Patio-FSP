@@ -11,6 +11,7 @@ const App = () => {
 
     return (
         <div id="app">
+            <Modal />
             <NavBarContainer />
                 <AuthRoute path="/login" component={SignupContainer} />       
                 <AuthRoute path="/signup" component={SignupContainer} />       

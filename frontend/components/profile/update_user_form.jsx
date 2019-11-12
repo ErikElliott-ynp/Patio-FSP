@@ -29,13 +29,21 @@ class UpdateUserForm extends React.Component {
     }
 
     render () {
+        
+        const { work, education, location, aboutMe } = this.props.user;
+        const info = {work, education, location, aboutMe}; 
+        const checkState = Object.assign({}, this.state);
+        const disabled = JSON.stringify(checkState) === JSON.stringify(info) ? "disabled" : ""; 
+
+
         return (
             <div className="update-wide">
                 <form onSubmit={this.handleSubmit} className="update-form">
-                    <textarea onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA">{this.state.aboutMe}</textarea>
+                    <textarea onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA" value={this.state.aboutMe}></textarea>
                     <input onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
                     <input onChange={this.handleChange("work")} type="text" className="update-info work" value={this.state.work}/>
                     <input onChange={this.handleChange("education")} type="text" className="update-info edu" value={this.state.education}/>
+                    <input type="submit" className={disabled} id="update-submit" submitvalue="Save"/>
                 </form>
             </div>
         )
