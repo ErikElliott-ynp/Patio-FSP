@@ -13,7 +13,7 @@ class ProfileHeader extends React.Component {
                 {coverPhoto}
                 {profilePic}
                 <h3 className="prof-name">{this.props.user.firstName} {this.props.user.lastName}</h3>
-
+                <button className="edit-prof-btn">Update Profile</button>
             </div>
         )
     }
