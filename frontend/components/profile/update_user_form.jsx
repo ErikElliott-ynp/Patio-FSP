@@ -14,6 +14,7 @@ class UpdateUserForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.cancelEnter = this.cancelEnter.bind(this);
     }
 
     handleChange(field) {
@@ -25,8 +26,16 @@ class UpdateUserForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault;
 
+
         const user = Object.assign({}, this.state, )
         this.props.updateUserInfo(user).then(this.props.closeModal)
+    }
+
+    cancelEnter (e) {
+        if (e.charCode == 13) {
+            e.preventDefault();
+        }
+        // return (e) => {e.curretTarget.keyCode === 13 && e.preventDefault() }
     }
 
     render () {
@@ -39,11 +48,12 @@ class UpdateUserForm extends React.Component {
 
         return (
             <div className="update-wide">
-                <form onSubmit={this.handleSubmit} className="update-form">
-                    <textarea onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA" value={this.state.aboutMe}></textarea>
-                    <input onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
-                    <input onChange={this.handleChange("work")} type="text" className="update-info work" value={this.state.work}/>
-                    <input onChange={this.handleChange("education")} type="text" className="update-info edu" value={this.state.education}/>
+                <form onSubmit={this.handleSubmit} onKeyPress={this.cancelEnter} className="update-form">
+                    <h3>Update Profile</h3>
+                    <textarea onKeyPress={this.cancelEnter} onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA" value={this.state.aboutMe}></textarea>
+                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
+                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("work")} type="text" className="update-info work" value={this.state.work}/>
+                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("education")} type="text" className="update-info edu" value={this.state.education}/>
                     <input type="submit" className={`update-sub ${disabled}`} id="update-submit" value="Save"/>
                 </form>
             </div>
