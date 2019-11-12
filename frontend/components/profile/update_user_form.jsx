@@ -49,10 +49,18 @@ class UpdateUserForm extends React.Component {
             <div className="update-wide">
                 <form onSubmit={this.handleSubmit} onKeyPress={this.cancelEnter} className="update-form">
                     <h3>Update Profile</h3>
-                    <textarea onKeyPress={this.cancelEnter} onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA" value={this.state.aboutMe}></textarea>
-                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
-                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("work")} type="text" className="update-info work" value={this.state.work}/>
-                    <input onKeyPress={this.cancelEnter} onChange={this.handleChange("education")} type="text" className="update-info edu" value={this.state.education}/>
+                    <label><h4 className="about-me-modal">About Me:</h4>
+                        <textarea onKeyPress={this.cancelEnter} onChange={this.handleChange("aboutMe")} id="update-TA" className="update-TA" value={this.state.aboutMe}></textarea>
+                    </label>
+                    <label ><h4>Location:</h4>
+                        <input onKeyPress={this.cancelEnter} onChange={this.handleChange("location")} type="text" className="update-info loc" value={this.state.location}/>
+                    </label>
+                    <label ><h4>Work:</h4>
+                        <input onKeyPress={this.cancelEnter} onChange={this.handleChange("work")} type="text" className="update-info works" value={this.state.work}/>
+                    </label>
+                    <label ><h4>Education:</h4>
+                        <input onKeyPress={this.cancelEnter} onChange={this.handleChange("education")} type="text" className="update-info edu" value={this.state.education}/>
+                    </label>
                     <input type="submit" className={`update-sub ${disabled}`} id="update-submit" value="Save"/>
                 </form>
             </div>

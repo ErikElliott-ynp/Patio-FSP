@@ -51,11 +51,10 @@ font-family: 'Fira Sans', sans-serif;
     font-size: 24px;
     color: white;
     text-shadow:
-		-1px -1px 0 rgb(112, 112, 112),
-		1px -1px 0 rgb(112, 112, 112),
-		-1px 1px 0 rgb(112, 112, 112),
-		1px 1px 0 rgb(112, 112, 112);
-
+		-1px -1px 0 rgb(107, 106, 106),
+		1px -1px 0 rgb(107, 106, 106),
+		-1px 1px 0 rgb(107, 106, 106),
+		1px 1px 0 rgb(107, 106, 106);
 }
 
 .update-TA {
@@ -71,4 +70,37 @@ font-family: 'Fira Sans', sans-serif;
     height: 21px;
     text-align: center;
     word-wrap: break-word;
+}
+
+.update-sub {
+    background-color: #4A154B;
+    color: white;
+    padding: 6px 24px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.update-sub:hover {
+    background-color: #ECB22E;
+}
+
+#update-submit {
+    border-radius: 34px;
+}
+
+.update-form h4 {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 8px;
+    text-shadow:
+		-1px -1px 0 rgb(107, 106, 106),
+		1px -1px 0 rgb(107, 106, 106),
+		-1px 1px 0 rgb(107, 106, 106),
+        1px 1px 0 rgb(107, 106, 106);
+    letter-spacing: 1px
+}
+
+.about-me-modal {
+    font-size: 20px !important;
 }
