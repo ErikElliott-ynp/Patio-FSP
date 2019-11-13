@@ -12,7 +12,8 @@ class PostFeed extends React.Component {
 
     componentDidMount () {
        
-        this.props.fetchPosts(this.props.profileId);
+        this.props.fetchPosts(this.props.profileId).then(() => this.setState({ posts: this.props.posts }));
+        
         
     }
 

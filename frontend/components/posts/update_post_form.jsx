@@ -61,7 +61,7 @@ class UpdatePostForm extends React.Component {
     }
 
     render() {
-        const disabled = this.state.body === this.props.post.body ? "disabled" : ""; 
+        const disabled = (this.state.body === "" || this.state.body === this.props.post.body) ? "disabled" : ""; 
 
        
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions";
-import { fetchUsers } from "../../actions/session_actions";
+import { fetchUsers, fetchUser } from "../../actions/session_actions";
 import PostFeed from "./post_feed";
 import { openModal } from "../../actions/modal_actions";
  
@@ -26,7 +26,8 @@ const mDTP = dispatch => {
         updatePost: post => dispatch(updatePost(post)),
         deletePost: postId => dispatch(deletePost(postId)),
         fetchUsers: () => dispatch(fetchUsers()),
-        openModal: (modal, id) => dispatch(openModal(modal, id))
+        openModal: (modal, id) => dispatch(openModal(modal, id)),
+        fetchUser: userId => dispatch(fetchUser(userId))
     }
 }
 

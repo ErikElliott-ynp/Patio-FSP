@@ -8,12 +8,21 @@ class PostFeedItem extends React.Component{
         this.state = this.props.post
     }
 
-    render() {
+    componentDidMount() {
+        this.setState( this.props.post )
+    }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        debugger
+        return this.props.user.profilePicture !== nextProps.user.profilePicture;
+    }
+
+    render() {
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
 
         let profilePic;
         if (this.props.user) {
+            debugger
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
         }
