@@ -23,7 +23,6 @@ class NavBar extends React.Component {
 
 
         this.props.clearErrors();
-        // this.hideErrors();
         this.props.login(this.state).then(() => this.props.history.push(`/feed`)).then(() => this.setState({
             email: "",
             password: ""
@@ -87,10 +86,6 @@ class NavBar extends React.Component {
             eleNav.style.height = "45px";
         }
     }
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     return this.props.errors[0] === nextProps.errors[0];
-    // }
 
 
 

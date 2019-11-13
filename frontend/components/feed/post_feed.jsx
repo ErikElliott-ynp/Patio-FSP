@@ -11,10 +11,7 @@ class PostFeed extends React.Component {
     }
 
     componentDidMount () {
-       
         this.props.fetchPosts(this.props.profileId)
-        
-        
     }
 
     shouldComponentUpdate(nextProps, _nextState) {
