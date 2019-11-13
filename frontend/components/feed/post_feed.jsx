@@ -35,7 +35,6 @@ class PostFeed extends React.Component {
 
 
     render () {
-        debugger
         let items = null;
         if (this.props.posts) {
             items = this.props.posts.reverse().map( (post, i) => {

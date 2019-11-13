@@ -67,11 +67,11 @@ class UpdatePostForm extends React.Component {
 
         return (
             <div className="update-post-wide">
-                <h2>Edit Post Text</h2>
-                <form onSubmit={this.handleSubmit} onKeyPress={this.cancelEnter} className="edit-port-form">
-                    <textarea onChange={this.handleChange("body")} id="edit-post-TA" value={this.state.body}></textarea>
+                <h2 className="edit-text outline" >Edit Post Text</h2>
+                <form onSubmit={this.handleSubmit} onKeyPress={this.cancelEnter} className="edit-post-form">
+                    <textarea onChange={this.handleChange("body")} id="edit-post-TA" className="edit-TA" value={this.state.body}></textarea>
                 
-                    <input type="submit" className={`edit-post-btn ${disabled}`} value="Update Post"/>
+                    <input type="submit" className={`update-post-btn ${disabled}`} value="Update Post"/>
                 </form>
             </div>
         )

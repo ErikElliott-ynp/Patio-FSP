@@ -7,6 +7,11 @@ class PostFeedItem extends React.Component{
         super(props)
         this.state = this.props.post
     }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        debugger
+        return this.props.post.body !== nextProps.post.body;
+    }
    
     render() {
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
