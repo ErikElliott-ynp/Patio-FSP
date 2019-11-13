@@ -8,19 +8,26 @@ class PostFeedItem extends React.Component{
         this.state = this.props.post
     }
 
-    shouldComponentUpdate (nextProps, nextState) {
-        return this.props.post.body !== nextProps.post.body;
-    }
+    // shouldComponentUpdate (nextProps, nextState) {
+    //     return this.props.post.body !== nextProps.post.body;
+    // }
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.post.body !== this.props.post.body) {
+    //         this.render();
+    //     }
+    // }
    
     render() {
-        const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
 
+        if (!this.props.post) return null;
+        
+        const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
         let profilePic;
         if (this.props.user) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
         }
-
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 
