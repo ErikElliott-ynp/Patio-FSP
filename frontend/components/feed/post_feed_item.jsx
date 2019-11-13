@@ -9,7 +9,6 @@ class PostFeedItem extends React.Component{
     }
 
     shouldComponentUpdate (nextProps, nextState) {
-        debugger
         return this.props.post.body !== nextProps.post.body;
     }
    
