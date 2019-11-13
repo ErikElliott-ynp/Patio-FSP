@@ -4,9 +4,10 @@ import { updatePost } from "../../actions/post_actions";
 import { withRouter } from "react-router";
 import UpdatePostForm from "./update_post_form";
 
-const mSTP = ({ entities }, ownProps) => {
+const mSTP = ({ entities, session }, ownProps) => {
     return {
-        null: null
+        post: entities.posts[ownProps.id],
+        currentUser: entities.users[session.id]
     }
 }
 

@@ -26,7 +26,7 @@ const mDTP = dispatch => {
         updatePost: post => dispatch(updatePost(post)),
         deletePost: postId => dispatch(deletePost(postId)),
         fetchUsers: () => dispatch(fetchUsers()),
-        openModal: (modal, num) => dispatch(openModal(modal, num))
+        openModal: (modal, id) => dispatch(openModal(modal, id))
     }
 }
 

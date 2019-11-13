@@ -26,7 +26,6 @@ class UpdateUserForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault;
 
-
         const user = Object.assign({}, this.state, )
         this.props.updateUserInfo(user).then(this.props.closeModal)
     }
