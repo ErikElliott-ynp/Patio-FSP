@@ -18,7 +18,8 @@ class PostFeed extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, _nextState) {
-        if (this.props.posts.length !== nextProps.posts.length || this.props.profileId !== nextProps.profileId) {
+        if (this.props.posts.length !== nextProps.posts.length 
+            || this.props.profileId !== nextProps.profileId) {
             return true;
         }  else {
             return false;
@@ -27,10 +28,14 @@ class PostFeed extends React.Component {
 
     componentDidUpdate () {
         this.props.fetchPosts(this.props.profileId);
+        this.setState({
+            posts: this.props.posts
+        })
     }
-    
+
 
     render () {
+        debugger
         let items = null;
         if (this.props.posts) {
             items = this.props.posts.reverse().map( (post, i) => {
@@ -42,6 +47,7 @@ class PostFeed extends React.Component {
                             deletePost={this.props.deletePost}
                             updatePost={this.props.updatePost}
                             openModal={this.props.openModal}
+                            fetchUser={this.props.fetchUser}
                         />
             })
         }
