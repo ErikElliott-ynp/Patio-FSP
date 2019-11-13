@@ -41,7 +41,7 @@ class PostForm extends React.Component {
         e.preventDefault;
        
         const formData = new FormData();
-        formData.append('post[profileId]', this.props.params.userId)
+        formData.append('post[profileId]', this.props.profile)
         formData.append('post[body]', this.state.body);
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
