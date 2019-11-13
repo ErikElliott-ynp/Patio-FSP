@@ -5,10 +5,9 @@ import { deletePost } from "../../actions/post_actions";
 
 
 const mSTP = (state, ownProps) => {
-    // if (!ownProps.post) return {};
     return {
         post: state.entities.posts[ownProps.post.id],
-        user: state.entities.users[ownProps.post.authorid],
+        user: state.entities.users[ownProps.post.authorId],
         currentUser: state.entities.users[state.session.id]
     }
 }

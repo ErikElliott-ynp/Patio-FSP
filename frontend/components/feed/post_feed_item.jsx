@@ -8,16 +8,6 @@ class PostFeedItem extends React.Component{
         this.state = this.props.post
     }
 
-    // shouldComponentUpdate (nextProps, nextState) {
-    //     return this.props.post.body !== nextProps.post.body;
-    // }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.post.body !== this.props.post.body) {
-    //         this.render();
-    //     }
-    // }
-   
     render() {
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
@@ -42,7 +32,7 @@ class PostFeedItem extends React.Component{
                         </Link>
                     </div>
 
-                    { this.props.post.authorId === this.props.currentUser.Id ? (
+                    { this.props.user === this.props.currentUser ? (
                         <div className="post-delete-button clearfix">
                             <button onClick={() => this.props.deletePost(this.props.post.id)}>
                                 <i className="fa fa-trash" aria-hidden="true"></i>
