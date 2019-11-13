@@ -2,16 +2,21 @@ import React from "react";
 import { closeModal} from '../../actions/modal_actions';
 import { connect } from "react-redux";
 import UpdateUserFormContainer from "../profile/update_user_form_container";
+import UpdatePostFormContainer from "../posts/update_post_form_container";
 
-
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, postId}) {
+    
     if (!modal) {
         return null;
     }
+    debugger
     let component;
      switch (modal) {
         case 'updateProfile':
             component = <UpdateUserFormContainer />
+            break;
+        case 'updatePost':
+            component = <UpdatePostFormContainer id={postId}/>
             break;
         default:
             return null; 

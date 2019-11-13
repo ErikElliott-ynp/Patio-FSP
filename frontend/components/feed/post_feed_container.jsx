@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions";
 import { fetchUsers } from "../../actions/session_actions";
 import PostFeed from "./post_feed";
-
+import { openModal } from "../../actions/modal_actions";
+ 
 const mSTP = (state, ownProps) => {
     let id = ownProps.params.userId;
     let profileId = state.session.id;
@@ -24,7 +25,8 @@ const mDTP = dispatch => {
         fetchPosts: (profileId) => dispatch(fetchPosts(profileId)),
         updatePost: post => dispatch(updatePost(post)),
         deletePost: postId => dispatch(deletePost(postId)),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
+        openModal: modal => dispatch(openModal(modal))
     }
 }
 

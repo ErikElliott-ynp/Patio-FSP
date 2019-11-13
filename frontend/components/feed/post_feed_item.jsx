@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import Modal from "../modal/modal"
     
 class PostFeedItem extends React.Component{
     constructor(props) {
@@ -10,7 +11,7 @@ class PostFeedItem extends React.Component{
     render() {
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
-        
+
         let profilePic;
         if (this.props.user) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
@@ -19,6 +20,7 @@ class PostFeedItem extends React.Component{
 
         return (
             <div className="post-item-wide">
+            <Modal postId={this.props.post.id}/>
                 <li className="list-item-post"> 
                     <div className="post-item-img">
                         <Link to={`/users/${this.props.user.id}`}>
@@ -40,7 +42,8 @@ class PostFeedItem extends React.Component{
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
-                      
+
+                    <button onClick={() => this.props.openModal("updatePost")} className="edit-post-btn">Update Post</button>
                 
                     <p className="line"></p>
                     <div className="post-item-footer">

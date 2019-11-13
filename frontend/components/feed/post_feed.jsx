@@ -40,6 +40,7 @@ class PostFeed extends React.Component {
                             userId={this.props.currentUserId}
                             deletePost={this.props.deletePost}
                             updatePost={this.props.updatePost}
+                            openModal={this.props.openModal}
                         />
             })
         }
