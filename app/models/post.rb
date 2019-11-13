@@ -10,6 +10,8 @@ class Post < ApplicationRecord
         foreign_key: :profile_id,
         class_name: :User
 
+    has_many :comments
+
     has_one_attached :photo
 
     def ensure_photo_or_body

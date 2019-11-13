@@ -3,7 +3,11 @@ class Api::PostsController < ApplicationController
     before_action :underscore_params!, only: :create
 
     def index 
-        @posts = Post.where('profile_id = ?', params[:user])    
+        if params[:user] == "all"
+            @posts = Post.all
+        else
+            @posts = Post.where('profile_id = ?', params[:user])    
+        end
         render :index
     end
 

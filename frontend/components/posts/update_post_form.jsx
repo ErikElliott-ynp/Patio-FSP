@@ -5,14 +5,10 @@ class UpdatePostForm extends React.Component {
         super(props)
         this.state = {
             body: this.props.post.body,
-            // photoFile: null,
-            // photoUrl: this.props.post.photoUrl
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.cancelEnter = this.cancelEnter.bind(this);
-        // this.handlePreviewCancel = this.handlePreviewCancel.bind(this);
-        // this.handleFile = this.handleFile.bind(this);
     }
 
 
@@ -27,25 +23,6 @@ class UpdatePostForm extends React.Component {
         this.props.updatePost(formData).then(this.props.closeModal)
         
     } 
-
-    // handleFile(e) {
-    //     let file = e.currentTarget.files[0];
-    //     const fileReader = new FileReader();
-    //     fileReader.onloadend = () => {
-    //         this.setState({ photoFile: file, photoUrl: fileReader.result });
-    //     }
-    //     if (file) {
-    //         fileReader.readAsDataURL(file);
-    //     }
-    //     this.setState({ photoFile: e.currentTarget.files[0] })
-    //     let photoInput = document.getElementById("file-upload-edit");
-    //     photoInput.value = ""
-    // }
-
-
-    // handlePreviewCancel() {
-    //     this.setState({ photoFile: null, photoUrl: null });
-    // }
 
     handleChange(field) {
         return (e) => this.setState({

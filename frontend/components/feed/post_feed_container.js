@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { fetchPosts, updatePost, deletePost } from "../../actions/post_actions";
+import { fetchPosts } from "../../actions/post_actions";
 import { fetchUsers, fetchUser } from "../../actions/session_actions";
 import PostFeed from "./post_feed";
-import { openModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router"
  
 const mSTP = (state, ownProps) => {
     let id = ownProps.params.userId;
@@ -27,4 +27,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(PostFeed);
+export default withRouter(connect(mSTP, mDTP)(PostFeed));

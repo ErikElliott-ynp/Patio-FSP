@@ -11,7 +11,11 @@ class PostFeed extends React.Component {
     }
 
     componentDidMount () {
-        this.props.fetchPosts(this.props.profileId)
+        let id = this.props.profileId;
+        if (this.props.match.url === "/feed") {
+            id = "all";
+        }
+        this.props.fetchPosts(id)
     }
 
     shouldComponentUpdate(nextProps, _nextState) {
@@ -24,7 +28,11 @@ class PostFeed extends React.Component {
     }
 
     componentDidUpdate () {
-        this.props.fetchPosts(this.props.profileId);
+        let id = this.props.profileId;
+        if (this.props.match.url === "/feed") {
+            id = "all";
+        }
+        this.props.fetchPosts(id)
         this.setState({
             posts: this.props.posts
         })

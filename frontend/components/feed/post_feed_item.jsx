@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import Modal from "../modal/modal"
     
 class PostFeedItem extends React.Component{
     constructor(props) {
@@ -14,17 +13,19 @@ class PostFeedItem extends React.Component{
         let profilePic;
         let firstName;
         let lastName;
+        let id;
         if (this.props.user) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
             firstName = this.props.user.firstName;
             lastName = this.props.user.lastName;
+            id = this.props.user.id;
         };
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 
                     <div className="post-item-img">
-                        <Link to={`/users/${this.props.userId}`}>
+                        <Link to={`/users/${id}`}>
                             <div className="full-name">
                                 {profilePic}
                                 <span className="item-username">{firstName}  {lastName}</span>
@@ -44,7 +45,6 @@ class PostFeedItem extends React.Component{
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
-                    {/* <button  className="edit-post-btn">Update Post</button> */}
                 
                     <p className="line"></p>
                     <div className="post-item-footer">
