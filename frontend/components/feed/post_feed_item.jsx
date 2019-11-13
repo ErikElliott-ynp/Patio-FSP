@@ -37,14 +37,14 @@ class PostFeedItem extends React.Component{
                             <button onClick={() => this.props.deletePost(this.props.post.id)}>
                                 <i className="fa fa-trash" aria-hidden="true"></i>
                             </button>
+                            <i className="fas fa-edit" onClick={() => this.props.openModal("updatePost", this.props.post.id)}></i>
                         </div>
                         
                         ) : ( <script></script>)
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
-
-                    <button onClick={() => this.props.openModal("updatePost", this.props.post.id)} className="edit-post-btn">Update Post</button>
+                    {/* <button  className="edit-post-btn">Update Post</button> */}
                 
                     <p className="line"></p>
                     <div className="post-item-footer">
