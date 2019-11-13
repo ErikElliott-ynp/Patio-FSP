@@ -1,5 +1,4 @@
 import React from "react";
-import PostFeedItem from "./post_feed_item";
 import PostFeedItemContainer from "./post_feed_item_container";
 
 
@@ -14,7 +13,6 @@ class PostFeed extends React.Component {
     componentDidMount () {
        
         this.props.fetchPosts(this.props.profileId)
-        // .then(() => this.setState({ posts: this.props.posts }));
         
         
     }
@@ -37,21 +35,17 @@ class PostFeed extends React.Component {
 
 
     render () {
-        let items = null;
+        let items;
         if (this.props.posts) {
             items = this.props.posts.reverse().map( post => {
                 return <PostFeedItemContainer 
                             post={post}
                             key={post.id}
-                            user={this.props.users[post.authorId]}
                         />
             })
         }
         let postsList = items ? items : null;
 
-        // if (!this.props.posts) {
-        //     return null
-        // }
         return (
             <div className="posts-feed">
                 <ul className="posts-list">

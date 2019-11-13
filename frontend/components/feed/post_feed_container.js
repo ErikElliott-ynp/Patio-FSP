@@ -14,7 +14,6 @@ const mSTP = (state, ownProps) => {
     return {
         posts: Object.values(state.entities.posts),
         errors: state.errors.posts,
-        users: state.entities.users,
         currentUserId: state.session.id,
         profileId: profileId
     }
@@ -23,10 +22,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchPosts: (profileId) => dispatch(fetchPosts(profileId)),
-        updatePost: post => dispatch(updatePost(post)),
-        deletePost: postId => dispatch(deletePost(postId)),
         fetchUsers: () => dispatch(fetchUsers()),
-        openModal: (modal, id) => dispatch(openModal(modal, id)),
         fetchUser: userId => dispatch(fetchUser(userId))
     }
 }

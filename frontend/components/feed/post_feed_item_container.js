@@ -2,15 +2,14 @@ import { connect } from "react-redux";
 import PostFeedItem from "./post_feed_item";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { deletePost } from "../../actions/post_actions";
-import { fetchUser } from "../../actions/session_actions";
 
 
 const mSTP = (state, ownProps) => {
     // if (!ownProps.post) return {};
     return {
         post: state.entities.posts[ownProps.post.id],
-        user: state.entities.users[user.id],
-        userID: state.entities.users[state.session.id],
+        user: state.entities.users[ownProps.post.authorid],
+        currentUser: state.entities.users[state.session.id]
     }
 }
 
