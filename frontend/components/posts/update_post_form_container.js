@@ -5,7 +5,6 @@ import { withRouter } from "react-router";
 import UpdatePostForm from "./update_post_form";
 
 const mSTP = ({ entities }, ownProps) => {
-    debugger
     return {
         null: null
     }

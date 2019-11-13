@@ -17,7 +17,6 @@ class PostFeedItem extends React.Component{
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
         }
-         <Modal postId={this.props.post.id}/> 
 
         return (
             <div className="post-item-wide">
@@ -43,7 +42,7 @@ class PostFeedItem extends React.Component{
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
 
-                    <button onClick={() => this.props.openModal("updatePost", 1)} className="edit-post-btn">Update Post</button>
+                    <button onClick={() => this.props.openModal("updatePost", this.props.post.id)} className="edit-post-btn">Update Post</button>
                 
                     <p className="line"></p>
                     <div className="post-item-footer">
