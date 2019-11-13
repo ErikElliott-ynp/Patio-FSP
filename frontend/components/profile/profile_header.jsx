@@ -55,7 +55,7 @@ class ProfileHeader extends React.Component {
             lastName = this.props.user.lastName;
             updateCover = this.props.currentUser === this.props.user ? (<div className="outer-cover">
                         <label className="prof-up-label">
-                        <i className="fas fa-camera cover"></i>
+                        <i className="fas fa-camera cover" id="cover-camera"></i>
                             <div className="cover-photo-update" id="update-cover-pic">
                                 <span>
                                     Update Cover Photo

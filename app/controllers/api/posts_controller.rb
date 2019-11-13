@@ -27,7 +27,8 @@ class Api::PostsController < ApplicationController
     end
 
     def update 
-        @post = Post.find_by(id: params[:post][:id])
+        @post = Post.find_by(id: params[:id])
+        
         if @post && @post.author_id == current_user.id && @post.update(change_params)
             render :show
         else
@@ -51,7 +52,7 @@ class Api::PostsController < ApplicationController
     end
 
     def change_params
-        params.require(:post).permit(:body, :photo)
+        params.require(:post).permit(:body)
     end
 
 end

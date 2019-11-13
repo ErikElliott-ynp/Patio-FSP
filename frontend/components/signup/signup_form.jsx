@@ -27,6 +27,7 @@ class SignupForm extends React.Component{
     }
 
     componentWillUnmount() {
+        this.props.fetchUsers();
         this.setState({
             email: "",
             password: "",
@@ -35,7 +36,7 @@ class SignupForm extends React.Component{
             dateOfBirth: "",
             sex: "",
         });
-        this.props.fetchUsers();
+        
     }
 
 

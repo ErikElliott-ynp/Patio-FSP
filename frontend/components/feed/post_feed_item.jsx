@@ -22,7 +22,7 @@ class PostFeedItem extends React.Component{
             <div className="post-item-wide">
                 <li className="list-item-post"> 
                     <div className="post-item-img">
-                        <Link to={`/users/${this.props.user.id}`}>
+                        <Link to={`/users/${this.props.userId}`}>
                             <div className="full-name">
                                 {profilePic}
                                 <span className="item-username">{this.props.user.firstName}  {this.props.user.lastName}</span>
