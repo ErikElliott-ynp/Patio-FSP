@@ -1,6 +1,8 @@
 class Api::PostsController < ApplicationController
 
+    before_action :require_login
     before_action :underscore_params!, only: :create
+
 
     def index 
         if params[:user] == "all"
