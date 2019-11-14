@@ -4,17 +4,19 @@ export const REMOVE_POST = "REMOVE_POST";
 export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 import * as PostAPIUtil from "../util/post_api_util";
 
-const receivePosts = posts => {
+const receivePosts = ({posts, comments}) => {
     return {
         type: RECEIVE_POSTS,
-        posts
+        posts,
+        comments
     }
 }
 
-const receivePost = post => {
+const receivePost = ({post, comments}) => {
     return {
         type: RECEIVE_POST,
-        post
+        post,
+        comments
     }
 }
 
@@ -34,13 +36,13 @@ const receivePostErrors = errors => {
 
 export const fetchPosts = (profileId) => dispatch => {
     return PostAPIUtil.fetchPosts(profileId)
-        .then( posts => dispatch(receivePosts(posts)),
+        .then( payload => dispatch(receivePosts(payload)),
             errors => dispatch(receivePostErrors(errors)))
 }
 
 export const fetchPost = postId => dispatch => {
     return PostAPIUtil.fetchPost(postId)
-        .then( post => dispatch(receivePost(post)),
+        .then( payload => dispatch(receivePost(payload)),
             errors => dispatch(receivePostErrors(errors)))
 }
 

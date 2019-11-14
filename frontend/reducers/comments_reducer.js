@@ -11,7 +11,7 @@ const CommentsReducer = ( state = {}, action ) => {
             delete nextState[action.comment.id];
             return nextState;
         case RECEIVE_POST:
-            action.post.comments.forEach(comment => {
+            action.comments.forEach(comment => {
                 nextState[comment]
             });
     
