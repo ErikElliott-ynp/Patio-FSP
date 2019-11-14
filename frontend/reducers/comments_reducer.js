@@ -12,10 +12,15 @@ const CommentsReducer = ( state = {}, action ) => {
             return nextState;
         case RECEIVE_POST:
             action.comments.forEach(comment => {
-                nextState[comment]
+                nextState[comment.id] = comment
             });
-    
+        case RECEIVE_POSTS:
+            action.comments.forEach(comment => {
+                nextState[comment.id] = comment
+            });
         default:
             return state;
     }
 }
+
+export default CommentsReducer;
