@@ -89,12 +89,12 @@
     opacity: 0;
     &:hover {
         cursor: pointer;
-        opacity: .7;
+        opacity: .9;
     }
 }
 
 .comment-actions {
-    background-color: white;
+    background-color: rgb(241, 236, 236);
     height: 35px;
     width: 90px;
     position: absolute;
@@ -106,7 +106,8 @@
 
 .comment-actions p {
     font-size: 10px;
+    padding: 3px 5px;
     &:hover {
-        background-color: gray;
+        background-color: rgb(255, 255, 255);
     }
 }

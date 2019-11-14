@@ -9,15 +9,6 @@ class CommentList extends React.Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, _nextState) {
-        return this.props.comments.length !== nextProps.comments.length;
-    }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.comments.length !== this.props.comments.length) {
-            this.setState({ comments: this.props.comments})
-        } 
-    }
 
 
     render() {

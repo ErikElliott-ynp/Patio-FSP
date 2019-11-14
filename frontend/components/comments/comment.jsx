@@ -22,7 +22,7 @@ class Comment extends React.Component {
             pic = owner.profilePicture ? <img src={owner.profilePicture} className="comm-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="comm-pic" />
             id = owner.id;
-            if (owner.id === this.props.currentUser) {
+            if (id === this.props.currentUser.id) {
               deleteComm = <i className="fas fa-ellipsis-h">
                     <div className="comment-actions">
                         <p>Delete comment</p>
@@ -30,6 +30,7 @@ class Comment extends React.Component {
                 </i>
             }
         }
+        
         return (
             <div className="comment-wide">
                 <div className="comm-user-pic">

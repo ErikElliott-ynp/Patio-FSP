@@ -20,7 +20,7 @@ class PostFeed extends React.Component {
 
     shouldComponentUpdate(nextProps, _nextState) {
         if (this.props.posts.length !== nextProps.posts.length 
-            || this.props.profileId !== nextProps.profileId) {
+            || this.props.location !== nextProps.location) {
             return true;
         }  else {
             return false;
@@ -31,7 +31,7 @@ class PostFeed extends React.Component {
         let id = this.props.profileId;
         if (this.props.match.url === "/feed") {
             id = "all";
-        }
+        } 
         this.props.fetchPosts(id)
         this.setState({
             posts: this.props.posts
@@ -43,10 +43,12 @@ class PostFeed extends React.Component {
         let items;
         if (this.props.posts) {
             items = this.props.posts.reverse().map( post => {
-                return <PostFeedItemContainer 
-                            post={post}
-                            key={post.id}
-                        />
+                if (this.props.match.url === "/feed" || post.profileId == this.props.match.params.userId) {
+                    return <PostFeedItemContainer 
+                                post={post}
+                                key={post.id}
+                            />
+                }
             })
         }
         let postsList = items ? items : null;

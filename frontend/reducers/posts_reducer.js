@@ -3,7 +3,8 @@ import { RECEIVE_COMMENT, REMOVE_COMMENT} from "../actions/comment_actions";
 
 const PostsReducer = (state = {}, action) => {
     Object.freeze(state)
-    let nextState = Object.assign({}, state)
+    let nextState = Object.assign({}, state);
+    let post;
     switch (action.type) {
         case RECEIVE_POSTS:
             return Object.assign({}, nextState, action.posts);
@@ -14,11 +15,11 @@ const PostsReducer = (state = {}, action) => {
             delete nextState[action.postId];
             return nextState;
         case RECEIVE_COMMENT:
-            let post = nextState[action.comment.postId];
+            post = nextState[action.comment.postId];
             post.commentIds.push(action.comment.id);
             return nextState;
         case REMOVE_COMMENT:
-            let post = nextState[action.comment.postId];
+            post = nextState[action.comment.postId];
             let commsArray = post.commentIds
             for (let i = 0; i < commsArray.length; i++) {
                 if (commsArray[i] === action.comment.id) {
