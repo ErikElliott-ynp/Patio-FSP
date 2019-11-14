@@ -42,7 +42,7 @@ class Comment extends React.Component {
               deleteComm = <i className="fas fa-ellipsis-h" onClick={this.handleDropDown} onMouseLeave={this.handleMouseLeave}>
                     <div className="comment-actions hidden" id="comm-acts">
                         <p onClick={() => this.props.deleteComment(this.props.comment)} >Delete Comment</p>
-                        <p>Edit Comment</p>
+                        <p id="edit-comm-btn">Edit Comment</p>
                     </div>
                 </i>
             }

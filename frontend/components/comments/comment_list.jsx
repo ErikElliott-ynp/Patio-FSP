@@ -9,13 +9,7 @@ class CommentList extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.comments.length !== this.props.comments.length) {
-            this.setState({
-                comments: this.props.comments
-            })
-        }
-    }
+
 
     render() {
         let commentsCont;
