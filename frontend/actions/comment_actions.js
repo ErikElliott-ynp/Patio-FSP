@@ -10,10 +10,10 @@ const receiveComment = comment => {
     }
 }
 
-const removeComment = commentId => {
+const removeComment = comment => {
     return {
         type: REMOVE_COMMENT,
-        commentId
+        comment
     }
 }
 

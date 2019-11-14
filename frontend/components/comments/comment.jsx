@@ -25,7 +25,8 @@ class Comment extends React.Component {
             if (id === this.props.currentUser.id) {
               deleteComm = <i className="fas fa-ellipsis-h">
                     <div className="comment-actions">
-                        <p>Delete comment</p>
+                        <p onClick={() => this.props.deleteComment(this.props.comment)} >Delete comment</p>
+                        <p>Edit Comment</p>
                     </div>
                 </i>
             }

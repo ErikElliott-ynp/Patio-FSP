@@ -34,7 +34,7 @@ class Api::CommentsController < ApplicationController
         if @comment && @comment.destroy
             render json: {}
         else
-            render json ["Post not found"], status: 404
+            render json: ["Post not found"], status: 404
         end
 
     end

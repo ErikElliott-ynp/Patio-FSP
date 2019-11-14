@@ -55,7 +55,7 @@
     background-color: rgba(133, 130, 130, 0.151);
     padding: 10px 28px 10px 10px;
     border-radius: 40px;
-    max-width: 400px;
+    max-width: 380px;
     
 }
 
@@ -64,7 +64,7 @@
     font-size: 14;
     text-transform: capitalize;
     cursor: pointer;
-    padding-right: 10px;
+    padding-right: 15px;
     font-family: 'Fira Sans', sans-serif;
 
     &:hover{
@@ -78,7 +78,7 @@
     font-family: 'Fira Sans', sans-serif;
     padding-top: 2px;
     word-wrap: break-word; 
-    max-width: 380px;
+    max-width: 350px;
 }
 
 .fa-ellipsis-h {
@@ -96,7 +96,7 @@
 .comment-actions {
     background-color: rgb(241, 236, 236);
     height: 35px;
-    width: 90px;
+    width: 95px;
     position: absolute;
     font-size: 6px;
     display: flex;
@@ -105,8 +105,9 @@
 }
 
 .comment-actions p {
-    font-size: 10px;
-    padding: 3px 5px;
+    font-size: 9px;
+    padding: 4px 6px;
+    color: black;
     &:hover {
         background-color: rgb(255, 255, 255);
     }
