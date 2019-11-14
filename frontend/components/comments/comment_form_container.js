@@ -6,7 +6,6 @@ const mSTP = (state, ownProps) => {
     return {
         post: state.entities.posts[ownProps.postId],
         user: state.entities.users[state.session.id]
-
     }
 }
 
