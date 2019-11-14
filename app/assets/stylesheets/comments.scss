@@ -96,13 +96,27 @@
 .comment-actions {
     background-color: rgb(241, 236, 236);
     height: 35px;
-    width: 95px;
+    width: 97px;
     position: absolute;
     font-size: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    top: 18px;
+    left: -1px;
+}
+
+.comment-actions:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    border-top: none;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid rgb(241, 236, 236);
+    z-index: 2;
 }
 
 .comment-actions p {

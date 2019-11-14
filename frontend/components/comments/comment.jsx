@@ -6,6 +6,23 @@ class Comment extends React.Component {
         super(props)
 
         this.state = this.props.comment
+        this.handleDropDown = this.handleDropDown.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    }
+
+    handleDropDown() {
+        let ele = document.getElementById('comm-acts');
+        let classArray = Array.from(ele.classList);
+        if (classArray.includes('hidden')) {
+            ele.classList.remove('hidden');
+        } else {
+            ele.classList.add('hidden');
+        }
+    }
+
+    handleMouseLeave() {
+        let ele = document.getElementById('comm-acts');
+        ele.classList.add('hidden');
     }
 
 
@@ -22,9 +39,9 @@ class Comment extends React.Component {
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="comm-pic" />
             id = owner.id;
             if (id === this.props.currentUser.id) {
-              deleteComm = <i className="fas fa-ellipsis-h">
-                    <div className="comment-actions">
-                        <p onClick={() => this.props.deleteComment(this.props.comment)} >Delete comment</p>
+              deleteComm = <i className="fas fa-ellipsis-h" onClick={this.handleDropDown} onMouseLeave={this.handleMouseLeave}>
+                    <div className="comment-actions hidden" id="comm-acts">
+                        <p onClick={() => this.props.deleteComment(this.props.comment)} >Delete Comment</p>
                         <p>Edit Comment</p>
                     </div>
                 </i>
