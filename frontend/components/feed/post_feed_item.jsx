@@ -9,6 +9,10 @@ class PostFeedItem extends React.Component{
         this.state = this.props.post
     }
 
+    handleOpenModal() {
+        return setTimeout(() => this.props.openModal("updatePost", this.props.post.id), 300 )
+    }
+
     render() {
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
@@ -24,7 +28,7 @@ class PostFeedItem extends React.Component{
             id = this.props.user.id;
         };
         let commentList;
-        if (this.props.post.commentIds.length) {
+        if ( this.props.post && this.props.post.commentIds.length > 0) {
             commentList = <CommentListContainer post={this.props.post} />;
         }
         let commentFormCont;
@@ -49,7 +53,7 @@ class PostFeedItem extends React.Component{
                             <button onClick={() => this.props.deletePost(this.props.post.id)}>
                                 <i className="fa fa-trash" aria-hidden="true"></i>
                             </button>
-                            <i className="fas fa-edit" onClick={() => this.props.openModal("updatePost", this.props.post.id)}></i>
+                            <i className="fas fa-edit" onClick={() => this.handleOpenModal()}></i>
                         </div>
                         
                         ) : ( <script></script>)

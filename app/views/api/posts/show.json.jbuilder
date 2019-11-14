@@ -1,11 +1,11 @@
-json.post
+json.post do
     json.partial! 'post', post: @post
-    json.commentsIds @post.comment_ids
+    json.commentIds @post.comment_ids
 end
 
-json.comments
+json.comments do
     @post.comments.each do |comment|
-        json.sent! comment.id do
+        json.set! comment.id do
             json.partial! 'api/comments/comment', comment: comment
         end
     end

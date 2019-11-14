@@ -20,7 +20,7 @@ class UpdatePostForm extends React.Component {
         formData.append('post[body]', this.state.body);
         formData.id = this.props.post.id;
 
-        this.props.updatePost(formData).then(this.props.closeModal)
+        this.props.updatePost(formData).then(setTimeout(() => this.props.closeModal(), 100))
         
     } 
 
