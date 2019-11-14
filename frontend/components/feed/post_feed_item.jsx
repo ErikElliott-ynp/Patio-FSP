@@ -12,7 +12,7 @@ class PostFeedItem extends React.Component{
     }
 
     handleOpenModal() {
-        return setTimeout(() => this.props.openModal("updatePost", this.props.post.id), 300 )
+        return setTimeout(() => this.props.openModal("updatePost", this.props.post.id), 200 )
     }
 
     setFocus() {

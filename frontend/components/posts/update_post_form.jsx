@@ -44,7 +44,7 @@ class UpdatePostForm extends React.Component {
 
         return (
             <div className="update-post-wide">
-                <h2 className="edit-text outline" >Edit Post Text</h2>
+                <h2 className="edit-text outline" >Edit Post's Text</h2>
                 <form onSubmit={this.handleSubmit} onKeyPress={this.cancelEnter} className="edit-post-form">
                     <textarea onChange={this.handleChange("body")} id="edit-post-TA" className="edit-TA" value={this.state.body}></textarea>
                 
