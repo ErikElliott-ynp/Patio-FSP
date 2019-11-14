@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
+import CommentListContainer from "../comments/comment_form_container";
     
 class PostFeedItem extends React.Component{
     constructor(props) {
@@ -59,6 +60,7 @@ class PostFeedItem extends React.Component{
                         </div>
                     </div>
                 </li>
+                    <CommentListContainer post={this.props.post}/>
                     <CommentFormContainer postId={this.props.post.id}/>
             </div>
         )
