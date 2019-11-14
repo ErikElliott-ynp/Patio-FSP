@@ -10,7 +10,6 @@ class CommentList extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, _nextState) {
-        debugger
         return this.props.comments.length !== nextProps.comments.length;
     }
 

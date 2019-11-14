@@ -7,7 +7,6 @@
 
 .comment-form-wide {
     display: flex;
-    border-top: 1px solid gray;
     height: 60px;
     align-items: center;
     font-family: 'Fira Sans', sans-serif;
@@ -37,7 +36,7 @@
 .comment-wide {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .comm-pic {
@@ -80,4 +79,34 @@
     padding-top: 2px;
     word-wrap: break-word; 
     max-width: 380px;
+}
+
+.fa-ellipsis-h {
+    font-size: 12px;
+    position: relative;
+    right: -12px;
+    color: gray;
+    opacity: 0;
+    &:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+}
+
+.comment-actions {
+    background-color: white;
+    height: 35px;
+    width: 90px;
+    position: absolute;
+    font-size: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-actions p {
+    font-size: 10px;
+    &:hover {
+        background-color: gray;
+    }
 }
