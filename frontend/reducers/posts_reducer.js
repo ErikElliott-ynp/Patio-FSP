@@ -16,7 +16,9 @@ const PostsReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_COMMENT:
             post = nextState[action.comment.postId];
-            post.commentIds.push(action.comment.id);
+            if (!post.commentIds.includes(action.comment.id)) {
+                post.commentIds.push(action.comment.id);
+            }
             return nextState;
         case REMOVE_COMMENT:
             post = nextState[action.comment.postId];

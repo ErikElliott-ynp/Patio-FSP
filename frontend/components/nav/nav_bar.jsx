@@ -154,9 +154,9 @@ class NavBar extends React.Component {
                                             </div>
                                         </Link>
                                         <div className="icons-cont">
-                                            <i className="fas fa-user-friends"></i>
-                                            <i className="fab fa-facebook-messenger"></i>
-                                            <i className="fas fa-bell"></i>
+                                            <i className="fas fa-user-friends" id="icon-friend"></i>
+                                            <i className="fab fa-facebook-messenger" id="icon-msg"></i>
+                                            <i className="fas fa-bell" id="icon-notification"></i>
                                         </div>
 
                                         <button onClick={this.handleLogout} className="action-button logout clearfix">Log Out</button>
