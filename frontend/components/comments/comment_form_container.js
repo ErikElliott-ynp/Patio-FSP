@@ -4,8 +4,9 @@ import CommentForm from "./comment_form";
 
 const mSTP = (state, ownProps) => {
     return {
-        post: state.entities.posts[ownProps.postId],
+        post: state.entities.posts[ownProps.post.id],
         user: state.entities.users[state.session.id]
+
     }
 }
 

@@ -14,13 +14,14 @@ class Comment extends React.Component {
         let pic;
         if (owner) {
             name = <Link to={`/users/${owner.id}`}><span>{owner.firstName} {owner.lastName}</span></Link>;
-            pic = 
+            pic = owner.profilePicture ? <img src={owner.profilePicture} className="comm-pic" />
+                : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="comm-pic" />
         }
 
         return (
             <div className="comment-wide">
                 <div className="comm-user-pic">
-
+                    <Link to={`/users/${owner.id}`}>{pic}</Link>
                 </div>
                 <div className="comment-body">
                     {name}

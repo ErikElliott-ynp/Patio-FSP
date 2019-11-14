@@ -27,6 +27,10 @@ class PostFeedItem extends React.Component{
         if (this.props.post.commentIds.length) {
             commentList = <CommentListContainer post={this.props.post} />;
         }
+        let commentFormCont;
+        if (this.props.post && this.props.user) {
+            commentFormCont = <CommentFormContainer postId={this.props.post.id} />
+        }
         
         return (
             <div className="post-item-wide">
@@ -64,7 +68,7 @@ class PostFeedItem extends React.Component{
                     </div>
                 </li>
                     {commentList}
-                    <CommentFormContainer postId={this.props.post.id}/>
+                    {commentFormCont}
             </div>
         )
     }

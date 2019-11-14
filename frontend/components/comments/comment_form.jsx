@@ -5,10 +5,12 @@ class CommentForm extends React.Component {
         super(props)
         this.state = {
             body: "",
-            postId: this.props.post.id
+            postId: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    
 
     handleChange () {
         return (e) => this.setState({
@@ -18,8 +20,10 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
         const comment = Object.assign({}, this.state)
-
+        comment.postId = this.props.post.id
+        
         this.props.createComment(comment).then( () => this.setState({ body: "" }))
     }
 

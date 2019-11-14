@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import PostFeedItem from "./post_feed_item";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { deletePost } from "../../actions/post_actions";
-import { selectCommentsForPost } from "../../reducers/selectors";
 
 
 const mSTP = (state, ownProps) => {
