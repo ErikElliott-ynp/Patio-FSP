@@ -1,4 +1,5 @@
 import React from "react";
+import CommentContainer from "./comment_container"
 
 class CommentList extends React.Component {
     constructor(props) {
@@ -7,13 +8,17 @@ class CommentList extends React.Component {
     }
 
     render() {
+        let commentsCont;
+        if (this.props.comments) {
+            commentsCont = this.props.comments.map( (comment,i) => {
+                <CommentContainer 
+                    comment={comment} 
+                    key={i}
+                />
+            })
 
-        let commentsCont = this.props.comments.map( comment => {
-            <CommentContainer 
-                comment={comment} 
-                key={comment.id}
-            />
-        })
+        }
+
         
         return (
             <div className="comment-list-wide">
