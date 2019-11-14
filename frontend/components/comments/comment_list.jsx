@@ -11,7 +11,7 @@ class CommentList extends React.Component {
         let commentsCont;
         if (this.props.comments) {
             commentsCont = this.props.comments.map( (comment,i) => {
-                <CommentContainer 
+                return <CommentContainer 
                     comment={comment} 
                     key={i}
                 />
@@ -19,7 +19,6 @@ class CommentList extends React.Component {
 
         }
 
-        
         return (
             <div className="comment-list-wide">
                 {commentsCont}

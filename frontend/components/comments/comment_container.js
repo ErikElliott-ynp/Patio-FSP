@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => {
         comment: ownProps.comment,
         currentUser: state.entities.users[state.session.id],
         owner: state.entities.users[ownProps.comment.authorId],
-        post: state.entites.posts[ownProps.comment.postId]
+        post: state.entities.posts[ownProps.comment.postId]
     }
 }
 
