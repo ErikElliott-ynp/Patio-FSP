@@ -6,15 +6,15 @@ class Api::PostsController < ApplicationController
 
     def index 
         if params[:user] == "all"
-            @posts = Post.all
+            @posts = Post.includes(:comments).all
         else
-            @posts = Post.where('profile_id = ?', params[:user])    
+            @posts = Post.includes(:comments).where('profile_id = ?', params[:user])    
         end
         render :index
     end
 
     def show
-        @post = Post.with_attached_photo.find_by(id: params[:id])
+        @post = Post.with_attached_photo.includes(:comments).find_by(id: params[:id])
         if @post
             render :show
         else
