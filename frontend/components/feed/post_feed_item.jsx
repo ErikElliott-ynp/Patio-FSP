@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import CommentFormContainer from "../comments/comment_form_container";
     
 class PostFeedItem extends React.Component{
     constructor(props) {
@@ -57,6 +58,7 @@ class PostFeedItem extends React.Component{
                             <i className="fas fa-comment-alt"> <strong>Comment</strong></i>
                         </div>
                     </div>
+                    {/* <CommentFormContainer postId={this.props.post.id}/> */}
                 </li>
             </div>
         )

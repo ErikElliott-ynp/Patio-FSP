@@ -11,10 +11,7 @@ const CommentsReducer = ( state = {}, action ) => {
             delete nextState[action.comment.id];
             return nextState;
         case RECEIVE_POST:
-            Object.values(action.comments).forEach(comment => {
-                nextState[comment.id] = comment
-            });
-            return nextState;
+            return Object.assign(nextState, action.comments)
         case RECEIVE_POSTS:
             return Object.assign(nextState, action.comments);
         default:
