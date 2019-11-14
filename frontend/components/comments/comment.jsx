@@ -7,7 +7,7 @@ class Comment extends React.Component {
 
         this.state = this.props.comment
         this.handleDropDown = this.handleDropDown.bind(this);
-        this.handleMouseLeave = this.handleMouseLeave.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleDropDown() {
@@ -23,9 +23,17 @@ class Comment extends React.Component {
         }
     }
 
-    handleMouseLeave() {
-        let ele = document.getElementById('comm-acts');
-        ele.classList.add('hidden');
+    handleChange () {
+        return (e) => this.setState({
+            body: e.currentTarget.value
+        })
+    }
+
+    handleSubmit() {
+        e.preventDefault();
+
+        const comment = this.state
+        this.props.updateComment(comment).then( () => this.props.closeEdit());
     }
 
 
@@ -36,6 +44,7 @@ class Comment extends React.Component {
         let pic;
         let id;
         let deleteComm;
+        let text;
         if (owner) {
             name = <Link to={`/users/${owner.id}`}><span>{owner.firstName} {owner.lastName}</span></Link>;
             pic = owner.profilePicture ? <img src={owner.profilePicture} className="comm-pic" />
@@ -45,22 +54,30 @@ class Comment extends React.Component {
               deleteComm = <i className="fas fa-ellipsis-h" id="..." onClick={this.handleDropDown} >
                     <div className="comment-actions hidden" id="comm-acts">
                         <p onClick={() => this.props.deleteComment(this.props.comment)} >Delete Comment</p>
-                        <p id="edit-comm-btn">Edit Comment</p>
+                        <p id="edit-comm-btn" onClick={() => this.props.editComment(this.props.comment.id)}>Edit Comment</p>
                     </div>
                 </i>
             }
         }
-        
+        let div = <div className="comment-body">
+                {name}
+                    <p>{this.props.comment.body}</p>
+                {deleteComm}
+            </div>;
+        let form = <div className="comment-body">
+                <form className="edit-form-comm" onSubmit={this.handleSubmit} >
+                    <textarea className="edit-textarea" onChange={this.handleChange()} id="edit-text" value={this.state.body}></textarea>
+                </form>
+                <p id="cancel" onClick={() => this.props.closeEdit}>cancel</p>
+            </div>
+
+        text = this.props.editId === this.props.comment.id ? form : div;
         return (
             <div className="comment-wide">
                 <div className="comm-user-pic">
                     <Link to={`/users/${id}`}>{pic}</Link>
                 </div>
-                <div className="comment-body">
-                    {name}
-                    <p>{this.props.comment.body}</p>
-                    {deleteComm}
-                </div>
+                {text}
             </div>
         )
 

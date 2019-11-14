@@ -128,6 +128,36 @@
         opacity: unset;
     }
 }
+
 #edit-comm-btn {
     padding: 4px 13px;
+}
+
+.edit-textarea {
+    width: 310px;
+    height: 75px;
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-family: 'Fira Sans', sans-serif;
+    word-wrap: break-word;
+    resize: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px 10px 15px;
+}
+
+#cancel {
+    position: relative;
+    color: rgb(80, 80, 253);
+    font-size: 10px;
+    left: -318px;
+    bottom: -113px;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline; 
+    }
+}
+
+.edit-form-comm {
+    width: 340px;
 }
