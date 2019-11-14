@@ -9,7 +9,12 @@ class CommentList extends React.Component {
         }
     }
 
-
+    componentDidUpdate(prevProps) {
+        debugger
+        if (prevProps.comments.length !== this.props.comments.length) {
+            this.render();
+        }
+    }
 
     render() {
         let commentsCont;
