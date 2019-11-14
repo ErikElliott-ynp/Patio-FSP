@@ -36,9 +36,9 @@ class PostFeed extends React.Component {
             id = "all";
         } 
         this.props.fetchPosts(id)
-        this.setState({
-            posts: this.props.posts
-        })
+        // this.setState({
+        //     posts: this.props.posts
+        // })
     }
 
 

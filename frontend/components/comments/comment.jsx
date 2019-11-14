@@ -8,7 +8,6 @@ class Comment extends React.Component {
         this.state = this.props.comment
     }
 
-    // openDropdown
 
     render () {
         if (!this.props.comment) return null;

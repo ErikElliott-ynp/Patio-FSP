@@ -29,6 +29,7 @@ class CommentForm extends React.Component {
 
 
     render() {
+        let id = this.props.post.id;
         let profilePic;
         if (this.props.user) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="comm-form-pic" />
@@ -38,7 +39,7 @@ class CommentForm extends React.Component {
             <div className="comment-form-wide">
                 {profilePic}
                 <form onSubmit={this.handleSubmit} className="comm-form">
-                    <input type="text" onChange={this.handleChange()} placeholder="Write a comment..." className="comm-form-text" id="comm-form-in" value={this.state.body}/>
+                    <input type="text" onChange={this.handleChange()} placeholder="Write a comment..." className="comm-form-text" id={`comm-form-in-${id}`} value={this.state.body}/>
                 </form>
             </div>
         )

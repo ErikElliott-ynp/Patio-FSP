@@ -7,10 +7,17 @@ class PostFeedItem extends React.Component{
     constructor(props) {
         super(props)
         this.state = this.props.post
+
+        this.setFocus = this.setFocus.bind(this);
     }
 
     handleOpenModal() {
         return setTimeout(() => this.props.openModal("updatePost", this.props.post.id), 300 )
+    }
+
+    setFocus() {
+        let ele = document.getElementById(`comm-form-in-${this.props.post.id}`);
+        ele.focus()
     }
 
     render() {
@@ -67,7 +74,7 @@ class PostFeedItem extends React.Component{
                             <i className="fas fa-thumbs-up"><strong>Like</strong></i>
                         </div>
                         <div className="post-item-comment">
-                            <i className="fas fa-comment-alt"> <strong>Comment</strong></i>
+                            <i onClick={this.setFocus} className="fas fa-comment-alt"> <strong>Comment</strong></i>
                         </div>
                     </div>
                 </li>
