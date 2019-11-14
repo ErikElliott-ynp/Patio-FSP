@@ -27,7 +27,7 @@ class CommentForm extends React.Component {
     render() {
         let profilePic;
         if (this.props.user) {
-            profilePic = profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="comm-form-pic" />
+            profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="comm-form-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="comm-form-pic" />
         }
         return (
