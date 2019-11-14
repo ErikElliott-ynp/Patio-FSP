@@ -9,6 +9,7 @@ class Comment extends React.Component {
     }
 
     render () {
+        if (!this.props.comment) return null;
         let owner = this.props.owner;
         let name;
         let pic;

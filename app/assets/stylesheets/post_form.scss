@@ -242,7 +242,7 @@ input[type="submit"]:hover {
 .list-item-post p {
     margin: 0 0 10px 50px;
     word-wrap: break-word;
-    width: 90%;
+    width: 82%;
     line-height: 7px;
     line-height: 25px;
     letter-spacing: .5px;
@@ -290,6 +290,9 @@ input[type="submit"]:hover {
 .item-username {
     margin: 17px 0 40px 13px;
     font-size: 20px;
+    text-transform: capitalize;
+    color: rgb(47, 47, 241);
+    
 }
 
 .prev-cont {
@@ -310,6 +313,9 @@ input[type="submit"]:hover {
     width: 100%;
     height: 375px;
     position: relative;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
 }
 
 .file-btn {
@@ -325,6 +331,7 @@ input[type="submit"]:hover {
 
 .sidebar-prof span {
     margin-bottom: 10px;
+    text-transform: capitalize;
 }
 
 .sidebar-prof:hover {

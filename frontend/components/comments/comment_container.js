@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Comment from "./comment";
 
 const mSTP = (state, ownProps) => {
+    if (!ownProps.comment) return null;
     return {
         comment: ownProps.comment,
         currentUser: state.entities.users[state.session.id],

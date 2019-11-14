@@ -4,8 +4,22 @@ import CommentContainer from "./comment_container"
 class CommentList extends React.Component {
     constructor(props) {
         super(props)
-        
+        this.state = {
+            comments: this.props.comments
+        }
     }
+
+    shouldComponentUpdate(nextProps, _nextState) {
+        debugger
+        return this.props.comments.length !== nextProps.comments.length;
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.comments.length !== this.props.comments.length) {
+            this.setState({ comments: this.props.comments})
+        } 
+    }
+
 
     render() {
         let commentsCont;

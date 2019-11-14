@@ -10,6 +10,8 @@
     border-top: 1px solid gray;
     height: 60px;
     align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+
 }
 
 .comm-form-text {
@@ -21,8 +23,61 @@
     border-radius: 40px;
     padding: 1px 0 0 17px;
     font-size: 16px;
+    letter-spacing: .5px;
     &::placeholder{
         font-size: 14px;
+        letter-spacing: .5px;
     }
 }
 
+.comment-list-wide {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.comment-wide {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.comm-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.comm-user-pic {
+    margin-right: 10px;
+}
+
+.comment-body {
+    display: flex;
+    background-color: rgba(133, 130, 130, 0.151);
+    padding: 10px 28px 10px 10px;
+    border-radius: 40px;
+    max-width: 400px;
+    
+}
+
+.comment-body span {
+    color:rgb(47, 47, 241);
+    font-size: 14;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding-right: 10px;
+    font-family: 'Fira Sans', sans-serif;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.comment-body p {
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-family: 'Fira Sans', sans-serif;
+    padding-top: 2px;
+    word-wrap: break-word; 
+    max-width: 380px;
+}
