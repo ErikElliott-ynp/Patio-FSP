@@ -1,10 +1,12 @@
 json.post
     json.partial! 'post', post: @post
-    json.commentsIds @post.comments.pluck(:id)
+    json.commentsIds @post.comment_ids
 end
 
-@post.comments.each do |comment|
-    json.comments do
-        json.partial! 'api/comments/comment', comment: comment
+json.comments
+    @post.comments.each do |comment|
+        json.sent! comment.id do
+            json.partial! 'api/comments/comment', comment: comment
+        end
     end
 end
