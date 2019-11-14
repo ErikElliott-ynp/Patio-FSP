@@ -21,6 +21,8 @@ class PostFeedItem extends React.Component{
             lastName = this.props.user.lastName;
             id = this.props.user.id;
         };
+
+        
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 

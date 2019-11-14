@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
     before_action :underscore_params!, only: :create
     before_action :require_login
 
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
         else
             render json ["Post not found"], status: 404
         end
-        
+
     end
 
     private 
@@ -41,7 +41,6 @@ class CommentsController < ApplicationController
     end
 
     def change_params
-        params.require(:comment).permit(:body, :post_id)
+        params.require(:comment).permit(:body)
     end
-
 end
