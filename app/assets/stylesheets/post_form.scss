@@ -166,6 +166,10 @@ input[type="submit"]:hover {
     right: -6px;
 }
 
+.fa-trash:hover {
+    color: gray;
+}
+
 .post-form-footer {
     display: flex;
     justify-content: space-between;
@@ -257,12 +261,16 @@ input[type="submit"]:hover {
 }
 
 .post-item-comment:hover {
-    color: blue;
+    color: rgb(81, 134, 248);
 }
 
 
 .post-item-like{
      cursor: pointer;
+}
+
+.post-item-like:hover {
+    color: rgb(81, 134, 248);
 }
 
 .post-item-img {
@@ -380,4 +388,7 @@ a.boxclose{
     position: relative;
     left: -16px;
     top: 13px;
+    &:hover{
+        color: gray;
+    }
 }

@@ -58,8 +58,8 @@ class PostFeedItem extends React.Component{
                             <i className="fas fa-comment-alt"> <strong>Comment</strong></i>
                         </div>
                     </div>
-                    {/* <CommentFormContainer postId={this.props.post.id}/> */}
                 </li>
+                    <CommentFormContainer postId={this.props.post.id}/>
             </div>
         )
     }

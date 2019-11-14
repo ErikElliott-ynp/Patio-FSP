@@ -1,0 +1,28 @@
+.comm-form-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 0 10px 0 15px;
+}
+
+.comment-form-wide {
+    display: flex;
+    border-top: 1px solid gray;
+    height: 60px;
+    align-items: center;
+}
+
+.comm-form-text {
+    width: 430px;
+    height: 40px;
+    border: 1px solid gray;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 40px;
+    padding: 1px 0 0 17px;
+    font-size: 16px;
+    &::placeholder{
+        font-size: 14px;
+    }
+}
+
