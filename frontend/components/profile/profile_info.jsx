@@ -49,7 +49,7 @@ class ProfileInfo extends React.Component {
                 <div className="bio-div">
                     <p className="bio-p">{this.props.profile.aboutMe}</p> 
                 </div> : aboutMeBtn;
-            // if (this.props.users.length[3]) {
+            // if (this.props.users[3]) {
             //     friends = this.props.users.map( (friend, i) => {
             //          return <FriendIcon 
             //             user={friend}
