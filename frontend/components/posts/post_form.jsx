@@ -89,11 +89,12 @@ class PostForm extends React.Component {
         const photo = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-prof-pic" />
             : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-prof-pic" />
 
+        
         return (
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>
                     <div className="post-form-header">
-                        <i className="fas fa-pencil-alt"></i>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                         <span>Create Post</span>
                     </div>
                     <div className="form-body">
@@ -116,14 +117,13 @@ class PostForm extends React.Component {
                     
                     
                     <div className="post-form-footer">
-                        <label>
-                            <i className="fas fa-photo-video">
-                                <span> 
-                                    Upload Photo
-                                    <input onChange={this.handleFile} className="file-btn" type="file" id="file-upload"/>
-                                </span>
-                            </i>
-
+                        <label className="post-form-label">
+                                <div className="upload-mountains">
+                                    <span> 
+                                        Upload Photo
+                                        <input onChange={this.handleFile} className="file-btn" type="file" id="file-upload"/>
+                                    </span>
+                                </div>
                         </label>
                         <input type="submit" value="Post" className="post-submit-btn" disabled="disabled"/>
                     </div>

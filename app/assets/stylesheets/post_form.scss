@@ -178,18 +178,27 @@ input[type="submit"]:hover {
     font-size: 16px;
 }
 
-.fa-photo-video {
-    margin-bottom: 18px;
-}
-
-.fa-photo-video span {
-    margin-left: 4px;
-}
-
-.fa-photo-video {
+.upload-mountains {
     margin: 7px 0 0 20px;
     cursor: pointer;
 }
+
+.upload-mountains span {
+   position: relative;
+    left: 36px;
+    font-size: 17px;
+    display: grid;
+    top: 6px;
+}
+
+.post-form-label {
+    margin-left: 10px;
+}
+.fa-pencil {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
 
 .post-submit-btn {
     margin: 25px 35px 0 0;
@@ -423,4 +432,13 @@ a.boxclose{
 
 .fa-caret-right {
     color: rgb(83, 83, 83);
+}
+
+.upload-mountains {
+    background-image: image_url('patio_upload.jpg'); 
+    background-size: 32px 27px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    border-radius: 8px;
 }
