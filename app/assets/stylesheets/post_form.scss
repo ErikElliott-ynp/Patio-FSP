@@ -27,7 +27,7 @@ input[type="text"], input[type="password"], textarea, select {
 }
 
 .post-form-wide {
-    min-height: 195px;
+    height: 195px;
     width: 530px;
     line-height: 16px;
     font-size: 12px;
@@ -147,7 +147,7 @@ input[type="submit"]:hover {
     background-color: lightgray;
 }
 
-.scroll-feeds {
+.scroll-feed {
     display: flex;
     flex-direction: column;
 }

@@ -7,6 +7,8 @@ class Icons extends React.Component {
     }
 
     handleIcons(elementId, iconId) {
+        this.resetIcons();
+        this.hideBoxes();
         let ele = document.getElementById(elementId)
         let classArray = Array.from(ele.classList);
         let icon = document.getElementById(iconId)
@@ -20,7 +22,28 @@ class Icons extends React.Component {
     }
 
     resetIcons() {
-        
+        let friend = document.getElementById('icon-friend');
+        let msg = document.getElementById('icon-msg');
+        let note = document.getElementById('icon-note');
+        let icons = [friend, msg, note];
+        icons.forEach( icon => {
+            if (icon.style.color === 'white') {
+                icon.style.color = "rgb(58, 56, 56)";
+            }
+        })
+    }
+
+    hideBoxes() {
+        let friend = document.getElementById('friend-box');
+        let msg = document.getElementById('msg-box');
+        let note = document.getElementById('note-box');
+        let icons = [friend, msg, note];
+        icons.forEach(icon => {
+            let classArray = Array.from(icon.classList);
+            if (!classArray.includes('hidden')) {
+                icon.classList.add("hidden");
+            }
+        })
     }
 
 
