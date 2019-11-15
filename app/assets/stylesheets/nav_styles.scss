@@ -338,12 +338,13 @@ body {
 }
 
 .icons-cont {
+    position: relative;
     height: 64%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     border-right: 1px solid gray;
-    padding-right: 22px;
+    padding-right: 47px;
     margin-bottom: 8px;
     padding-bottom: 3px
 }
@@ -351,10 +352,68 @@ body {
 .icons-cont * {
     font-size: 22px;
     color: rgb(58, 56, 56);
-    margin: 0 7px;
+    margin: 0 11px;
 }
 
 .icons-cont i:hover {
     cursor: pointer;
     color: rgb(0, 0, 0);
+}
+
+.request-wrapper {
+    position: absolute;
+    top: 44px;
+    right: 113px;
+    height: 60px;
+    width: 371px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0px !important;
+}
+
+.request-wrapper:after {
+  content: " ";
+  position: absolute;
+  right: 30px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+
+#reqs {
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    padding: 5px 0px 5px 0px;
+    margin: 0 0 0 0px;
+    width: 100%;
+    text-indent: 9px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.request-wrapper ul {
+    margin: 0;
+}
+
+.request-wrapper h4 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    padding-top: 9px;
+    text-indent: 10px;
+}
+
+.msg-box {
+    position: absolute;
+    top: 44px;
+    right: 80px;
+    height: 60px;
+    width: 371px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0px !important;
 }

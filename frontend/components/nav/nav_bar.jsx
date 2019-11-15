@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Icons from "./icons"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -153,11 +153,7 @@ class NavBar extends React.Component {
                                                 Home
                                             </div>
                                         </Link>
-                                        <div className="icons-cont">
-                                            <i className="fas fa-user-friends" id="icon-friend"></i>
-                                            <i className="fab fa-facebook-messenger" id="icon-msg"></i>
-                                            <i className="fas fa-bell" id="icon-notification"></i>
-                                        </div>
+                                        <Icons/>
 
                                         <button onClick={this.handleLogout} className="action-button logout clearfix">Log Out</button>
                                     </div>
