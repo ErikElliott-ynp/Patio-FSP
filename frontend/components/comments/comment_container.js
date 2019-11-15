@@ -5,11 +5,12 @@ import { editComment, closeEdit } from "../../actions/edit_comment_actions";
 
 const mSTP = (state, ownProps) => {
     if (!ownProps.comment) return null;
+    let post = state.entities.posts[ownProps.comment.postId];
     return {
         comment: ownProps.comment,
         currentUser: state.entities.users[state.session.id],
         owner: state.entities.users[ownProps.comment.authorId],
-        post: state.entities.posts[ownProps.comment.postId],
+        post: post,
         editId: state.ui.edit
     }
 }

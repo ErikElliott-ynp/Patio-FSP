@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
         post: post,
         user: state.entities.users[ownProps.post.authorId],
         currentUser: state.entities.users[state.session.id],
+        profile: state.entities.users[post.profileId],
         comments: subscribeCommentsToItem(state, post)
     }
 }

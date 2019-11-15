@@ -65,7 +65,8 @@ class Comment extends React.Component {
                         <p id="edit-comm-btn" onClick={() => this.props.editComment(this.props.comment.id)}>Edit Comment</p>
                     </div>
                 </i>
-            }
+            };
+            
         }
         let div = <div className="comment-body">
                 {name}

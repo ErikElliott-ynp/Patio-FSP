@@ -24,15 +24,23 @@ class PostFeedItem extends React.Component{
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
         let profilePic;
+        let profile = this.props.profile;
         let firstName;
         let lastName;
         let id;
+        let location;
         if (this.props.user) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
             firstName = this.props.user.firstName;
             lastName = this.props.user.lastName;
             id = this.props.user.id;
+            if (profile.id !== this.props.user.id) {
+                location = <div className="prof-loc-arrow">
+                    <i className="fas fa-caret-right"></i>
+                    <Link className="comment-name-link" to={`/users/${profile.id}`}>{profile.firstName} {profile.lastName}</Link>
+                </div>
+            }
         };
         let commentList;
         if ( this.props.post && this.props.post.commentIds.length > 0) {
@@ -53,6 +61,7 @@ class PostFeedItem extends React.Component{
                                 <span className="item-username">{firstName}  {lastName}</span>
                             </div> 
                         </Link>
+                        {location}
                     </div>
 
                     { this.props.user === this.props.currentUser ? (

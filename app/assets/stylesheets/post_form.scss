@@ -401,3 +401,23 @@ a.boxclose{
         color: gray;
     }
 }
+
+.prof-loc-arrow {
+    position: relative;
+    right: -8px;
+    top: 21px;
+}
+
+.comment-name-link {
+    font-size: 19px;
+    color: #2f2ff1;
+    margin-left: 6px;
+    text-transform: capitalize;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.fa-caret-right {
+    color: rgb(83, 83, 83);
+}
