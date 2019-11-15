@@ -12,3 +12,18 @@ export const subscribeCommentsToItem = ({ entities }, post) => {
     });
     return comments;
 }
+
+export const fakeFriends = ({ entities}) => {
+    let allUsers = Object.values(entities.users);
+    let randomFriends = [];
+    const shuffle = (array) => {
+        array.sort(() => Math.random() - .5)
+        return array;
+    }
+    while (randomFriends.length < 4) {
+        let friend = shuffle(allUsers).pop();
+        randomFriends.push(friend);
+    }
+    return randomFriends;
+}
+
