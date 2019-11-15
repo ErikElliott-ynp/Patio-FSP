@@ -39,7 +39,7 @@ class PostFeedItem extends React.Component{
             if (profile.id !== this.props.user.id) {
                 location = <div className="prof-loc-arrow">
                     <i className="fas fa-caret-right"></i>
-                    <Link className="comment-name-link" to={`/users/${profile.id}`}>{profile.firstName} {profile.lastName}</Link>
+                    <Link className="comment-name-link" to={`/users/${profile.id}`} replace>{profile.firstName} {profile.lastName}</Link>
                 </div>
             }
         };
@@ -56,7 +56,7 @@ class PostFeedItem extends React.Component{
             <div className="post-item-wide">
                 <li className="list-item-post"> 
                     <div className="post-item-img">
-                        <Link to={`/users/${id}`}>
+                        <Link to={`/users/${id}`} replace>
                             <div className="full-name">
                                 {profilePic}
                                 <span className="item-username">{firstName}  {lastName}</span>

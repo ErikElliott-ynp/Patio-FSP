@@ -131,7 +131,7 @@ class NavBar extends React.Component {
                             this.props.loggedIn ? (
                                 <div className="logged-in-bar">
                                     <div className="left-logged-in">
-                                        <Link to="/feed" style={{ textDecoration: 'none' }}>
+                                        <Link to="/feed" replace>
                                             <div className="logo-logged-in">
                                                 <h2 className="the-p">P</h2>
                                             </div>
@@ -140,7 +140,7 @@ class NavBar extends React.Component {
                                         <i className="fa fa-search"></i>
                                     </div>
                                     <div className="right-logged-in clearfix">
-                                        <Link to={`/users/${this.props.currentUser.id}`} className="info-blip-a" style={{ textDecoration: 'none' }}>
+                                        <Link to={`/users/${this.props.currentUser.id}`} className="info-blip-a" replace>
                                             <div className="info-blip">
                                                 {photo}
                                                 <p>
@@ -148,7 +148,7 @@ class NavBar extends React.Component {
                                                 </p>
                                             </div>
                                         </Link>
-                                        <Link to="/feed" style={{ textDecoration: 'none' }} className="home-a">
+                                        <Link to="/feed" className="home-a" replace>
                                             <div className="home">
                                                 Home
                                             </div>
@@ -163,7 +163,7 @@ class NavBar extends React.Component {
                                 <div className="login-bar">
                                     
                                     <div className="logo-box clearfix">
-                                        <Link onClick={this.resetState} to="/" style={{ textDecoration: 'none' }}><h1 className="logo clearfix" >Patio</h1></Link>
+                                        <Link onClick={this.resetState} to="/" replace><h1 className="logo clearfix" >Patio</h1></Link>
                                     </div>
                                     <div className="submission-form clearfix">
                                         <form onSubmit={this.handleSubmit}>
