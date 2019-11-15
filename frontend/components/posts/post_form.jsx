@@ -94,7 +94,7 @@ class PostForm extends React.Component {
             <div className="post-form-wide">
                 <form className="post-form-21" onSubmit={this.handleSubmit}>
                     <div className="post-form-header">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <i className="fa fa-pencil" aria-hidden="true"></i>
                         <span>Create Post</span>
                     </div>
                     <div className="form-body">

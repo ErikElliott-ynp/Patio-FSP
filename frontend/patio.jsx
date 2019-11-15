@@ -24,4 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(< Root store={store} /> , divRoot);
 })
 
+document.addEventListener("click", (e) => {
+    if (!e.target.matches(".icons-cont")) {
+        let dropdowns = document.getElementsByClassName('down');
+        for (let i = 0; i < dropdowns.length; i++) {
+            let open = dropdowns[i];
+            if (!open.classList.contains('hidden')){
+                open.classList.add('hidden')
+            }
+        }
+        let icons = document.getElementsByClassName('gray');
+        for (let i = 0; i < icons.length; i++) {
+            let white = icons[i];
+            if (white.style.color === "white") {
+                white.style.color = "rgb(58, 56, 56)";
+            }
+        }
+    }
+})
     

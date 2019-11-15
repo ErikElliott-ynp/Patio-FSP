@@ -22,10 +22,11 @@ class Icons extends React.Component {
     }
 
     resetIcons(iconId) {
-        let friend = document.getElementById('icon-friend');
-        let msg = document.getElementById('icon-msg');
-        let note = document.getElementById('icon-note');
-        let icons = [friend, msg, note];
+        // let friend = document.getElementById('icon-friend');
+        // let msg = document.getElementById('icon-msg');
+        // let note = document.getElementById('icon-note');
+        let icons;
+        icons = Array.from(document.getElementsByClassName('gray')); 
         const skip = document.getElementById(iconId);
         icons.forEach( icon => {
             if (icon !== skip && icon.style.color === 'white') {
@@ -35,10 +36,12 @@ class Icons extends React.Component {
     }
 
     hideBoxes(elementId) {
-        let friend = document.getElementById('friend-box');
-        let msg = document.getElementById('msg-box');
-        let note = document.getElementById('note-box');
-        let boxes = [friend, msg, note];
+        // let friend = document.getElementById('friend-box');
+        // let msg = document.getElementById('msg-box');
+        // let note = document.getElementById('note-box');
+
+        let boxes;
+        boxes = Array.from(document.getElementsByClassName('down'));
         const skip = document.getElementById(elementId);
         boxes.forEach(box => {
             let classArray = Array.from(box.classList);
@@ -48,17 +51,14 @@ class Icons extends React.Component {
         })
     }
 
-
-
     
-
     render () {
         return (
             <div className="icons-cont">
-                <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends" id="icon-friend"></i>
-                <i className="fab fa-facebook-messenger" onClick={() => this.handleIcons('msg-box', 'icon-msg')} id="icon-msg"></i>
-                <i className="fas fa-bell" onClick={() => this.handleIcons('note-box', 'icon-note')} id="icon-note"></i>
-                <div className="request-wrapper hidden" id="friend-box">
+                <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
+                <i className="fab fa-facebook-messenger gray" onClick={() => this.handleIcons('msg-box', 'icon-msg')} id="icon-msg"></i>
+                <i className="fas fa-bell gray" onClick={() => this.handleIcons('note-box', 'icon-note')} id="icon-note"></i>
+                <div className="request-wrapper hidden down" id="friend-box">
                     <ul>
                         <section id="reqs">
                          Friend Requests   
@@ -66,7 +66,7 @@ class Icons extends React.Component {
                     </ul>
                     <h4>No New Friend Requests</h4>
                 </div>
-                <div className="msg-wrapper hidden" id="msg-box" >
+                <div className="msg-wrapper hidden down" id="msg-box" >
                     <ul>
                     <section id="msgs">
                         Messages
@@ -74,7 +74,7 @@ class Icons extends React.Component {
                     </ul>
                 <h4>There's nothing here</h4>
                 </div>
-                <div className="note-wrapper hidden" id="note-box" >
+                <div className="note-wrapper hidden down" id="note-box" >
                     <ul>
                     <section id="notes">
                         Notifications
