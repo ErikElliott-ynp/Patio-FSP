@@ -22,9 +22,6 @@ class Icons extends React.Component {
     }
 
     resetIcons(iconId) {
-        // let friend = document.getElementById('icon-friend');
-        // let msg = document.getElementById('icon-msg');
-        // let note = document.getElementById('icon-note');
         let icons;
         icons = Array.from(document.getElementsByClassName('gray')); 
         const skip = document.getElementById(iconId);
@@ -36,10 +33,6 @@ class Icons extends React.Component {
     }
 
     hideBoxes(elementId) {
-        // let friend = document.getElementById('friend-box');
-        // let msg = document.getElementById('msg-box');
-        // let note = document.getElementById('note-box');
-
         let boxes;
         boxes = Array.from(document.getElementsByClassName('down'));
         const skip = document.getElementById(elementId);
