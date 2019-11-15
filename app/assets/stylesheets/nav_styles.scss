@@ -405,10 +405,10 @@ body {
     text-indent: 10px;
 }
 
-.msg-box {
+.msg-wrapper {
     position: absolute;
-    top: 44px;
-    right: 80px;
+    top: 43px;
+    right: 67px;
     height: 60px;
     width: 371px;
     border-radius: 2px;
@@ -416,4 +416,73 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
     font-family: 'Fira Sans', sans-serif;
     margin: 0px !important;
+}
+
+.msg-wrapper h4 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    padding-top: 9px;
+    text-indent: 10px;
+}
+
+.msg-wrapper:after {
+  content: " ";
+  position: absolute;
+  right: 30px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+
+#msgs {
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    padding: 5px 0px 5px 0px;
+    margin: 0 0 0 0px;
+    width: 100%;
+    text-indent: 9px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.note-wrapper {
+    position: absolute;
+    top: 43px;
+    right: 22px;
+    height: 60px;
+    width: 371px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0px !important;
+}
+
+.note-wrapper h4 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    padding-top: 9px;
+    text-indent: 10px;
+}
+
+.note-wrapper:after {
+  content: " ";
+  position: absolute;
+  right: 30px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+
+#notes {
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    padding: 5px 0px 5px 0px;
+    margin: 0 0 0 0px;
+    width: 100%;
+    text-indent: 9px;
+    font-family: 'Fira Sans', sans-serif;
 }
