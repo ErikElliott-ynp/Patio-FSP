@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
         if params[:user] == "all"
             @posts = Post.includes(:comments).all
         else
-            @posts = Post.includes(:comments).where('profile_id = ?', params[:user])    
+            @posts = Post.includes(:comments).where('profile_id = ? OR author_id = ?', params[:user], current_user.id)    
         end
         render :index
     end

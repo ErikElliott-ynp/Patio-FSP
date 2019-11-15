@@ -40,7 +40,9 @@ class PostFeed extends React.Component {
         let items;
         if (this.props.posts) {
             items = this.props.posts.reverse().map( post => {
-                if (this.props.match.url === "/feed" || post.profileId == this.props.match.params.userId) {
+                if (this.props.match.url === "/feed" || 
+                post.profileId == this.props.match.params.userId
+                || post.authorId == this.props.match.params.userId) {
                     return <PostFeedItemContainer 
                                 post={post}
                                 key={post.id}

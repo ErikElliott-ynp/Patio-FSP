@@ -24,7 +24,7 @@ class PostFeedItem extends React.Component{
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
         let profilePic;
-        let profile = this.props.profile;
+        let profile;
         let firstName;
         let lastName;
         let id;
@@ -35,6 +35,7 @@ class PostFeedItem extends React.Component{
             firstName = this.props.user.firstName;
             lastName = this.props.user.lastName;
             id = this.props.user.id;
+            profile = this.props.profile;
             if (profile.id !== this.props.user.id) {
                 location = <div className="prof-loc-arrow">
                     <i className="fas fa-caret-right"></i>
