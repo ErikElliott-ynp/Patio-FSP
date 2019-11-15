@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { createPost } from "../../actions/post_actions";
 import { fetchUsers } from "../../actions/session_actions";
 import PostForm from "./post_form";
+import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
     let profileId = state.session.id;
@@ -22,4 +23,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(PostForm)
+export default withRouter(connect(mSTP, mDTP)(PostForm));

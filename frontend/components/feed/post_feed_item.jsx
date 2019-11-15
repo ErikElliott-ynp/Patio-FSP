@@ -29,7 +29,7 @@ class PostFeedItem extends React.Component{
         let lastName;
         let id;
         let location;
-        if (this.props.user) {
+        if (this.props.user && this.props.profile) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
             firstName = this.props.user.firstName;

@@ -72,7 +72,6 @@ class PostForm extends React.Component {
 
 
     render () {
-        let textareaPlaceholder;
         
         const preview = this.state.photoUrl ?
         (<div className="prev-cont" id="prev-cont">

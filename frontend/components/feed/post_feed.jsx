@@ -27,14 +27,6 @@ class PostFeed extends React.Component {
         }
     }
 
-    componentDidUpdate (_prevProps) {
-        let id = this.props.profileId;
-        if (this.props.match.url === "/feed") {
-            id = "all";
-        } 
-        this.props.fetchPosts(id)
-    }
-
 
     render () {
         let items;
