@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         profile: state.entities.users[profileId],
         profileId,
-        users: fakeFriends(state)
+        users: Object.values(state.entities.users)
     }
 }
 

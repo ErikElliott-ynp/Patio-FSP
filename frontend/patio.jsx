@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
+import Darkmode from "darkmode-js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
-    ReactDOM.render(< Root store={store} /> , divRoot);
+    // new Darkmode().showWidget();
+    ReactDOM.render(<Root store={store} /> , divRoot);
 })
 
 document.addEventListener("click", (e) => {
-    if (!e.target.matches(".icons-cont")) {
+    if (!e.target.matches(".icons-cont") || e.currentTarget.style.color === "white") {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];

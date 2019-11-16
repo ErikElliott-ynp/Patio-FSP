@@ -49,18 +49,11 @@ class ProfileInfo extends React.Component {
                 <div className="bio-div">
                     <p className="bio-p">{this.props.profile.aboutMe}</p> 
                 </div> : aboutMeBtn;
-            // if (this.props.users[3]) {
-            //     friends = this.props.users.map( (friend, i) => {
-            //          return <FriendIcon 
-            //             user={friend}
-            //             key={i}
-            //             />
-            //      })
-            // }
-            friend0 = <FriendIcon user={this.props.users[0]} />;
-            friend1 = <FriendIcon user={this.props.users[1]} />;
-            friend2 = <FriendIcon user={this.props.users[2]} />;
-            friend3 = <FriendIcon user={this.props.users[3]} />;
+        
+            friend0 = <FriendIcon user={this.props.users[8]} />;
+            friend1 = <FriendIcon user={this.props.users[9]} />;
+            friend2 = <FriendIcon user={this.props.users[13]} />;
+            friend3 = <FriendIcon user={this.props.users[11]} />;
         }
         
         return (
@@ -84,7 +77,6 @@ class ProfileInfo extends React.Component {
                 <div className="friends">
                     <h3>Friends:</h3>
                     <div className="friends-list">
-                        {/* {friends} */}
                         {friend0}
                         {friend1}
                         {friend2}
