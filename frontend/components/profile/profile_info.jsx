@@ -52,8 +52,8 @@ class ProfileInfo extends React.Component {
         
             friend0 = <FriendIcon user={this.props.users[8]} />;
             friend1 = <FriendIcon user={this.props.users[9]} />;
-            friend2 = <FriendIcon user={this.props.users[13]} />;
-            friend3 = <FriendIcon user={this.props.users[11]} />;
+            friend2 = <FriendIcon user={this.props.users[7]} />;
+            friend3 = <FriendIcon user={this.props.users[4]} />;
         }
         
         return (
