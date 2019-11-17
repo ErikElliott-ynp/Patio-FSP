@@ -26,10 +26,10 @@ about their lives. Users can share posts about their activities, comment on thei
  ## Feature Highlights
  
  ### Posts
-   Users can seemlessly post statuses with text about their lives, photos stored on AWS, and other media for friends to 
+   Users can seemlessly post statuses with text about their lives, photos, and other media for friends to 
    see and comment on.
    
-   **GIF**
+   ![Posts](https://media.giphy.com/media/humla8pPF0Y6QT72g5/giphy.gif)
    
 ### Comments
   Users can comment on posts, delete only their own comments, and smoothly, edit their comments in-line.
