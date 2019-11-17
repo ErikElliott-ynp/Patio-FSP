@@ -40,7 +40,7 @@ about their lives. Users can share posts about their activities, comment on thei
   Users have their own profiles where friends can comment on their walls and they can update their personal information
   including work, location, photos, and more.
   
-  ![Profiles](https://media.giphy.com/media/PkAOqhHhRUy7vSswL4/giphy.gif)
+  ![Profiles](https://user-images.githubusercontent.com/51393952/69013282-35464080-0933-11ea-9e98-a52d767428e3.gif)
   
   
   
