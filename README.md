@@ -29,7 +29,7 @@ about their lives. Users can share posts about their activities, comment on thei
    Users can seemlessly post statuses with text about their lives, photos, and other media for friends to 
    see and comment on.
    
-   ![Posts](https://media.giphy.com/media/humla8pPF0Y6QT72g5/giphy.gif)
+   ![Posts](https://giphy.com/gifs/KCdUhACqLy02Js4gfT)
    
 ### Comments
   Users can comment on posts, delete only their own comments, and smoothly, edit their comments in-line.
