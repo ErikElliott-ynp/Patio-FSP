@@ -34,7 +34,7 @@ about their lives. Users can share posts about their activities, comment on thei
 ### Comments
   Users can comment on posts, delete only their own comments, and smoothly, edit their comments in-line.
   
-  ![Comments](https://media.giphy.com/media/QZW26lJ6UJr4i3HX0u/giphy.gif)
+  ![Comments](https://imgflip.com/gif/3gnpik)
   
 ### Profiles
   Users have their own profiles where friends can comment on their walls and they can update their personal information
