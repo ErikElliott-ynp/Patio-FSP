@@ -80,16 +80,10 @@ class PostForm extends React.Component {
         </div> ) : null
 
         let btn = document.getElementsByClassName("post-submit-btn")[0];
-        let newStr = ""
-        let body = this.state.body;
-        for (let i = 0; i < body.length; i++) {
-            if (!(body[i] == "\n" || body[i] == "\r")) {
-                newStr += body[i]
-            }
-        }
-        if (newStr || this.state.photoFile) {
+        
+        if ( this.state.body.trim() || this.state.photoFile) {
             btn.removeAttribute("disabled");
-        } else if (!(newStr || this.state.photoFile)) {
+        } else if (!( this.state.body.trim() || this.state.photoFile)) {
             if (btn) btn.setAttribute("disabled", "disabled")
         }
         
