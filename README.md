@@ -43,9 +43,15 @@ about their lives. Users can share posts about their activities, comment on thei
   ![Profiles](https://user-images.githubusercontent.com/51393952/69013282-35464080-0933-11ea-9e98-a52d767428e3.gif)
   
 ### Code Snippets
+#### Inline Comment Edits
    This code demonstrates inline edits of comments. The component conditionally renders either the comment's text or a textarea to edit the comment by using a slice of the Redux state.
    
   ![Comment Code](https://user-images.githubusercontent.com/51393952/70081144-d59b9680-15bc-11ea-8cbf-824f6b579e13.jpg)
+  
+#### Custom Index Route
+   This snippet has a custom index route which fetches different posts depending on the users current location (either a profile page or the main news feed). The database query is optimized using `.includes` to avoid N+1 and sanatized to avoid any malicious users attacks including SQL Injections.  
+
+![Index Route](https://user-images.githubusercontent.com/51393952/70095602-0b02ad00-15da-11ea-9b1b-aa06a8cd4200.jpg)
   
 ## Future Goals
  + Likes
