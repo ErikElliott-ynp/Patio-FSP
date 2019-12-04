@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} /> , divRoot);
 })
 
+
 document.addEventListener("click", (e) => {
-    if (!e.target.matches(".icons-cont") || e.currentTarget.style.color === "white") {
+    if ( !(e.target.style.color === 'white') && !(e.target.matches(".icons-cont"))) {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];

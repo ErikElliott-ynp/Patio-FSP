@@ -75,7 +75,12 @@ class Comment extends React.Component {
             </div>;
         let form = <div className="comment-body">
                 <form className="edit-form-comm"  onKeyPress={this.handleEnter} >
-                    <textarea className="edit-textarea" onChange={this.handleChange()} id="edit-text" value={this.state.body}></textarea>
+                    <textarea 
+                        className="edit-textarea" 
+                        onChange={this.handleChange()}
+                         id="edit-text"
+                          value={this.state.body}>
+                    </textarea>
                 </form>
                 <p id="cancel" onClick={() => this.props.closeEdit()}>cancel</p>
             </div>
