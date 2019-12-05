@@ -10,11 +10,11 @@ class Post < ApplicationRecord
         foreign_key: :profile_id,
         class_name: :User
 
-    has_many :comments
+    has_many :comments, dependent: :destroy
 
     has_one_attached :photo
 
-    has_many :likes, as: :likeable
+    has_many :likes, as: :likeable, dependent: :destroy
 
     def ensure_photo_or_body
         unless self.photo.attached? || self.body.length > 0

@@ -1,6 +1,6 @@
 import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions"
 import { RECEIVE_COMMENT, REMOVE_COMMENT} from "../actions/comment_actions";
-import { RECEIVE_LIKE, RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
+import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
 
 const PostsReducer = (state = {}, action) => {
     Object.freeze(state)

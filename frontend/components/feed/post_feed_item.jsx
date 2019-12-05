@@ -29,6 +29,7 @@ class PostFeedItem extends React.Component{
         let lastName;
         let id;
         let location;
+        let likes;
         if (this.props.user && this.props.profile) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
@@ -50,6 +51,9 @@ class PostFeedItem extends React.Component{
         let commentFormCont;
         if (this.props.post && this.props.user) {
             commentFormCont = <CommentFormContainer postId={this.props.post.id} />
+        }
+        if (this.props.likes){
+            
         }
         
         return (

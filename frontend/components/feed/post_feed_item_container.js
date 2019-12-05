@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import PostFeedItem from "./post_feed_item";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { deletePost } from "../../actions/post_actions";
-import { subscribeCommentsToItem, subscribeCommentsToItem, subscribeLikestoItem } from "../../reducers/selectors";
+import { subscribeCommentsToItem, subscribeLikestoItem } from "../../reducers/selectors";
+import { createLike, deleteLike } from "../../actions/like_actions";
 
 
 const mSTP = (state, ownProps) => {
@@ -22,7 +23,9 @@ const mDTP = dispatch => {
     return {
         openModal: (modal, id) => dispatch(openModal(modal, id)),
         closeModal: () => dispatch(closeModal()),
-        deletePost: postId => dispatch(deletePost(postId))
+        deletePost: postId => dispatch(deletePost(postId)),
+        likePost: like => dispatch(createLike(like)),
+        unlikePost: like => dispatch(deleteLike(like))
     }
 }
 
