@@ -14,6 +14,8 @@ class Post < ApplicationRecord
 
     has_one_attached :photo
 
+    has_many :likes, as: :likeable
+
     def ensure_photo_or_body
         unless self.photo.attached? || self.body.length > 0
             errors[:post] << "Please Add a Photo or a Status"

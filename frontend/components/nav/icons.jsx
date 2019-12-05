@@ -13,9 +13,6 @@ class Icons extends React.Component {
         if (classArray.includes("hidden")) {
             ele.classList.remove('hidden');
             icon.style.color = 'white';
-        } else if ( e.target.style.color === 'white') {
-            ele.classList.add('hidden');
-            icon.style.color = "rgb(58, 56, 56)";
         } else {
             ele.classList.add('hidden');
             icon.style.color = "rgb(58, 56, 56)"
