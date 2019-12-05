@@ -25,3 +25,4 @@ export const deleteLike = likeId => dispatch => {
     return LikeAPIUtil.deleteLike(likeId)
         .then( () => dispatch(removeLike(likeId)))
 }
+
