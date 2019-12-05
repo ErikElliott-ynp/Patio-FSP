@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import PostFeedItem from "./post_feed_item";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { deletePost } from "../../actions/post_actions";
-import { subscribeCommentsToItem } from "../../reducers/selectors";
+import { subscribeCommentsToItem, subscribeCommentsToItem, subscribeLikestoItem } from "../../reducers/selectors";
 
 
 const mSTP = (state, ownProps) => {
@@ -13,7 +13,8 @@ const mSTP = (state, ownProps) => {
         user: state.entities.users[ownProps.post.authorId],
         currentUser: state.entities.users[state.session.id],
         profile: state.entities.users[post.profileId],
-        comments: subscribeCommentsToItem(state, post)
+        comments: subscribeCommentsToItem(state, post),
+        likes: subscribeLikestoItem(state, post)
     }
 }
 

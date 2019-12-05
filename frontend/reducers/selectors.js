@@ -13,6 +13,16 @@ export const subscribeCommentsToItem = ({ entities }, post) => {
     return comments;
 }
 
+export const subscribeLikestoItem = ({ entities }, post) => {
+    let likes = [];
+    Object.values(entities.likes).forEach( like => {
+        if (like.likeableType === 'Post' && like.likeableId === post.id ) {
+            likes.push(like);
+        }
+    })
+    return likes;
+}
+
 export const fakeFriends = ({ entities}) => {
     let allUsers = Object.values(entities.users);
     let randomFriends = [];
