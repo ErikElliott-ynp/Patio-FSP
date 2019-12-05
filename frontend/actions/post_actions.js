@@ -4,19 +4,21 @@ export const REMOVE_POST = "REMOVE_POST";
 export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 import * as PostAPIUtil from "../util/post_api_util";
 
-const receivePosts = ({posts, comments}) => {
+const receivePosts = ({posts, comments, likes}) => {
     return {
         type: RECEIVE_POSTS,
         posts,
-        comments
+        comments,
+        likes
     }
 }
 
-const receivePost = ({post, comments}) => {
+const receivePost = ({post, comments, likes}) => {
     return {
         type: RECEIVE_POST,
         post,
-        comments
+        comments,
+        likes
     }
 }
 
