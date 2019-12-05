@@ -6,9 +6,9 @@ class Api::PostsController < ApplicationController
 
     def index 
         if params[:user] == "all"
-            @posts = Post.includes(:comments).all
+            @posts = Post.includes(:likes, comments: [:likes] ).all
         else
-            @posts = Post.includes(:comments).where('profile_id = ? OR author_id = ?', params[:user], current_user.id)    
+            @posts = Post.includes(:likes, comments: [:likes] ).where('profile_id = ? OR author_id = ?', params[:user], current_user.id)    
         end
         render :index
     end
