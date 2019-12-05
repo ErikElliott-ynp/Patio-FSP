@@ -6,7 +6,7 @@ class Icons extends React.Component {
         this.handleIcons = this.handleIcons.bind(this);
     }
 
-    handleIcons(e, elementId, iconId) {
+    handleIcons(elementId, iconId) {
         let ele = document.getElementById(elementId)
         let classArray = Array.from(ele.classList);
         let icon = document.getElementById(iconId)
@@ -24,9 +24,9 @@ class Icons extends React.Component {
     render () {
         return (
             <div className="icons-cont">
-                <i onClick={(e) => this.handleIcons(e, 'friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
-                <i className="fab fa-facebook-messenger gray" onClick={(e) => this.handleIcons(e, 'msg-box', 'icon-msg')} id="icon-msg"></i>
-                <i className="fas fa-bell gray" onClick={(e) => this.handleIcons(e, 'note-box', 'icon-note')} id="icon-note"></i>
+                <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
+                <i className="fab fa-facebook-messenger gray" onClick={() => this.handleIcons('msg-box', 'icon-msg')} id="icon-msg"></i>
+                <i className="fas fa-bell gray" onClick={() => this.handleIcons('note-box', 'icon-note')} id="icon-note"></i>
                 <div className="request-wrapper hidden down" id="friend-box">
                     <ul>
                         <section id="reqs">
