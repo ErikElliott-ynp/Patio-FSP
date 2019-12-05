@@ -1,5 +1,6 @@
 import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions"
 import { RECEIVE_COMMENT, REMOVE_COMMENT} from "../actions/comment_actions";
+import { RECEIVE_LIKE, RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
 
 const PostsReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -29,6 +30,23 @@ const PostsReducer = (state = {}, action) => {
                 }
             }
             return nextState;
+        case RECEIVE_LIKE:
+            if (action.like.likeableType === "Post") {
+                post = nextState[action.like.likeableId] 
+                post.likeIds.push(action.like.id);
+            }
+            return nextState;
+            case REMOVE_LIKE:
+                if (action.like.likeableType === "Post" ) {
+                    post = nextState[action.like.likeableId] 
+                    let likesArray = post.likeIds;
+                    for (let i = 0; i < likesArray.length; i++) {
+                        if (likesArray[i] === action.like.id) {
+                            likesArray.splice(i, 1)
+                        }
+                    }
+                }
+                return nextState;
         default:
             return state;
     }
