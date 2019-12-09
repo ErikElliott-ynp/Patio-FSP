@@ -40,8 +40,9 @@ export const fakeFriends = ({ entities}) => {
 
 export const isLiked = (state, item) => {
     let liked = false;
+    let type = item.profileId ? "Post" : "Comment";
     Object.values(state.entities.likes).forEach(like => {
-        if (like.likeableId === item.id && like.userId === state.session.id) {
+        if (like.likeableType === type && like.likeableId === item.id && like.userId === state.session.id) {
             liked = true;
         }
     })
