@@ -1,6 +1,7 @@
 json.post do
     json.partial! 'post', post: @post
     json.commentIds @post.comment_ids
+    json.likeIds @post.like_ids
 end
 
 json.comments do

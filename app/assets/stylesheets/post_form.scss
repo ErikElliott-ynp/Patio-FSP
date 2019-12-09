@@ -456,14 +456,20 @@ a.boxclose{
     width: 25px;
     height: 25px;
     margin-right: 5px;
+    overflow: visible;
 }
 
 .like-cont {
     display: flex;
-    margin-left: 15px;
     align-items: center;
     font-family: 'Fira Sans', sans-serif;
     color: gray;
-    font-size: 14px    
+    font-size: 14px;
+    position: relative;
+    left: 15px;    
+}
+
+.like-words {
+    white-space: nowrap;
 }
 
