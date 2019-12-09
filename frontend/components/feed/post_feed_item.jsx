@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentListContainer from "../comments/comment_list_container";
+import Like from "../like/like";
     
 class PostFeedItem extends React.Component{
     constructor(props) {
@@ -9,6 +10,7 @@ class PostFeedItem extends React.Component{
         this.state = this.props.post
 
         this.setFocus = this.setFocus.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     }
 
     handleOpenModal() {
@@ -20,6 +22,25 @@ class PostFeedItem extends React.Component{
         ele.focus()
     }
 
+    handleLike() {
+        let newLike = {
+            likeableType: "Post",
+            likeableId: this.props.post.id
+        };
+        let liked = false;
+        this.props.likes.forEach( like => {
+            if (like.userId === this.props.currentUser.id) {
+                liked = true;
+                newLike = like;
+            } 
+        })
+        if (liked) {
+            this.props.unlikePost(newLike)
+        } else {
+            this.props.likePost(newLike)
+        }
+    }
+
     render() {
 
         const photo = this.props.post.photoUrl ? <img className="post-photo" src={this.props.post.photoUrl} alt="" /> : null
@@ -29,7 +50,9 @@ class PostFeedItem extends React.Component{
         let lastName;
         let id;
         let location;
-        let likes;
+        let likes = this.props.likes.length > 0 ? <Like 
+            likes={this.props.likes}
+            isLiked={this.props.isLiked}/> : null;
         if (this.props.user && this.props.profile) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
@@ -44,18 +67,9 @@ class PostFeedItem extends React.Component{
                 </div>
             }
         };
-        let commentList;
-        if ( this.props.post && this.props.post.commentIds.length > 0) {
-            commentList = <CommentListContainer post={this.props.post} />;
-        }
-        let commentFormCont;
-        if (this.props.post && this.props.user) {
-            commentFormCont = <CommentFormContainer postId={this.props.post.id} />
-        }
-        if (this.props.likes){
-            
-        }
-        
+        let commentList = this.props.post && this.props.post.commentIds.length > 0 ? <CommentListContainer post={this.props.post} /> : null;
+        let commentFormCont = this.props.post && this.props.user ? <CommentFormContainer postId={this.props.post.id} /> : null;
+        let isLiked =  this.props.isLiked ? "liked" : ""; 
         return (
             <div className="post-item-wide">
                 <li className="list-item-post"> 
@@ -81,11 +95,11 @@ class PostFeedItem extends React.Component{
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
-                
+                    {likes}
                     <p className="line"></p>
                     <div className="post-item-footer">
-                        <div className="post-item-like">
-                            <i className="fas fa-thumbs-up"><strong>Like</strong></i>
+                        <div onClick={() => this.handleLike()} className="post-item-like">
+                            <i className={`fas fa-thumbs-up ${isLiked}`}><strong>Like</strong></i>
                         </div>
                         <div className="post-item-comment">
                             <i onClick={this.setFocus} className="fas fa-comment-alt"> <strong>Comment</strong></i>

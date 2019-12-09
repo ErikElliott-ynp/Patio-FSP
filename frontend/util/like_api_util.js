@@ -1,13 +1,14 @@
 export const createLike = like => {
     return $.ajax({
         url: '/api/likes',
-        method: 'POST'
+        method: 'POST',
+        data: { like }
     })
 }
 
-export const deleteLike = likeId => {
+export const deleteLike = like => {
     return $.ajax({
-        url: `/api/likes/${likeId}`,
-        method: 'DELETE'
+        url: `/api/likes/${like.id}`,
+        method: 'DELETE',
     })
 }

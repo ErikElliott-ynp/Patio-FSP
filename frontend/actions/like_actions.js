@@ -22,7 +22,7 @@ export const createLike = like => dispatch => {
 }
 
 export const deleteLike = like => dispatch => {
-    return LikeAPIUtil.deleteLike(like.id)
+    return LikeAPIUtil.deleteLike(like)
         .then( () => dispatch(removeLike(like)))
 }
 

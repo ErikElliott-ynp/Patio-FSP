@@ -108,7 +108,7 @@ class SignupForm extends React.Component{
                                 <input className="ln-input-box" onChange={this.handleChange('lastName')} type="text" placeholder="   Last Name" value={this.state.lastName}/>
 
                         </div>
-                        <input className="email-input-box" onChange={this.handleChange('email')} type="text" placeholder="   Email" value={this.state.email}/>
+                        <input className="email-input-box" onChange={this.handleChange('email')} type="email" placeholder="   Email" value={this.state.email}/>
                         <input className="pw-input-box" onChange={this.handleChange('password')} type="password" placeholder="   New Password" value={this.state.password}/>
                         <label className="bday-text"><h4 className="outline">Birthday</h4>
                             <input onChange={this.handleChange('dateOfBirth')} value={this.state.dateOfBirth} min="1905-01-01" max="2006-11-04" type="date" id="bday" className="bday-box" required/>

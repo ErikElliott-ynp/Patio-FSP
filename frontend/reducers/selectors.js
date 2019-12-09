@@ -37,3 +37,12 @@ export const fakeFriends = ({ entities}) => {
     return randomFriends;
 }
 
+export const isLiked = (state, post) => {
+    let liked = false;
+    Object.values(state.entities.likes).forEach(like => {
+        if (like.likeableId === post.id && like.userId === state.session.id) {
+            liked = true;
+        }
+    })
+    return liked;
+}

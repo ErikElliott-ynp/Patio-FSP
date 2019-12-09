@@ -1,5 +1,8 @@
 class Api::LikesController < ApplicationController
+
     before_action :require_login
+    before_action :underscore_params!, only: :create
+
 
     def create 
         @like = Like.new(like_params)
@@ -12,7 +15,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        @like = Link.find_by(id: params[:id])
+        @like = Like.find_by(id: params[:id])
         if @like && @like.destroy
             render json: {}
         else
