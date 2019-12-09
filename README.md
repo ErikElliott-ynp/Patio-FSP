@@ -1,6 +1,6 @@
 # Patio 
 
-   Patio is a clone of Facebook where users can connect with friends and family to share posts, photos, and other media
+   Patio is a single-page app, inspired by Facebook, where users can connect with friends and family to share posts, photos, and other media
 about their lives. Users can share posts about their activities, comment on theirs and friend's posts, and create  profiles to highlight how great they are!  
 
 ---
