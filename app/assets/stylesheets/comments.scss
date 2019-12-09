@@ -10,7 +10,8 @@
     height: 60px;
     align-items: center;
     font-family: 'Fira Sans', sans-serif;
-
+    position: relative;
+    z-index: 3;
 }
 
 .comm-form-text {
@@ -105,7 +106,7 @@
     flex-direction: column;
     top: 19px;
     left: -2px;
-    z-index: 5;
+    z-index: 25;
 }
 
 .comment-actions:after {
@@ -117,7 +118,7 @@
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
     border-bottom: 10px solid rgb(255, 255, 255);
-    z-index: 5;
+    z-index: 25;
 }
 
 .comment-actions p {
@@ -133,6 +134,7 @@
 
 #edit-comm-btn {
     padding: 4px 13px;
+    z-index: 25;
 }
 
 .edit-textarea {
@@ -186,6 +188,7 @@
 
 .comm-likes-cont {
     position: relative;
-    right: 35px;
-    bottom: -15px;
+    left: -56px;
+    bottom: -20px;
+    z-index: 3;
 }
