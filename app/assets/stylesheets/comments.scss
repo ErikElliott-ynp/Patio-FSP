@@ -105,6 +105,7 @@
     flex-direction: column;
     top: 19px;
     left: -2px;
+    z-index: 5;
 }
 
 .comment-actions:after {
@@ -116,7 +117,7 @@
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
     border-bottom: 10px solid rgb(255, 255, 255);
-    z-index: 2;
+    z-index: 5;
 }
 
 .comment-actions p {
@@ -127,6 +128,7 @@
         background-color: rgb(223, 223, 223);
         opacity: unset;
     }
+    
 }
 
 #edit-comm-btn {
@@ -160,4 +162,30 @@
 
 .edit-form-comm {
     width: 340px;
+}
+
+.like-btn {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+    color: #385898;
+    position: relative;
+    right: -32px;
+    bottom: -28px;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.liked-comm {
+    color: rgb(0, 60, 145);
+    font-weight: 1000;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.comm-likes-cont {
+    position: relative;
+    right: 35px;
+    bottom: -15px;
 }

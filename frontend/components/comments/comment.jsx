@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Like from "../like/like";
 
 class Comment extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Comment extends React.Component {
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     }
 
     handleDropDown() {
@@ -44,6 +46,24 @@ class Comment extends React.Component {
         }
     }
 
+    handleLike() {
+        let newLike = {
+            likeableType: "Comment",
+            likeableId: this.props.comment.id
+        };
+        let liked = false;
+        this.props.likes.forEach(like => {
+            if (like.userId === this.props.currentUser.id) {
+                liked = true;
+                newLike = like;
+            }
+        })
+        if (liked) {
+            this.props.unlikeComment(newLike)
+        } else {
+            this.props.likeComment(newLike)
+        }
+    }
 
     render () {
         if (!this.props.comment) return null;
@@ -86,12 +106,24 @@ class Comment extends React.Component {
             </div>
 
         text = this.props.editId === this.props.comment.id ? form : div;
+        let isLiked = this.props.isLiked ? "liked-comm" : "";
+        let likes = this.props.likes.length > 0 && (this.props.editId !== this.props.comment.id) ?
+            <Like
+            likes={this.props.likes}
+            isLiked={this.props.isLiked}
+            currentUser={this.props.currentUser} /> : null;
+        let likeBtn = this.props.editId === this.props.comment.id ? null :
+            <p onClick={this.handleLike} className={`like-btn ${isLiked}`}>Like</p>;
         return (
             <div className="comment-wide">
                 <div className="comm-user-pic">
                     <Link to={`/users/${id}`} replace>{pic}</Link>
                 </div>
+                {likeBtn}
                 {text}
+                <div className="comm-likes-cont">
+                    {likes}
+                </div>
             </div>
         )
 

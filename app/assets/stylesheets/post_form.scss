@@ -447,3 +447,23 @@ a.boxclose{
     color: rgb(32, 120, 244);
     fill: rgb(32, 120, 244);
 }
+
+.like-icon {
+    background-image: image_url('like_PNG50.png');
+    background-repeat: no-repeat;
+    background-size: 25px, 25px;       
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.like-cont {
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+    color: gray;
+    font-size: 14px    
+}
+

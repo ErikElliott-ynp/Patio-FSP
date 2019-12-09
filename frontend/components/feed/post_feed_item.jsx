@@ -52,7 +52,8 @@ class PostFeedItem extends React.Component{
         let location;
         let likes = this.props.likes.length > 0 ? <Like 
             likes={this.props.likes}
-            isLiked={this.props.isLiked}/> : null;
+            isLiked={this.props.isLiked}
+            currentUser={this.props.currentUser}/> : null;
         if (this.props.user && this.props.profile) {
             profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="post-item-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="post-item-pic" />
