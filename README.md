@@ -49,9 +49,9 @@ about their lives. Users can share posts about their activities, comment on thei
   ![Comment Code](https://user-images.githubusercontent.com/51393952/70081144-d59b9680-15bc-11ea-8cbf-824f6b579e13.jpg)
   
 #### Custom Index Route
-   This snippet has a custom index route which fetches different posts depending on the users current location (either a profile page or the main news feed). The database query is optimized using `.includes` to avoid N+1 and sanatized to avoid any malicious users attacks including SQL Injections.  
+   This snippet has a custom index route which fetches different posts depending on the users current location (either a profile page or the main news feed). The database query is optimized using `.includes` to avoid N+1 for likes, comments, and likes on comments and sanatized to avoid any malicious users attacks including SQL Injections.  
 
-![Index Route](https://user-images.githubusercontent.com/51393952/70095602-0b02ad00-15da-11ea-9b1b-aa06a8cd4200.jpg)
+![Index Route](https://user-images.githubusercontent.com/51393952/70410120-d3916780-1a02-11ea-8de0-8a1c62b9c848.png)
   
 ## Future Goals
  + Friending
