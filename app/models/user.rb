@@ -22,6 +22,9 @@ class User < ApplicationRecord
 
     has_many :likes
 
+    has_many :friend_requests, dependent: :destroy
+    has_many :pending_friends, through: :friend_requests, source: :friend
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil
