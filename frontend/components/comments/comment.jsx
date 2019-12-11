@@ -74,7 +74,7 @@ class Comment extends React.Component {
         let deleteComm;
         let text;
         if (owner) {
-            name = <Link className="user-name-comm"  to={`/users/${owner.id}`} replace><span>{`${owner.firstName} ${owner.lastName}`}</span></Link>;
+            name = <span> <Link className="user-name-comm" to={`/users/${owner.id}`} replace><span>{`${owner.firstName} ${owner.lastName}`}</span></Link></span>;
             pic = owner.profilePicture ? <img src={owner.profilePicture} className="comm-pic" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="comm-pic" />
             id = owner.id;
@@ -89,8 +89,7 @@ class Comment extends React.Component {
             
         }
         let div = <div className="comment-body">
-                {name}
-                <span className="comm-body-text">{this.props.comment.body}</span>
+            <span className="comm-span"> {name}<span className="comm-body-text">{this.props.comment.body}</span></span>
                 {deleteComm}
             </div>;
         let form = <div className="comment-body">
