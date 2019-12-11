@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :bigint           not null, primary key
+#  body       :string
+#  author_id  :integer          not null
+#  profile_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Post < ApplicationRecord
 
     validate :ensure_photo_or_body
