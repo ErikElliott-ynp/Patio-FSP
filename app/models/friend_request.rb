@@ -11,6 +11,12 @@
 
 class FriendRequest < ApplicationRecord
 
+  validates :user, presence: true
+  validates :friend, presence: true, uniqueness: { score: :user }
+  validate :not_self
+  validate :not_friends
+  validate :not_pending
+
   belongs_to :user,
     foreign_key: :user_id,
     class_name: :User
@@ -23,5 +29,18 @@ class FriendRequest < ApplicationRecord
     user.friends << friend
     destroy
   end
+
+  private
+
+  def not_self
+        errors[:friend] << "can't be user" if user == friend
+  end
+
+  def not_friends
+    errors[:friend] << "is already added" if user.friends.include?(friend)
+  end
   
+  def not_pending
+    errors.[:friend] << "already requested friendship" if friend.pending_friends.include?(user)
+  end
 end

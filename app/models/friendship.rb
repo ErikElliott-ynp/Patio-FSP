@@ -11,6 +11,10 @@
 
 class Friendship < ApplicationRecord
 
+    validates :user, presence: true
+    validates :friend, presence: true, uniqueness: { score: :user }
+    validate :not_self
+    
     after_create :create_inverse_relationship
     after_destroy :destroy_inverse_relationship
 
@@ -26,6 +30,10 @@ class Friendship < ApplicationRecord
     def destroy_inverse_relationship
         friendship = friend.friendships.find_by(friend: user)
         friendship.destroy if friendship
+    end
+
+    def not_self
+        errors[:friend] << "can't be user" if user == friend
     end
     
 end
