@@ -22,10 +22,10 @@ const receiveUser = (user) => {
     }
 }
 
-const receiveUsers = users => {
+const receiveUsers = payload => {
     return {
         type: RECEIVE_USERS,
-        users
+        payload
     }
 }
 
@@ -80,5 +80,5 @@ export const fetchUser = userId => dispatch => {
 
 export const fetchUsers = () => dispatch => {
     return UserAPTUtil.fetchUsers()
-        .then( users => dispatch(receiveUsers(users)))
+        .then( payload => dispatch(receiveUsers(payload)))
 }

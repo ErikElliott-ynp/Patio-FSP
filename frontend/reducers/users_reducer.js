@@ -8,7 +8,7 @@ const UsersReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return Object.assign({}, state, { [action.user.id]: action.user } );
         case RECEIVE_USERS: 
-            return Object.assign({}, state, action.users )
+            return Object.assign({}, state, action.payload.users )
         case LOGOUT_CURRENT_USER:
             return {};
         default:
