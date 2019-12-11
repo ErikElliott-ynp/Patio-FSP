@@ -1,2 +1,1 @@
-json.partial! '/api/users/user', user: @friend
-json.partial! '/api/users/user', user: current_user
+json.partial! 'friend_request', friend_request: @friend_request

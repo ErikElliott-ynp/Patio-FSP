@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from  "../actions/session_actions";
+import { RECEIVE_FRIEND_REQUEST, ACCEPT_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST } from "../actions/friend_request_actions"
 
 const UsersReducer = (state = {}, action) => {
     Object.freeze(state);

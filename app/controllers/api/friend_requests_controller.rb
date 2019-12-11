@@ -17,7 +17,7 @@ class Api::FriendRequestsController < ApplicationController
     def update
        @friend_request = FriendRequest.find(params[:id])
         if @friend_request.accept
-            render :update
+            render json: {}
         else
             render json: @friend_request.errors.full_messages
         end
