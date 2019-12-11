@@ -1,12 +1,12 @@
 class Api::FriendRequestsController < ApplicationController
     def index 
-        @incoming = FriendRequest.where(friend: current_user)
+        @incoming = FriendRequest.where(friend_id: current_user)
         @outgoing = current_user.friend_requests
     end
 
     def create 
         friend = User.find_by(friend_id: params[:friend_request][:friend_id])
-        @friend_request = current_user.friend_requests.new(friend: friend)
+        @friend_request = current_user.friend_requests.new(friend_id: friend)
         if @friend_request.save 
             render :show
         else
@@ -16,7 +16,7 @@ class Api::FriendRequestsController < ApplicationController
 
     def update
         @friend = User.find_by(friend_id: params[:friend_request][:friend_id])
-        @friend_request = current_user.friend_requests.new(friend: @friend)
+        @friend_request = current_user.friend_requests.new(friend_id: @friend)
         if @friend_request.accept
             render :update
         else
@@ -26,7 +26,7 @@ class Api::FriendRequestsController < ApplicationController
 
     def destroy
         friend = User.find_by(friend_id: params[:friend_request][:friend_id])
-        @friend_request = current_user.friend_requests.new(friend: friend)
+        @friend_request = current_user.friend_requests.new(friend_id: friend)
         if @friend_request.destroy
             render json: {}
         else
