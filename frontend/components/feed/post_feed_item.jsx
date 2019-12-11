@@ -96,7 +96,9 @@ class PostFeedItem extends React.Component{
                     }
                     <p className="post-body">{this.props.post.body}</p>
                    {photo}
-                    {likes}
+                   <div className="post-like-cont">
+                        {likes}
+                   </div>
                     <p className="line"></p>
                     <div className="post-item-footer">
                         <div onClick={() => this.handleLike()} className="post-item-like">

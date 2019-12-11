@@ -193,9 +193,12 @@
 
 .comm-likes-cont {
     position: absolute;
-    right: -60px;
-    bottom: -5px;
+    right: -15px;
+    bottom: -15px;
     z-index: 3;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2px 5px 2px 2px;
 }
 
 .comm-text-likes {
@@ -206,4 +209,5 @@
 
 .comm-span {
     padding: 10px 0 10px 10px;
+    word-break: break-word;
 }

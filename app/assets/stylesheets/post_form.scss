@@ -467,7 +467,7 @@ a.boxclose{
     color: gray;
     font-size: 14px;
     position: relative;
-    left: 15px;    
+    left: 0px;    
 }
 
 .like-words {
@@ -476,4 +476,8 @@ a.boxclose{
 
 .news-margin {
     margin-left: 33em;
+}
+
+.post-like-cont {
+    margin-left: 1.5em;
 }

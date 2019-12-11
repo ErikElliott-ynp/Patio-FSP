@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-
-    window.getState = store.getState;
+    if (process.env.NODE_ENV !== "production"){
+        window.getState = store.getState;
+    }
     // new Darkmode().showWidget();
     ReactDOM.render(<Root store={store} /> , divRoot);
 })

@@ -118,7 +118,7 @@ class Comment extends React.Component {
                 <div className="comm-user-pic">
                     <Link to={`/users/${id}`}replace>{pic}</Link>
                 </div>
-                <div class="comm-text-likes">
+                <div className="comm-text-likes">
                     {text}
                     <div className="comm-likes-cont">
                         {likes}
