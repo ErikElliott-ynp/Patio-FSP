@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_234421) do
     t.integer "friend_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["friend_id", "user_id"], name: "index_friendships_on_friend_id_and_user_id", unique: true
-    t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
+    t.index ["friend_id", "user_id"], name: "index_friendships_on_friend_id_and_user_id"
+    t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id"
   end
 
   create_table "likes", force: :cascade do |t|
