@@ -116,6 +116,7 @@ input[type="submit"]:hover {
     height: 400px;
     margin: 20px 25px 0 289px;
     border-radius: 3px;
+    position: fixed;
 }
 
 .feed-side-main * {
@@ -473,3 +474,6 @@ a.boxclose{
     white-space: nowrap;
 }
 
+.news-margin {
+    margin-left: 33em;
+}

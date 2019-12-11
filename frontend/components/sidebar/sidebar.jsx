@@ -15,13 +15,13 @@ const Sidebar = (props) => {
                 <span><i className="fas fa-newspaper"></i> News Feed</span>
             </Link>
             <div className="info-links">
-                <a href="https://www.linkedin.com/in/erik-elliott/">
+                <a href="https://www.linkedin.com/in/erik-elliott/" target="_blank">
                     <span><i className="fab fa-linkedin-in"></i>    LinkedIn</span>
                 </a>
-                <a href="https://github.com/ErikElliott-ynp">
+                <a href="https://github.com/ErikElliott-ynp" target="_blank">
                     <span><i className="fab fa-github"></i>    Github</span>
                 </a>
-                <a href="https://github.com/ErikElliott-ynp/Patio-FSP">
+                <a href="https://github.com/ErikElliott-ynp/Patio-FSP" target="_blank">
                     <span><i className="fas fa-code-branch"></i>    Patio Repo</span>
                 </a>
 
