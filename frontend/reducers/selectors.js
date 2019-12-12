@@ -24,18 +24,14 @@ export const subscribeLikestoItem = ({ entities }, item) => {
     return likes;
 }
 
-export const fakeFriends = ({ entities}) => {
-    let allUsers = Object.values(entities.users);
-    let randomFriends = [];
-    const shuffle = (array) => {
-        array.sort(() => Math.random() - .5)
-        return array;
-    }
-    while (randomFriends.length < 4) {
-        let friend = shuffle(allUsers).pop();
-        randomFriends.push(friend);
-    }
-    return randomFriends;
+export const friends = ({ entities }, user) => {
+    let friends = [];
+    let ids = user.friendIds;
+    ids.forEach( id => {
+        friends.push(entities.users[id])
+    })
+    friends.reverse();
+    return friends;
 }
 
 export const isLiked = (state, item) => {
@@ -71,4 +67,9 @@ export const friendshipSelector = ({entities}, user, currentUser) => {
         }
     }
     return wantedFriendship;
+}
+
+const shuffle = (array) => {
+    array.sort(() => Math.random() - .5)
+    return array;
 }

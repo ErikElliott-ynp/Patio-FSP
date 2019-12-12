@@ -34,7 +34,7 @@ class ProfileInfo extends React.Component {
         let friend2; 
         let friend3; 
 
-        if (this.props.profile && this.props.users) {
+        if (this.props.profile && this.props.friends) {
             aboutMeBtn = this.props.profile === this.props.currentUser ? 
                 <div className="bio-basic" id="bio-basic">
                     Add a short bio to tell people about yourself
@@ -50,10 +50,10 @@ class ProfileInfo extends React.Component {
                     <p className="bio-p">{this.props.profile.aboutMe}</p> 
                 </div> : aboutMeBtn;
         
-            friend0 = <FriendIcon user={this.props.users[8]} />;
-            friend1 = <FriendIcon user={this.props.users[9]} />;
-            friend2 = <FriendIcon user={this.props.users[7]} />;
-            friend3 = <FriendIcon user={this.props.users[4]} />;
+            friend0 = <FriendIcon user={this.props.friends[0]} />;
+            friend1 = <FriendIcon user={this.props.friends[1]} />;
+            friend2 = <FriendIcon user={this.props.friends[2]} />;
+            friend3 = <FriendIcon user={this.props.friends[3]} />;
         }
         
         return (

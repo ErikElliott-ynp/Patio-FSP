@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ProfileInfo from "./profile_info";
 import { updateUser, fetchUser } from "../../actions/session_actions";
-import { fakeFriends } from "../../reducers/selectors";
+import { friends } from "../../reducers/selectors";
 
 const mSTP = (state, ownProps) => {
     let id = ownProps.params.userId;
@@ -9,11 +9,14 @@ const mSTP = (state, ownProps) => {
     if (id) {
         profileId = id;
     }
+    let currentUser = state.entities.users[state.session.id];
+    let user = state.entities.users[profileId];
+
     return {
-        currentUser: state.entities.users[state.session.id],
+        currentUser,
         profile: state.entities.users[profileId],
         profileId,
-        users: Object.values(state.entities.users)
+        friends: friends(state, user)
     }
 }
 
