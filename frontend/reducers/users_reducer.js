@@ -3,16 +3,20 @@ import { RECEIVE_FRIEND_REQUEST, ACCEPT_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST } 
 
 const UsersReducer = (state = {}, action) => {
     Object.freeze(state);
+    let nextState = Object.assign({}, state);
+    let req, currentUser, friendUser;
     if (action.friendRequest) {
-        let req = action.friendRequest;
-        let currentUser = nextState[req.userId];
-        let friendUser = nextState[req.friendId]
+        req = action.friendRequest;
+        currentUser = nextState[req.userId];
+        friendUser = nextState[req.friendId]
     }
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, state, { [action.user.id]: action.user });
+            nextState[action.user.id] = action.user;
+            return nextState;
         case RECEIVE_USER:
-            return Object.assign({}, state, { [action.user.id]: action.user } );
+            nextState[action.user.id] = action.user;
+            return nextState;
         case RECEIVE_USERS: 
             return Object.assign({}, state, action.payload.users )
         case LOGOUT_CURRENT_USER:
@@ -22,14 +26,15 @@ const UsersReducer = (state = {}, action) => {
             friendUser.friendRequesterIds << req.userId;
             return nextState;
         case ACCEPT_FRIEND_REQUEST:
-            currentUser.friends << req.friendId;
-            friendUser.friends << req.userId;
+            currentUser.friendIds.push(req.friendId);
+            friendUser.friendIds.push(req.userId);
             currentUser.pendingFriendIds = removeId(currentUser.pendingFriendIds, req.friendId);
             friendUser.friendRequesterIds = removeId(friendUser.friendRequesterIds, req.userId);
             return nextState;
         case REMOVE_FRIEND_REQUEST:
             currentUser.pendingFriendIds = removeId(currentUser.pendingFriendIds, req.friendId);
             friendUser.friendRequesterIds = removeId(friendUser.friendRequesterIds, req.userId);
+            return nextState;
         default:
             return state;
     }

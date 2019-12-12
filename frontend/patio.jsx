@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 import Darkmode from "darkmode-js";
+import { createFriendRequest, acceptFriendRequest, denyFriendRequest } from "./actions/friend_request_actions"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (process.env.NODE_ENV !== "production"){
         window.getState = store.getState;
+        window.createFriendRequest = createFriendRequest;
+        window.acceptFriendRequest = acceptFriendRequest;
+        window.denyFriendRequest = denyFriendRequest;
+        window.dispatch = store.dispatch;
     }
     // new Darkmode().showWidget();
     ReactDOM.render(<Root store={store} /> , divRoot);

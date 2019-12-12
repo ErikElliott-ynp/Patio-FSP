@@ -4,9 +4,9 @@ class Api::FriendRequestsController < ApplicationController
         @outgoing = current_user.friend_requests
     end
 
-    def create 
-        @friend = User.find_by(id: params[:friend_request][:friend_id])
-        @friend_request = current_user.friend_requests.new(friend: @friend)
+    def create
+        @friend_request = FriendRequest.new(friend_id: params[:friend_request][:friend_id]) 
+        @friend_request.user_id = current_user.id
         if @friend_request.save 
             render :show
         else
@@ -31,4 +31,7 @@ class Api::FriendRequestsController < ApplicationController
             render @friend_request.errors.full_messages, status: 422
         end
     end
+
+
+    private 
 end

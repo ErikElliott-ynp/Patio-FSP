@@ -8,14 +8,14 @@ export const createFriendRequest = friendRequest => {
 
 export const acceptFriendRequest = friendRequestId => {
     return $.ajax({
-        url: `/api/friend_request/${friendRequestId}`,
+        url: `/api/friend_requests/${friendRequestId}`,
         method: 'PATCH'
     })
 }
 
 export const denyFriendRequest = friendRequestId => {
     return $.ajax({
-        url: `/api/friend_request/${friendRequestId}`,
+        url: `/api/friend_requests/${friendRequestId}`,
         method: 'DELETE'
     })
 }
