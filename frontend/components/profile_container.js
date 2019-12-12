@@ -1,17 +1,12 @@
 import { connect } from "react-redux";
-import { fetchUsers } from "../actions/session_actions";
 import Profile from "./profile";
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
+    let user = ownProps.match.params ? state.entities.users[ownProps.match.params.userId] : null;
+    let currentUser = state.entities.users[state.session.id];
     return {
-
+        isFriend: user ? currentUser.friendIds.includes(user.id) : false,
     }
 }
 
-const mDTP = dispatch => {
-    return {
-        fetchUsers: () => dispatch(fetchUsers())
-    }
-}
-
-export default connect(mSTP, mDTP)(Profile);
+export default connect(mSTP)(Profile);
