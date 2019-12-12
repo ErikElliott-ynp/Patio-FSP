@@ -6,13 +6,13 @@ const FriendRequestsReducer = ( state = {}, action ) => {
     let nextState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_FRIEND_REQUEST:
-            nextState[action.friendRequest.id] = action.friendRequest;
+            nextState[action.payload.friendRequest.id] = action.payload.friendRequest;
             return nextState;
         case ACCEPT_FRIEND_REQUEST:
-            delete nextState[action.friendRequest.id];
+            delete nextState[action.payload.friendRequest.id];
             return nextState;
         case REMOVE_FRIEND_REQUEST:
-            delete nextState[action.friendRequest.id];
+            delete nextState[action.payload.friendRequest.id];
             return nextState;
         case RECEIVE_USERS:
             return Object.assign({}, nextState, action.payload.friendRequests)

@@ -16,8 +16,9 @@ class Api::FriendRequestsController < ApplicationController
 
     def update
        @friend_request = FriendRequest.find(params[:id])
-        if @friend_request.accept
-            render json: {}
+       if @friend_request.accept
+            @friendship = Frienship.where("user_id = ? AND friend_id = ?", @friend_request.user_id, @friend_request.friend_id)
+            render :show
         else
             render json: @friend_request.errors.full_messages
         end

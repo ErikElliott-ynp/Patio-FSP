@@ -61,3 +61,5 @@ export const friendRequestSelector = ({ entities }, user, currentUser) => {
     } 
     return wantedRequest;
 }
+
+export const friendshipSelector = ({entities}, user, currentUser)

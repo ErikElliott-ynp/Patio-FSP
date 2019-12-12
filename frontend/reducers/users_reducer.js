@@ -1,14 +1,14 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from  "../actions/session_actions";
-import { RECEIVE_FRIEND_REQUEST, ACCEPT_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST } from "../actions/friend_request_actions"
+import { RECEIVE_FRIEND_REQUEST, ACCEPT_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, REMOVE_FRIENDSHIP } from "../actions/friend_request_actions"
 
 const UsersReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
     let req, currentUser, friendUser;
-    if (action.friendRequest) {
-        req = action.friendRequest;
+    if (action.payload && action.payload.friendRequest) {
+        req = action.payload.friendRequest;
         currentUser = nextState[req.userId];
-        friendUser = nextState[req.friendId]
+        friendUser = nextState[req.friendId];
     }
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
@@ -34,6 +34,12 @@ const UsersReducer = (state = {}, action) => {
         case REMOVE_FRIEND_REQUEST:
             currentUser.pendingFriendIds = removeId(currentUser.pendingFriendIds, req.friendId);
             friendUser.friendRequesterIds = removeId(friendUser.friendRequesterIds, req.userId);
+            return nextState;
+        case REMOVE_FRIENDSHIP:
+            currentUser = nextState[action.payload.friendship.userId];
+            friendUser = nextState[action.payload.friendship.friendId];
+            currentUser.friendIds = removeId(currentUser.friendIds, action.payload.friendship.friendId);
+            friendUser.friendIds = removeId(friendUser.friendIds, action.payload.friendship.userId);
             return nextState;
         default:
             return state;
