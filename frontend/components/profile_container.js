@@ -6,6 +6,7 @@ const mSTP = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
     return {
         isFriend: user ? currentUser.friendIds.includes(user.id) : false,
+        self: user === currentUser
     }
 }
 
