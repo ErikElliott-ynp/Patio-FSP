@@ -2,10 +2,10 @@ import React from "react";
 import NavBarContainer from "./nav/nav_bar_container";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import SignupContainer from "./signup/signup_container"
-import Profile from "./profile"
+import SignupContainer from "./signup/signup_container";
+import Profile from "./profile";
 import NewsFeed from "./news_feed";
-import Modal from "./modal/modal"
+import Modal from "./modal/modal";
 
 const App = () => {
 

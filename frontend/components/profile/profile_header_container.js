@@ -4,15 +4,18 @@ import ProfileHeader from "./profile_header";
 import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => {
-    let id = parseInt(ownProps.params.userId);
+    let id = ownProps.params.userId;
     let profileId = state.session.id;
     if (id) {
         profileId = id;
     }
+    let user = state.entities.users[profileId];
+    let currentUser = state.entities.users[state.session.id]
     return {
-        user: state.entities.users[profileId],
+        user,
         profileId: profileId,
-        currentUser: state.entities.users[state.session.id]
+        currentUser,
+        isFriend: user ? currentUser.friendIds.includes(user.id) : false
     }
 }
 

@@ -1,10 +1,11 @@
-import React from "react"
-import PostFeedContainer from "./feed/post_feed_container"
+import React from "react";
+import PostFeedContainer from "./feed/post_feed_container";
 import PostFormContainer from "./posts/post_form_container";
 import ProfileInfoContainer from "./profile/profile_info_container";
 import ProfileHeaderContainer from "./profile/profile_header_container";
 
 const Profile = (props) => {
+
     return (
         <div className="profile-main">
             <ProfileHeaderContainer params={props.match.params}/>
