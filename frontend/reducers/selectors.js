@@ -62,4 +62,13 @@ export const friendRequestSelector = ({ entities }, user, currentUser) => {
     return wantedRequest;
 }
 
-export const friendshipSelector = ({entities}, user, currentUser)
+export const friendshipSelector = ({entities}, user, currentUser) => {
+    let friendships = entities.friendships;
+    let wantedFriendship;
+    for ( let ship in friendships ) {
+        if (friendships[ship].friendId === user.id && friendships[ship].userId === currentUser.id) {
+            wantedFriendship = friendships[ship];
+        }
+    }
+    return wantedFriendship;
+}

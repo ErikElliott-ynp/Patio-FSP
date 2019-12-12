@@ -12,7 +12,7 @@
 class Friendship < ApplicationRecord
 
     validates :user, presence: true
-    validates :friend, presence: true, uniqueness: { score: :user }
+    validates :friend, presence: true, uniqueness: { scope: :user }
     validate :not_self
     
     after_create :create_inverse_relationship
@@ -24,11 +24,11 @@ class Friendship < ApplicationRecord
     private
 
     def create_inverse_relationship
-        friend.friendships.create(friend: user) unless friend.friends.include?(user)
+        Friendship.create(user_id: friend.id, friend_id: user.id ) unless friend.friends.include?(user)
     end
 
     def destroy_inverse_relationship
-        friendship = friend.friendships.find_by(friend: user)
+        friendship = friend.friendships.find_by(friend_id: user.id)
         friendship.destroy if friendship
     end
 

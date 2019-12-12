@@ -12,6 +12,7 @@ const FrienshipReducer = (state = {}, action) => {
             return nextState;
         case ACCEPT_FRIEND_REQUEST:
             nextState[action.payload.friendship.id] = action.payload.friendship;
+            nextState[action.payload.otherSide.id] = action.payload.otherSide;
             return nextState;
         default:
             return state;
