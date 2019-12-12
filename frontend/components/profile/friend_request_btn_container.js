@@ -1,16 +1,19 @@
 import { connect } from "react-redux";
 import { createFriendRequest, acceptFriendRequest, denyFriendRequest } from "../../actions/friend_request_actions";
 import FriendRequestButton from "./friend_request_btn";
+import { friendRequestSelector } from "../../reducers/selectors";
+import { withRouter } from "react-router";
 
 const mSTP = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
-    let user = state.entities.users[ownProps.params.userId];
+    let user = ownProps.match.params ? state.entities.users[ownProps.match.params.userId] : null ;
     return {
         user, 
         currentUser,
         isFriend: user ? currentUser.friendIds.includes(user.id) : false,
-        pending: user ? currentUser.pendingFriendIds.includes(user.id) : false,
+        pendingRequest: user ? currentUser.pendingFriendIds.includes(user.id) : false,
         friendRequested: user ? currentUser.friendRequesterIds.includes(user.id) : false,
+        friendRequest: user ? friendRequestSelector(state, user, currentUser) : false
     }
 }
 
@@ -22,4 +25,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(FriendRequestButton);
+export default withRouter(connect(mSTP, mDTP)(FriendRequestButton));

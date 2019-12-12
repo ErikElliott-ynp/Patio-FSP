@@ -22,8 +22,8 @@ const UsersReducer = (state = {}, action) => {
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_FRIEND_REQUEST:
-            currentUser.pendingFriendIds << req.friendId;
-            friendUser.friendRequesterIds << req.userId;
+            currentUser.pendingFriendIds.push(req.friendId);
+            friendUser.friendRequesterIds.push(req.userId);
             return nextState;
         case ACCEPT_FRIEND_REQUEST:
             currentUser.friendIds.push(req.friendId);

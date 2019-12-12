@@ -1,4 +1,5 @@
 import React from "react"
+import FriendRequestButtonContainer from "./friend_request_btn_container";
 
 
 class ProfileHeader extends React.Component {
@@ -44,6 +45,7 @@ class ProfileHeader extends React.Component {
         let firstName;
         let lastName;
         let updateCover;
+        let friendBtn;
         let profilePicUpdate;
         if (this.props.user) {
              coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
@@ -75,6 +77,7 @@ class ProfileHeader extends React.Component {
                                     </label>
                                 </form>
                             </div>) : null
+        friendBtn = this.props.user.id === this.props.currentUser.id ? null : <FriendRequestButtonContainer /> ;
         }
         return (
             <div className="prof-header-main">
@@ -84,6 +87,7 @@ class ProfileHeader extends React.Component {
                 {updateBtn}
                 {profilePicUpdate}
                 {updateCover}
+                {friendBtn}
             </div>
         )
     }

@@ -48,3 +48,14 @@ export const isLiked = (state, item) => {
     })
     return liked;
 }
+
+export const friendRequestSelector = ({ entities }, user, currentUser) => {
+    let requests = entities.friendRequests
+    let wantedRequest;
+    for ( let req in requests ) {
+        if (requests[req].friendId === user.id && requests[req].userId === currentUser.id ){
+            wantedRequest = requests[req];
+        }
+    } 
+    return wantedRequest;
+}
