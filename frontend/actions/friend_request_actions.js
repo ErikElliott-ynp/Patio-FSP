@@ -30,6 +30,7 @@ export const createFriendRequest = friendRequest => dispatch => {
 }
 
 export const acceptFriendRequest = friendRequest => dispatch => {
+    
     return FriendRequestUtil.acceptFriendRequest(friendRequest.id)
         .then( () => dispatch(receiveAcceptedFriendRequest(friendRequest)))
 }

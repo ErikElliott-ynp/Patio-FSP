@@ -19,3 +19,10 @@ export const denyFriendRequest = friendRequestId => {
         method: 'DELETE'
     })
 }
+
+export const removeFriend = friendshipId => {
+    return $.ajax({
+        url: `/api/friendships/${friendshipId}`,
+        method: 'DELETE'
+    })
+}

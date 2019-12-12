@@ -26,7 +26,7 @@ class FriendRequest < ApplicationRecord
     class_name: :User
 
   def accept
-    user.friends << friend
+    friend.friends << user
     destroy
   end
 

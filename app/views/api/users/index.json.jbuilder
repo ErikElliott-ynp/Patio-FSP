@@ -14,3 +14,12 @@ json.friendRequests do
         end
     end
 end
+json.friendships do
+    @users.each do |user|
+        user.friendships.each do |friendship|
+            json.set! friendship.id do
+                json.extract! friendship, :id, :user_id, :friend_id
+            end
+        end
+    end
+end

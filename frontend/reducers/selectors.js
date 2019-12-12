@@ -55,6 +55,8 @@ export const friendRequestSelector = ({ entities }, user, currentUser) => {
     for ( let req in requests ) {
         if (requests[req].friendId === user.id && requests[req].userId === currentUser.id ){
             wantedRequest = requests[req];
+        } else if (requests[req].userId === user.id && requests[req].friendId === currentUser.id ) {
+            wantedRequest = requests[req];
         }
     } 
     return wantedRequest;
