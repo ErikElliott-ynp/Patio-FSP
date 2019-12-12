@@ -34,6 +34,4 @@ class Api::FriendRequestsController < ApplicationController
         end
     end
 
-
-    private 
 end

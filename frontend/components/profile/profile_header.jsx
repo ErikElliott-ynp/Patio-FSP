@@ -34,10 +34,6 @@ class ProfileHeader extends React.Component {
         }
     }
 
-
-
-
-
     render() {
         let coverPhoto;
         let profilePic;
