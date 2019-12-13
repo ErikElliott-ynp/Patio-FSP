@@ -44,7 +44,7 @@ class ProfileHeader extends React.Component {
         let friendBtn;
         let profilePicUpdate;
         if (this.props.user) {
-             coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : null;
+            coverPhoto = this.props.user.coverPhoto ? <img src={this.props.user.coverPhoto} className="cover-photo-img" /> : <div className="cover-photo-img" style={{ "background-color": "#1c1e21"}}></div> ;
              profilePic = this.props.user.profilePicture ? <img src={this.props.user.profilePicture} className="prof-photo-profile" />
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="prof-photo-profile" />;
             updateBtn = this.props.currentUser === this.props.user ? <button onClick={() => this.props.openModal("updateProfile")} className="edit-prof-btn">Update Profile</button>
