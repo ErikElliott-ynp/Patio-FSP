@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
         currentUser,
         profile: state.entities.users[profileId],
         profileId,
-        friends: friends(state, user)
+        friends: user ? friends(state, user) : false
     }
 }
 

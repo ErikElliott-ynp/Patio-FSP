@@ -155,7 +155,7 @@ class NavBar extends React.Component {
                                                 Home
                                             </div>
                                         </Link>
-                                        <Icons/>
+                                        <Icons friendRequests={this.props.currentUser.friendRequesterIds}/>
 
                                         <button onClick={this.handleLogout} className="action-button logout clearfix">Log Out</button>
                                     </div>

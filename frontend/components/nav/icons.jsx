@@ -1,4 +1,5 @@
 import React from "react";
+import NavFriendRequestContainer from "./nav_friend_request_container";
 
 class Icons extends React.Component {
     constructor(props) {
@@ -19,9 +20,15 @@ class Icons extends React.Component {
         }
     }
 
+    
 
     
+    
     render () {
+        let requests = this.props.friendRequests.map( (request, i) => {
+            return <NavFriendRequestContainer request={request} key={i}/>
+        });
+        let newFriendRequests = this.props.friendRequests.length > 0 ? requests : <h4>No New Friend Requests</h4>;
         return (
             <div className="icons-cont">
                 <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
@@ -30,23 +37,24 @@ class Icons extends React.Component {
                 <div className="request-wrapper hidden down" id="friend-box">
                     <ul>
                         <section id="reqs">
-                         Friend Requests   
+                            Friend Requests   
                         </section>
+                        {newFriendRequests}
                     </ul>
-                    <h4>No New Friend Requests</h4>
+                    
                 </div>
                 <div className="msg-wrapper hidden down" id="msg-box" >
                     <ul>
-                    <section id="msgs">
-                        Messages
+                        <section id="msgs">
+                            Messages
                         </section>
                     </ul>
                 <h4>There's nothing here</h4>
                 </div>
                 <div className="note-wrapper hidden down" id="note-box" >
                     <ul>
-                    <section id="notes">
-                        Notifications
+                        <section id="notes">
+                            Notifications
                         </section>
                     </ul>
                 <h4>You're all caught up!</h4>
@@ -54,6 +62,10 @@ class Icons extends React.Component {
             </div>
         )
     }
+}
+
+Icons.defaultProps = {
+    friendRequests: []
 }
 
 export default Icons;

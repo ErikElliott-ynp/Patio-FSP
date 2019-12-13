@@ -12,7 +12,7 @@
 class FriendRequest < ApplicationRecord
 
   validates :user, presence: true
-  validates :friend, presence: true, uniqueness: { score: :user }
+  validates :friend, presence: true, uniqueness: { scope: :user }
   validate :not_self
   validate :not_friends
   validate :not_pending
