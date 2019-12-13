@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     before_action :underscore_params!, only: [:create, :update]
 
     def index
-        @users = User.includes(:friend_requests, :friends).all
+        @users = User.includes(:friend_requests, :friendships).all
         render :index
     end
 
