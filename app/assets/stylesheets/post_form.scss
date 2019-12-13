@@ -293,6 +293,34 @@ input[type="submit"]:hover {
     color: rgb(81, 134, 248);
 }
 
+.fa-thumbs-up strong {
+    color: #606770;
+    -webkit-text-stroke-width: 0px;
+    letter-spacing: .5px;
+}
+
+.fa-comment-alt::before {
+    color: white;
+    -webkit-text-stroke: #606770;
+    -webkit-text-stroke-width: 1px;
+}
+.fa-thumbs-up {
+    color: white;
+    -webkit-text-stroke: #606770;
+    -webkit-text-stroke-width: 1px;
+}
+
+.fa-comment-alt strong {
+    color: #606770;
+    &:hover {
+        color: rgb(88,144,255);
+    }
+}
+
+.hover-comm:hover {
+    -webkit-text-fill-color: rgb(88,144,255);
+}
+
 .post-item-img {
     float: left;
     display: flex;
@@ -452,9 +480,13 @@ a.boxclose{
     border-radius: 8px;
 }
 
-.liked {
-    color: rgb(32, 120, 244);
-    fill: rgb(32, 120, 244);
+#liked {
+    color: rgb(88,144,255);
+    -webkit-text-stroke-color: rgb(157, 189, 255);
+}
+
+#liked strong {
+    color: rgb(88,144,255);
 }
 
 .like-icon {

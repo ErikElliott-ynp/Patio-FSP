@@ -102,10 +102,10 @@ class PostFeedItem extends React.Component{
                     <p className="line"></p>
                     <div className="post-item-footer">
                         <div onClick={() => this.handleLike()} className="post-item-like">
-                            <i className={`fas fa-thumbs-up ${isLiked}`}><strong>Like</strong></i>
+                            <i className={`fas fa-thumbs-up`} id={isLiked}><strong>Like</strong></i>
                         </div>
                         <div className="post-item-comment">
-                            <i onClick={this.setFocus} className="fas fa-comment-alt"> <strong>Comment</strong></i>
+                            <i onClick={this.setFocus} className="fas fa-comment-alt hover-comm"> <strong>Comment</strong></i>
                         </div>
                     </div>
                 </li>
