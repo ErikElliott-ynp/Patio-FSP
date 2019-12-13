@@ -113,8 +113,7 @@ input[type="submit"]:hover {
     justify-content: space-between;
     width: 200px;
     height: 400px;
-    margin: 20px 25px 0 289px;
-    border-radius: 3px;
+    margin: 20px 25px 0 280px;
     position: fixed;
 }
 
@@ -377,6 +376,7 @@ input[type="submit"]:hover {
 .sidebar-prof {
     cursor: pointer;
     font-size: 20px;
+    padding: 1px;
     display: flex;
     align-items: flex-end;
     &:hover{

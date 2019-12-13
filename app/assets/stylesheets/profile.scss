@@ -1,13 +1,13 @@
 .prof-info-main {
     height: min-content;
     min-width: 255px;
-    margin: 25px 20px 0 290px;
+    margin: 25px 15px 0 285px;
     display: inline-block;
     font-family: 'Fira Sans', sans-serif;
     border-radius: 20px;
     background-color: rgb(248, 242, 242);
     padding: 0 7px 0 0;
-
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
 }
 
 .profile-main {
@@ -97,7 +97,8 @@
 }
 
 .prof-header-main {
-    margin: 0 0 0 289px;
+    position: relative;
+    margin: -4px1 0 0 283px;
     width: 845px;
     height: 370px;
     text-align: center;
@@ -115,9 +116,11 @@
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 825px;
+    width: 102.5%;
     height: 370px;
-    left: 290px;
+    left: 7px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+    border-radius: 4px;
 }
 
 .prof-photo-profile {
