@@ -14,7 +14,7 @@ body {
     background-image: linear-gradient(rgb(115, 196, 221), #36C5F0 23%);
     height: 80px;
     z-index: 5;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgb(49, 183, 224);
 }
 
 
@@ -546,9 +546,8 @@ body {
 
 .nav-btn {
     color: white;
-    background-color: #4267b2;
-    border: 1px solid rgb(66, 103, 178);
-    width: 55px;
+    background-color: #36C5F0;
+    border: 1px solid rgb(48, 181, 221);
     outline: none;
 }
 

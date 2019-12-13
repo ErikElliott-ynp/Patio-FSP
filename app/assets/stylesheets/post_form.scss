@@ -34,21 +34,20 @@ input[type="text"], input[type="password"], textarea, select {
     background-color: rgb(248, 242, 242);   
     margin-top: 25px; 
     border-radius: 4px;
-    border: 1px solid gray;
     display: inline-block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
 }
 .post-form-header {
     padding: 10px 0 10px 0;
-    border-bottom: 2px solid gray;
-    border-top: 1px solid gray;
-    border-left: .5px solid gray;
-    background-color: #e9ebee;
-    
+    border-bottom: 1px solid #c2c2c2;
+    background-color: #f0f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 
 .post-form-header span {
-    font-size: 18px;
+    font-size: 17px;
     padding: 0 0 8px 7px;
     font-family: 'Fira Sans', sans-serif;
     letter-spacing: .5px;
@@ -65,6 +64,7 @@ input[type="submit"]:hover {
 .form-body {
     height: 90px;
     width: 530px;
+    margin-bottom: 18px;
 }
 
 .post-prof-img {
@@ -79,7 +79,6 @@ input[type="submit"]:hover {
     height: 80px;
     background-color: inherit;
     border: none;
-    border-bottom: 2px grey solid;
     font-size: 16px;
     letter-spacing: .5px;
     padding: 20px 0 0 20px;
@@ -177,6 +176,9 @@ input[type="submit"]:hover {
     align-items: flex-end;
     font-family: 'Fira Sans', sans-serif;
     font-size: 16px;
+    margin: 0 12px;
+    border-top: 1px solid #dbdbdb;
+    width: 95%;
 }
 
 .upload-mountains {
@@ -202,7 +204,7 @@ input[type="submit"]:hover {
 
 
 .post-submit-btn {
-    margin: 25px 35px 0 0;
+    margin: 9px 35px 0 0;
     border-radius: 2px;
     font-family: 'Fira Sans', sans-serif;
     background-color: #36C5F0;   
@@ -213,9 +215,10 @@ input[type="submit"]:hover {
 
 .post-item-wide {
     background-color: rgb(248, 242, 242);
-    border-radius: 14px;
+    border-radius: 4px;
     margin: 20px 0 20px ;
     max-width: 530px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
 }
 
 .active-news-feed {
