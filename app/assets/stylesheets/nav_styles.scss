@@ -206,13 +206,12 @@ body {
     height: 17px;
     border-radius: 4px;
     font-size: 14px;
-    padding: 3px;
+    padding: 3px 3px 3px 9px;
     border: .5px solid black;
 }
 
 .search-bar::placeholder {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 0px;
     letter-spacing: 1px;

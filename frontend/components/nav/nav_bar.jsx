@@ -8,11 +8,13 @@ class NavBar extends React.Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            search: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
         this.resetState = this.resetState.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleSubmit(e){
@@ -60,7 +62,8 @@ class NavBar extends React.Component {
     resetState() {
         this.setState({
             email: "",
-            password: ""
+            password: "",
+            search: ""
         });
     }
 
@@ -71,6 +74,12 @@ class NavBar extends React.Component {
             this.demoLogin(email, password)
         ) );
 
+    }
+
+    handleSearch (e) {
+        this.setState({
+            search: e.currentTarget.value 
+        })
     }
 
     handleLogout() {
@@ -87,6 +96,12 @@ class NavBar extends React.Component {
         }
     }
 
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.resetState();
+        }
+    }
     
 
 
@@ -138,7 +153,7 @@ class NavBar extends React.Component {
                                                 <h2 className="the-p">P</h2>
                                             </div>
                                         </Link>
-                                        <input className="search-bar" type="text" placeholder="Search"/>
+                                        <input className="search-bar" type="text" onChange={(e) => this.handleSearch(e)} value={this.state.search} placeholder="Search"/>
                                         <i className="fa fa-search"></i>
                                     </div>
                                     <div className="right-logged-in clearfix">
