@@ -54,7 +54,6 @@ about their lives. Users can share posts about their activities, comment on thei
 ![Index Route](https://user-images.githubusercontent.com/51393952/70410120-d3916780-1a02-11ea-8de0-8a1c62b9c848.png)
   
 ## Future Goals
- + Friending
  + Videos on posts 
  + Photo carousel
  + Search 
