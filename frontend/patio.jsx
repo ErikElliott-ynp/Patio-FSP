@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("click", (e) => {
-    if ( !(e.target.style.color === 'white') && !(e.target.matches(".icons-cont"))) {
+    const divs = ["friend-box", "msg-box", "note-box"];
+    if ( !pathChecker(e, divs) && (!(e.target.style.color === 'white') && !(e.target.matches(".icons-cont")))) {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];
@@ -52,4 +53,13 @@ document.addEventListener("click", (e) => {
         }
     }
 })
+
+const pathChecker = (e, ids) => {
+    let check = false;
+    for (let i = 0; i < e.path.length; i++) {
+        if (ids.includes(e.path[i].id)) check = true;
+        if (e.path[i].nodeName === 'A') return false
+    }
+    return check;
+}
     
