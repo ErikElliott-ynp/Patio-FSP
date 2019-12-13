@@ -24,10 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (process.env.NODE_ENV !== "production"){
         window.getState = store.getState;
-        window.createFriendRequest = createFriendRequest;
-        window.acceptFriendRequest = acceptFriendRequest;
-        window.denyFriendRequest = denyFriendRequest;
-        window.dispatch = store.dispatch;
+        
     }
     // new Darkmode().showWidget();
     ReactDOM.render(<Root store={store} /> , divRoot);
@@ -36,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
     const divs = ["friend-box", "msg-box", "note-box"];
-    if ( !pathChecker(e, divs) && (!(e.target.style.color === 'white') && !(e.target.matches(".icons-cont")))) {
+    if (!pathChecker(e, divs) && (!(e.target.style.color === 'white') && !(e.target.matches(".icons-cont")))) {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];

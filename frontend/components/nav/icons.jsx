@@ -5,12 +5,13 @@ class Icons extends React.Component {
     constructor(props) {
         super(props)
         this.handleIcons = this.handleIcons.bind(this);
+        this.handleFriendNotificiations = this.handleFriendNotificiations.bind(this);
     }
 
     handleIcons(elementId, iconId) {
         let ele = document.getElementById(elementId)
         let classArray = Array.from(ele.classList);
-        let icon = document.getElementById(iconId)
+        let icon = document.getElementById(iconId);
         if (classArray.includes("hidden")) {
             ele.classList.remove('hidden');
             icon.style.color = 'white';
@@ -20,7 +21,18 @@ class Icons extends React.Component {
         }
     }
 
-    
+    handleFriendNotificiations() {
+        let notifications = document.getElementById("notifs-friends")
+        let icon = document.getElementById("icon-friend")
+        if (!notifications) return true;
+        if (this.props.friendRequests.length > 0) {
+            notifications.classList.remove('hidden');
+            // icon.style.color = "rgb(239, 239, 239)"
+        } else if (this.props.friendRequests.length === 0) {
+            notifications.classList.add('hidden');
+            // icon.style.color = "rgb(58, 56, 56)"
+        }
+    }
 
     
     
@@ -29,6 +41,8 @@ class Icons extends React.Component {
             return <NavFriendRequestContainer request={request} key={i}/>
         });
         let newFriendRequests = this.props.friendRequests.length > 0 ? requests : <h4>No New Friend Requests</h4>;
+        let friendNotifications = this.props.friendRequests.length;
+        this.handleFriendNotificiations();
         return (
             <div className="icons-cont">
                 <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
@@ -58,6 +72,9 @@ class Icons extends React.Component {
                         </section>
                     </ul>
                 <h4>You're all caught up!</h4>
+                </div>
+                <div className="friend-notifs hidden" id="notifs-friends">
+                    {friendNotifications}
                 </div>
             </div>
         )

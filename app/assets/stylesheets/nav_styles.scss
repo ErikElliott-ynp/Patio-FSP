@@ -361,6 +361,10 @@ body {
     color: rgb(0, 0, 0);
 }
 
+.fa-user-friends:hover {
+    color: rgb(0, 0, 0);
+}
+
 .request-wrapper {
     position: absolute;
     top: 44px;
@@ -566,4 +570,19 @@ body {
     margin-left: 3px;
     letter-spacing: .03em;
     color: #385898;
+}
+
+.friend-notifs {
+    position: absolute;
+    top: 1px;
+    left: 15px;
+    max-width: min-content;
+    height: 1em;
+    font-family: 'Fira Sans', sans-serif;
+    padding: 3px 5px 1px 4px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    border-radius: 2px;
+    text-align: center;
 }
