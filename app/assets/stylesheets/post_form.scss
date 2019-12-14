@@ -113,7 +113,7 @@ input[type="submit"]:hover {
     justify-content: space-between;
     width: 200px;
     height: 400px;
-    margin: 20px 25px 0 280px;
+    margin: 20px 25px 0 11em;
     position: fixed;
 }
 
@@ -140,13 +140,18 @@ span .fa-github {
 
 
 
-.info-links {
+.feed-side-main .info-links {
     display: flex;
     flex-direction: column;
     margin-bottom: 150px;
+    a {
+        padding-left: 4px;
+    }
     a:hover {
     background-color: rgb(255, 255, 255);
+    border-radius: 3px;
     }
+    margin-left: 0px
 }
 
 .scroll-feed {
@@ -238,6 +243,7 @@ span .fa-github {
     background-position-x: 0px;
     background-position-y: -711px;
     background-size: 37px 1608px;
+    margin-left: 3px;
 }
 
 .news-feed-cont {
@@ -405,7 +411,8 @@ span .fa-github {
     display: flex;
     align-items: flex-end;
     &:hover{
-    background-color: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
+        border-radius: 3px;
     }
 }
 
@@ -547,7 +554,7 @@ a.boxclose{
 }
 
 .news-margin {
-    margin-left: 33em;
+    margin-left: 26em;
 }
 
 .post-like-cont {
