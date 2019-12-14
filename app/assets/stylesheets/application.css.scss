@@ -15,8 +15,9 @@
  *= require signup
  *= require profile
  *= require post_form
+ += require comments
+ += require sessions
  *= require modal
  *= require_tree .
  *= require_self
  */
-@import 'font-awesome'
