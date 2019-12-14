@@ -27,7 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
