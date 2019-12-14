@@ -126,12 +126,16 @@ input[type="submit"]:hover {
     margin: 7px 0;
 }
 
-.fa-github {
-    margin-left: 6px;
+span .fa-github {
+    margin-left: -2px;
 }
 
 .feed-side-main img {
     padding-right: 5px;
+}
+
+.fa-code-branch {
+    margin-right: 1px;
 }
 
 
@@ -177,19 +181,17 @@ input[type="submit"]:hover {
     margin: 0 12px;
     border-top: 1px solid #dbdbdb;
     width: 95%;
+    padding-bottom: 3px;
 }
 
-.upload-mountains {
-    margin: 7px 0 0 20px;
-    cursor: pointer;
-}
 
 .upload-mountains span {
-   position: relative;
-    left: 36px;
-    font-size: 17px;
+    position: relative;
+    left: 22px;
+    font-size: 16px;
     display: grid;
-    top: 6px;
+    top: 4px;
+    padding-left: 2px;
 }
 
 .post-form-label {
@@ -227,6 +229,29 @@ input[type="submit"]:hover {
 .active-news-feed {
     background-color: white;
     border-radius: 3px;
+}
+
+.news-icon {
+    background-image: url('more-icons.png');
+    width: 20px;
+    height: 20px;
+    background-position-x: 0px;
+    background-position-y: -711px;
+    background-size: 37px 1608px;
+}
+
+.news-feed-cont {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+
+
+.news-feed-cont span {
+    font-size: 17px;
+    letter-spacing: .5px;
+    margin-top: 2px;
 }
 
 .post-item-footer {
@@ -349,8 +374,8 @@ input[type="submit"]:hover {
      width: 150px;
     height: 150px;
      position: relative;
-    bottom: -40px;
-    right: -220px;
+    bottom: 5px;
+    right: -16px;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -405,21 +430,21 @@ input[type="submit"]:hover {
 
 
 a.boxclose{
-    position: absolute;
-    top: 17px;
-    left: -8px;
-    margin-top:-30px;
-    margin-right:-30px;
-    cursor:pointer;
-    color: #fff;
-    border: 1px solid #AEAEAE;
-    border-radius: 30px;
-    background: #605F61;
-    font-size: 31px;
+      position: absolute;
+    top: 27px;
+    right: 30px;
+    margin-top: -30px;
+    margin-right: -30px;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font-size: 17px;
     font-weight: bold;
     display: inline-block;
     line-height: 0px;
-    padding: 11px 3px;       
+    padding: 11px 3px;     
+    &:hover{
+        color: white;
+    }
 }
 
 .boxclose:before {
@@ -472,12 +497,15 @@ a.boxclose{
 }
 
 .upload-mountains {
-    background-image: image_url('patio_upload.jpg'); 
-    background-size: 32px 27px;
+    background-image: image_url('icons.png'); 
+    background-position: 0 -1100px;
+    background-size: 64px 1916px;
     background-repeat: no-repeat;
-    width: 30px;
-    height: 28px;
+    width: 21px;
+    height: 21px;
     border-radius: 8px;
+    margin: 7px 0 0 20px;
+    cursor: pointer;
 }
 
 #liked {
@@ -491,12 +519,13 @@ a.boxclose{
 }
 
 .like-icon {
-    background-image: image_url('like_PNG50.png');
+    background-image: image_url('emojis.png');
     background-repeat: no-repeat;
-    background-size: 25px, 25px;       
+    background-size: 97px 1406px;
+    background-position: -37px -1300px;    
     border-radius: 100%;
-    width: 25px;
-    height: 25px;
+    width: 19px;
+    height: 22px;
     margin-right: 5px;
     overflow: visible;
 }
@@ -508,7 +537,8 @@ a.boxclose{
     color: gray;
     font-size: 14px;
     position: relative;
-    left: 0px;    
+    left: 0px;  
+    padding: 0 2px;  
 }
 
 .like-words {

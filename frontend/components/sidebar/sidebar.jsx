@@ -12,7 +12,11 @@ const Sidebar = (props) => {
                 {photo}  <span> {props.currentUser.firstName}  {props.currentUser.lastName}</span>
             </Link>
             <Link to="/feed" className="active-news-feed" replace>
-                <span><i className="fas fa-newspaper"></i> News Feed</span>
+                <div className="news-feed-cont">
+                    <div className="news-icon"></div>
+                    <span> News Feed</span>
+                </div>
+                {/* <i className="fas fa-newspaper"></i> */}
             </Link>
             <div className="info-links">
                 <a href="https://www.linkedin.com/in/erik-elliott/" target="_blank">
