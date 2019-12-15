@@ -59,4 +59,3 @@ const pathChecker = (e, ids) => {
     }
     return check;
 }
-    

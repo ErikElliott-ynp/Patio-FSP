@@ -75,7 +75,9 @@ class PostForm extends React.Component {
         
         const preview = this.state.photoUrl ?
         (<div className="prev-cont" id="prev-cont">
-            <a onClick={this.handlePreviewCancel} className="boxclose" id="boxclose"></a>
+            <div className="prev-close-circle" id="prev-close-cover">
+                <a onClick={this.handlePreviewCancel} className="boxclose" id="boxclose"></a>
+            </div>
             <img className="img-preview" src={this.state.photoUrl} /> 
         </div> ) : null
 
