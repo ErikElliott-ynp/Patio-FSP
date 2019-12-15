@@ -68,8 +68,3 @@ export const friendshipSelector = ({entities}, user, currentUser) => {
     }
     return wantedFriendship;
 }
-
-const shuffle = (array) => {
-    array.sort(() => Math.random() - .5)
-    return array;
-}

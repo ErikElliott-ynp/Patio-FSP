@@ -33,7 +33,7 @@ class FriendRequest < ApplicationRecord
   private
 
   def not_self
-        errors[:friend] << "can't be user" if user == friend
+      errors[:friend] << "can't be user" if user == friend
   end
 
   def not_friends

@@ -6,7 +6,6 @@ import { createLike, deleteLike } from "../../actions/like_actions";
 import { subscribeLikestoItem, isLiked } from "../../reducers/selectors";
 
 const mSTP = (state, ownProps) => {
-    if (!ownProps.comment) return null;
     let post = state.entities.posts[ownProps.comment.postId];
     let comment = ownProps.comment;
     return {

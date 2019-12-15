@@ -23,14 +23,11 @@ class Icons extends React.Component {
 
     handleFriendNotificiations() {
         let notifications = document.getElementById("notifs-friends")
-        let icon = document.getElementById("icon-friend")
         if (!notifications) return true;
         if (this.props.friendRequests.length > 0) {
             notifications.classList.remove('hidden');
-            // icon.style.color = "rgb(239, 239, 239)"
         } else if (this.props.friendRequests.length === 0) {
             notifications.classList.add('hidden');
-            // icon.style.color = "rgb(58, 56, 56)"
         }
     }
 
