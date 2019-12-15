@@ -243,7 +243,7 @@ span .fa-github {
     background-position-x: 0px;
     background-position-y: -711px;
     background-size: 37px 1608px;
-    margin-left: 3px;
+    margin-left: 1px;
 }
 
 .news-feed-cont {
@@ -448,9 +448,11 @@ a.boxclose{
     font-weight: bold;
     display: inline-block;
     line-height: 0px;
-    padding: 11px 3px;     
+    padding: 11px 3px;   
+    opacity: .6;  
     &:hover{
         color: white;
+        opacity: 1.0;
     }
 }
 
@@ -516,12 +518,12 @@ a.boxclose{
 }
 
 #liked {
-    color: rgb(88,144,255);
+    color: #1E6CF7;
     -webkit-text-stroke-color: rgb(157, 189, 255);
 }
 
 #liked strong {
-    color: rgb(88,144,255);
+    color: #1E6CF7;
     -webkit-text-stroke-color: #f8f2f2;
 }
 

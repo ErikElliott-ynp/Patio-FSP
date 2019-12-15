@@ -1,6 +1,7 @@
 class Api::FriendshipsController < ApplicationController
     def destroy
-        friendship = Friendship.find(params[:id])
+        id = params.dig(:id)
+        friendship = Friendship.find(id)
         if friendship.destroy
             render json: {}
         else

@@ -3,7 +3,8 @@ class Api::CommentsController < ApplicationController
     before_action :require_login
 
     def index
-        @comments = Comment.where('post_id = ?', params[:comment][:post_id])
+        search = params.dig(:comment, :post_id)
+        @comments = Comment.where('post_id = ?', search)
         render :index
     end
 
@@ -19,7 +20,8 @@ class Api::CommentsController < ApplicationController
     end
 
     def update
-        @comment = Comment.find_by(id: params[:id])
+        id = params.dig(:id)
+        @comment = Comment.find_by(id: id)
         
         if @comment && @comment.author_id == current_user.id && @comment.update(change_params)
             render :show
@@ -29,7 +31,8 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = Comment.find_by(id: params[:id])
+        id = params.dig(:id)
+        @comment = Comment.find_by(id: id)
 
         if @comment && @comment.destroy
             render json: {}

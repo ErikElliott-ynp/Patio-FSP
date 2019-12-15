@@ -9,10 +9,9 @@ class Api::UsersController < ApplicationController
     end
 
     def create
-        
-        params[:user][:email] = params[:user][:email].downcase
-    
+        email = params.dig(:user, :email).downcase
         @user = User.new(user_params)
+        @user.email = email
         if @user.save
             login(@user)
             render :show
@@ -32,7 +31,8 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id])
+        id = params.dig(:id)
+        @user = User.find_by(id: id)
         if @user
             render :show
         else
@@ -43,7 +43,7 @@ class Api::UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:work, :password, :education, :about_me, :first_name, :last_name, :sex, :email, :date_of_birth)
+        params.require(:user).permit(:work, :password, :education, :about_me, :first_name, :last_name, :sex, :date_of_birth)
     end
 
     def change_params

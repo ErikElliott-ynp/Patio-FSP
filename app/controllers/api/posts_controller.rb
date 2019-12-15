@@ -5,17 +5,19 @@ class Api::PostsController < ApplicationController
 
 
     def index 
-        if params[:user] == "all"
+        user = params.dig(:user)
+        if user == "all"
             @posts = Post.includes(:likes, comments: [:likes] ).all
         else
             @posts = Post.includes(:likes, comments: [:likes] )
-                .where('profile_id = ? OR author_id = ?', params[:user], current_user.id)    
+                .where('profile_id = ? OR author_id = ?', user, current_user.id)    
         end
         render :index
     end
 
     def show
-        @post = Post.with_attached_photo.includes(:comments).find_by(id: params[:id])
+        id = params.dig(:id)
+        @post = Post.with_attached_photo.includes(:comments).find_by(id: id)
         if @post
             render :show
         else
@@ -34,7 +36,8 @@ class Api::PostsController < ApplicationController
     end
 
     def update 
-        @post = Post.find_by(id: params[:id])
+        id = params.dig(:id)
+        @post = Post.find_by(id: id)
         
         if @post && @post.author_id == current_user.id && @post.update(change_params)
             render :show
@@ -44,7 +47,8 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find_by(id: params[:id])
+        id = params.dig(:id)
+        @post = Post.find_by(id: id)
         if @post && @post.destroy
             render json: {}
         else 
