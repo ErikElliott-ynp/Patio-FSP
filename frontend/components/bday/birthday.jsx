@@ -1,28 +1,30 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Birthday = (props) => {
     return (
         <div className="right-side">
-            <div className="bday-box">
-                <div className="bday-total">
+            <div className="bday-total">
+                
                     <div className="bday-img"></div>
-                    <div className="bday-text">
-                        <span>{props.user.fname} {props.user.lname}</span>
+                    <div className="bday-text-news">
+                         <Link to={`/users/${props.bdayUser.id}`} className="bday-link">{props.bdayUser.firstName} {props.bdayUser.lastName}'s</Link> Birthday is today!
                     </div>
-                </div>
+                
                 
             </div>
             <div className="lang-box">
-                <p className="english">English (US)</p>
+                <p className="english">English (US) •    San Francisco, CA</p>
             </div>
         </div>
     )
 }
 
 Birthday.defaultProps = {
-    user: {
-        fname: "",
-        lname: ""
+    bdayUser: {
+        id: null,
+        firstName: "",
+        lastName: ""
     }
 }
 

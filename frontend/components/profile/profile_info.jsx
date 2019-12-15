@@ -40,9 +40,9 @@ class ProfileInfo extends React.Component {
                     Add a short bio to tell people about yourself
                 </div> : null;
 
-            home = this.props.profile.location ? <div className="location"><i className="fas fa-home"></i> <p>Lives in {this.props.profile.location}</p></div> : null;
-            work = this.props.profile.work ? <div className="work"><i className="fas fa-briefcase"></i> <p> Works at {this.props.profile.work}</p></div> : null;
-            education = this.props.profile.education ? <div className="education"><i className="fas fa-graduation-cap"></i> <p>Went to school at {this.props.profile.education}</p></div> : null;   
+            home = this.props.profile.location ? <div className="location"><i className="fas fa-home profile-info-icons"></i> <p>Lives in {this.props.profile.location}</p></div> : null;
+            work = this.props.profile.work ? <div className="work"><i className="fas fa-briefcase profile-info-icons"></i> <p> Works at {this.props.profile.work}</p></div> : null;
+            education = this.props.profile.education ? <div className="education"><i className="fas fa-graduation-cap profile-info-icons"></i> <p>Went to school at {this.props.profile.education}</p></div> : null;   
 
 
             bio = this.props.profile.aboutMe ? 

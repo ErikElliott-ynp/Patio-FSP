@@ -113,7 +113,7 @@ input[type="submit"]:hover {
     justify-content: space-between;
     width: 200px;
     height: 400px;
-    margin: 20px 25px 0 11em;
+    margin: 24px 25px 0 11em;
     position: fixed;
 }
 
@@ -237,7 +237,7 @@ span .fa-github {
 }
 
 .news-icon {
-    background-image: url('more-icons.png');
+    background-image: image_url('more-icons.png');
     width: 20px;
     height: 20px;
     background-position-x: 0px;
@@ -561,4 +561,68 @@ a.boxclose{
 
 .post-like-cont {
     margin-left: 1.5em;
+}
+
+.lang-box {
+    background-color: #F8F2F2;
+    width: 16.05em;
+    height: 1.9em;
+    border-radius: 4px;
+    margin-top: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+
+}
+
+.english {
+    font-family: 'Fira Sans', sans-serif;
+    color: rgb(160, 160, 160);
+    font-size: 12px;
+    margin: 10px 15px;
+}
+
+.bday-total {
+    background-color: #F8F2F2;
+    width: 16em;
+    height: 3em;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+
+}
+
+.right-side {
+    border-radius: 4px;
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+}
+
+.bday-img {
+    background-image: image_url('cake.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    margin-left: 4px;
+}
+
+.bday-cont {
+    position: fixed;
+    margin: 1.55em 0 0 35.85em;
+}
+
+.bday-link {
+    color: rgb(47, 47, 241);
+    &:hover{
+        // border-bottom: 1px solid rgb(47, 47, 241);
+        text-decoration: underline;
+    }
+}
+
+.bday-text-news {
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: .5px;
 }
