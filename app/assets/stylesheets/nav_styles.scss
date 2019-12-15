@@ -299,11 +299,10 @@ body {
 
 .info-blip-a {
     padding: 3px 0 7px 2px;
-}
-
-.info-blip-a:hover {
-    background-color: rgb(150, 140, 140);
+    &:hover {
+    background-color: rgb(37, 142, 173);
     border-radius: 5px;
+    }
 }
 
 .info-blip p {

@@ -620,13 +620,12 @@ a.boxclose{
 
 .bday-cont {
     position: fixed;
-    margin: 1.55em 0 0 35.85em;
+    margin: 1.55em 0 0 35.35em;
 }
 
 .bday-link {
     color: rgb(47, 47, 241);
     &:hover{
-        // border-bottom: 1px solid rgb(47, 47, 241);
         text-decoration: underline;
     }
 }

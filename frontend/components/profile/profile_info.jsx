@@ -75,7 +75,7 @@ class ProfileInfo extends React.Component {
 
                 </div>
                 <div className="friends">
-                    <h3>Friends:</h3>
+                    <h3>Friends <p className="friends-p">•</p>  <p className="friend-count">{this.props.friends.length}</p> </h3>
                     <div className="friends-list">
                         {friend0}
                         {friend1}
