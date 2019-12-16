@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
     const divs = ["friend-box", "msg-box", "note-box"];
-    if (!pathChecker(e, divs) && (!(e.target.classList.contains('white')))) {
+    if (!pathChecker(e, divs) && (!(e.target.classList.contains('white')su))) {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];
