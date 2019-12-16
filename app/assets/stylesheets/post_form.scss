@@ -409,7 +409,7 @@ span .fa-github {
     font-size: 20px;
     padding: 1px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     &:hover{
         background-color: rgb(255, 255, 255);
         border-radius: 3px;
@@ -417,7 +417,7 @@ span .fa-github {
 }
 
 .sidebar-prof span {
-    margin-bottom: 7px;
+    margin-bottom: -2px;
     text-transform: capitalize;
 }
 
