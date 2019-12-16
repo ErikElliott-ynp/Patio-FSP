@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
     const divs = ["friend-box", "msg-box", "note-box"];
-    if (!pathChecker(e, divs) && (!(e.target.style.color === 'white') && !(e.target.matches(".icons-cont")))) {
+    if (!pathChecker(e, divs) && (!(e.target.classList.contains('white')))) {
         let dropdowns = document.getElementsByClassName('down');
         for (let i = 0; i < dropdowns.length; i++) {
             let open = dropdowns[i];
@@ -41,8 +41,8 @@ document.addEventListener("click", (e) => {
         let icons = document.getElementsByClassName('gray');
         for (let i = 0; i < icons.length; i++) {
             let white = icons[i];
-            if (white.style.color === "white") {
-                white.style.color = "rgb(58, 56, 56)";
+            if (white.classList.contains("white")) {
+                white.classList.remove("white");
             }
         }
     }

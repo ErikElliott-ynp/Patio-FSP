@@ -34,6 +34,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .logo:hover {
     cursor: pointer;
 }
@@ -588,4 +589,18 @@ body {
     font-size: 16px;
     border-radius: 2px;
     text-align: center;
+}
+
+.icons-cont .off-white {
+    color: rgb(248, 247, 247);
+    &:hover {
+        color: rgb(248, 247, 247);
+    }
+}
+
+.icons-cont .white {
+    color: white;
+    &:hover {
+        color: white;
+    }
 }

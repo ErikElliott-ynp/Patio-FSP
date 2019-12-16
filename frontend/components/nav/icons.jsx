@@ -14,10 +14,10 @@ class Icons extends React.Component {
         let icon = document.getElementById(iconId);
         if (classArray.includes("hidden")) {
             ele.classList.remove('hidden');
-            icon.style.color = 'white';
+            icon.classList.add('white');
         } else {
             ele.classList.add('hidden');
-            icon.style.color = "rgb(58, 56, 56)"
+            icon.classList.remove("white");
         }
     }
 
@@ -39,10 +39,11 @@ class Icons extends React.Component {
         });
         let newFriendRequests = this.props.friendRequests.length > 0 ? requests : <h4>No New Friend Requests</h4>;
         let friendNotifications = this.props.friendRequests.length;
+        let offWhite = this.props.friendRequests.length > 0 ? "off-white" : "";
         this.handleFriendNotificiations();
         return (
             <div className="icons-cont">
-                <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className="fas fa-user-friends gray" id="icon-friend"></i>
+                <i onClick={() => this.handleIcons('friend-box', 'icon-friend')} className={`fas ${offWhite} fa-user-friends gray`} id="icon-friend"></i>
                 <i className="fab fa-facebook-messenger gray" onClick={() => this.handleIcons('msg-box', 'icon-msg')} id="icon-msg"></i>
                 <i className="fas fa-bell gray" onClick={() => this.handleIcons('note-box', 'icon-note')} id="icon-note"></i>
                 <div className="request-wrapper hidden down" id="friend-box">
