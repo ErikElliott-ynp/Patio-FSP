@@ -9,7 +9,8 @@ class NavBar extends React.Component {
         this.state = {
             email: "",
             password: "",
-            search: ""
+            search: "",
+            results: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
@@ -153,7 +154,9 @@ class NavBar extends React.Component {
                                                 <h2 className="the-p">P</h2>
                                             </div>
                                         </Link>
-                                        <input className="search-bar" type="text" onChange={(e) => this.handleSearch(e)} value={this.state.search} placeholder="Search"/>
+                                        <form>
+                                            <input className="search-bar" type="text" onChange={(e) => this.handleSearch(e)} value={this.state.search} placeholder="Search"/>
+                                        </form>
                                         <i className="fa fa-search"></i>
                                     </div>
                                     <div className="right-logged-in clearfix">
