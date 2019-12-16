@@ -3,7 +3,7 @@ import Birthday from "./birthday";
 
 const mSTP = state => {
     return {
-        bdayUser: state.entities.users[4]
+        bdayUser: state.entities.users[5]
     }
 }
 
