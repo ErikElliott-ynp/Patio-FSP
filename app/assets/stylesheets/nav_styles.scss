@@ -203,7 +203,7 @@ body {
     position: relative;
     top: -33px;
     left: 332px;
-    width: 360px;
+    width: 395px;
     height: 17px;
     border-radius: 4px;
     font-size: 14px;
@@ -212,7 +212,7 @@ body {
 }
 
 .search-bar::placeholder {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     padding-top: 5px;
     padding-bottom: 0px;
     letter-spacing: 1px;
@@ -254,7 +254,7 @@ body {
 .fa-search {
     position: absolute;
     top: 7px;
-    left: 676px;
+    left: 711px;
     width: 30px;
     color: gray;
 }

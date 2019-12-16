@@ -8,6 +8,7 @@ const mSTP = state => {
         currentUser: state.entities.users[state.session.id],
         loggedIn: !!state.session.id,
         errors: state.errors.session,
+        users: Object.values(state.entities.users)
     }
 }
 
