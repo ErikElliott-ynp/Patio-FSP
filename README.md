@@ -36,11 +36,16 @@ about their lives. Users can share posts about their activities, comment on thei
   
   ![Comments](https://user-images.githubusercontent.com/51393952/69013220-7b4ed480-0932-11ea-8a06-35cf07b498f4.gif)
   
-### Profiles
-  Users have their own profiles where friends can comment on their walls and they can update their personal information
-  including work, location, photos, and more.
+### Friending
+  Profiles are private until Users become friends. You can navigate to another user's page, send a friend request, and cancel your current request!
   
-  ![Profiles](https://user-images.githubusercontent.com/51393952/69013282-35464080-0933-11ea-9e98-a52d767428e3.gif)
+  ![Friending](https://user-images.githubusercontent.com/51393952/70950892-bcf89b00-2016-11ea-8341-869bae7ec78f.gif)
+  
+### Likes
+   Users can like both comments and posts! Rails polymorphic associations used for DRY code and the React Redux framework provides seemless Liking and Unliking.
+   
+   ![Likes](https://user-images.githubusercontent.com/51393952/70949742-79506200-2013-11ea-85c3-c1e58ea4c29d.gif)
+   
   
 ### Code Snippets
 #### Inline Comment Edits
