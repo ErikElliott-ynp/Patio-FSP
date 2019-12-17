@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Icons from "./icons"
+import Icons from "./icons";
+import SearchItem from "./search_item";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -85,11 +86,13 @@ class NavBar extends React.Component {
 
     handleSearchResults (e) {
         e.preventDefault();
+
+        this.setState({results: []});
         
         this.props.user.forEach( user => {
             let name = user.firstName + " "  + user.lastName;
             if (name.includes(this.state.search)) {
-                this.setState({searchResults: this.state.searchResults.push(user)})
+                this.setState({results: this.state.results.push(user)})
             }
         })
     }
@@ -150,6 +153,13 @@ class NavBar extends React.Component {
             photo = this.props.currentUser.profilePicture ? <img src={this.props.currentUser.profilePicture} className="profile-photo" /> 
                 : <img src="https://www.punchstick.com/wp-content/uploads/2017/12/default-user-image.png" className="profile-photo" />
         }
+        let searchItems = this.state.results.map(user => {
+            return <SearchItem user={user} key={user.id}/>
+        })
+        let searchClass = this.state.results.length === 0 ? "hidden" : "";
+        let searchRes = <ul className="search-list">
+                {searchItems}
+        </ul>
        
         return (
             <div>
@@ -170,6 +180,9 @@ class NavBar extends React.Component {
                                             <input className="search-bar" type="text" onChange={(e) => this.handleSearch(e)} value={this.state.search} placeholder="Search"/>
                                         </form>
                                         <i className="fa fa-search"></i>
+                                        <div className={`search-dropdown ${searchClass}`}>
+                                            {searchRes}
+                                        </div>
                                     </div>
                                     <div className="right-logged-in clearfix">
                                         <Link to={`/users/${this.props.currentUser.id}`} className="info-blip-a" replace>
@@ -222,5 +235,9 @@ class NavBar extends React.Component {
         )
     }
 }
+
+NavBar.DefaultProps = ({
+
+})
 
 export default NavBar;
