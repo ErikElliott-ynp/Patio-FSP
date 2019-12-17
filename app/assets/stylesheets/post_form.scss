@@ -364,7 +364,7 @@ span .fa-github {
 .img-preview { 
     width: 150px;
     height: 150px;
-   
+    object-fit: cover;
 }
 
 .item-username {
@@ -436,6 +436,7 @@ span .fa-github {
     height: 80px;
     width: 80px;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 
