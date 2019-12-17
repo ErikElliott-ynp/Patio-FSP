@@ -83,6 +83,17 @@ class NavBar extends React.Component {
         })
     }
 
+    handleSearchResults (e) {
+        e.preventDefault();
+        
+        this.props.user.forEach( user => {
+            let name = user.firstName + " "  + user.lastName;
+            if (name.includes(this.state.search)) {
+                this.setState({searchResults: this.state.searchResults.push(user)})
+            }
+        })
+    }
+
     handleLogout() {
         this.props.logout()
             .then(document.getElementById('demo').classList.remove('hidden') )
@@ -102,6 +113,7 @@ class NavBar extends React.Component {
         if (prevProps.location.pathname !== this.props.location.pathname) {
             this.resetState();
         }
+
     }
     
 
