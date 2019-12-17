@@ -17,6 +17,7 @@ class NavBar extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.resetState = this.resetState.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleSearchResults = this.handleSearchResults.bind(this);
     }
 
     handleSubmit(e){
@@ -65,7 +66,8 @@ class NavBar extends React.Component {
         this.setState({
             email: "",
             password: "",
-            search: ""
+            search: "", 
+            results: []
         });
     }
 
@@ -82,19 +84,21 @@ class NavBar extends React.Component {
         this.setState({
             search: e.currentTarget.value 
         })
+        this.handleSearchResults(e);
     }
 
     handleSearchResults (e) {
-        e.preventDefault();
 
-        this.setState({results: []});
-        
-        this.props.user.forEach( user => {
-            let name = user.firstName + " "  + user.lastName;
-            if (name.includes(this.state.search)) {
-                this.setState({results: this.state.results.push(user)})
-            }
-        })
+        let resultArray = []
+        if (e.target.value.trim()) {
+            this.props.users.forEach( user => {
+                let name = user.firstName + user.lastName;
+                if (name.toLowerCase().includes(e.target.value)) {
+                    resultArray.push(user)
+                }
+            })
+        }
+        this.setState({results: resultArray})
     }
 
     handleLogout() {
@@ -236,8 +240,5 @@ class NavBar extends React.Component {
     }
 }
 
-NavBar.DefaultProps = ({
-
-})
 
 export default NavBar;
