@@ -51,10 +51,12 @@ input[type="text"], input[type="password"], textarea, select {
     padding: 0 0 8px 7px;
     font-family: 'Fira Sans', sans-serif;
     letter-spacing: .5px;
+    color: rgb(100, 100, 100);
 }
 
 .fa-pencil-alt {
     padding-left: 15px;
+    fill: rgb(100, 100, 100);
 }
 
 input[type="submit"]:hover {
@@ -171,6 +173,7 @@ span .fa-github {
     position: absolute;
     font-size: 30px;
     right: -6px;
+    color: rgb(100, 100, 100);
 }
 
 .fa-trash:hover {
@@ -180,13 +183,11 @@ span .fa-github {
 .post-form-footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     font-family: 'Fira Sans', sans-serif;
     font-size: 16px;
     margin: 0 12px;
     border-top: 1px solid #dbdbdb;
     width: 95%;
-    padding-bottom: 3px;
 }
 
 
@@ -197,6 +198,7 @@ span .fa-github {
     display: grid;
     top: 4px;
     padding-left: 2px;
+    color: #292929;
 }
 
 .post-form-label {
@@ -209,7 +211,7 @@ span .fa-github {
 
 
 .post-submit-btn {
-    margin: 9px 35px 0 0;
+    margin: 9px 10px 0 0;
     border-radius: 2px;
     font-family: 'Fira Sans', sans-serif;
     background-color: #36C5F0;   
@@ -397,6 +399,7 @@ span .fa-github {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .file-btn {
@@ -491,6 +494,7 @@ a.boxclose{
     position: relative;
     left: -16px;
     top: 13px;
+    color: rgb(100, 100, 100);
     &:hover{
         color: gray;
     }
@@ -524,7 +528,7 @@ a.boxclose{
     width: 21px;
     height: 21px;
     border-radius: 8px;
-    margin: 7px 0 0 20px;
+    margin: 14px 0 0 0px;
     cursor: pointer;
 }
 
