@@ -61,5 +61,4 @@ about their lives. Users can share posts about their activities, comment on thei
 ## Future Goals
  + Videos on posts 
  + Photo carousel
- + Search 
  + Nested Comments 
