@@ -48,12 +48,8 @@ form.update-form input textarea {
 
 .update-form h3 {
     font-size: 24px;
-    color: white;
-    text-shadow:
-		-1px -1px 0 rgb(107, 106, 106),
-		1px -1px 0 rgb(107, 106, 106),
-		-1px 1px 0 rgb(107, 106, 106),
-		1px 1px 0 rgb(107, 106, 106);
+    color: #646464;
+  
 }
 
 .update-TA {
@@ -89,19 +85,14 @@ form.update-form input textarea {
 
 .update-form h4 {
     text-align: center;
-    color: white;
+    color: #646464;
     font-size: 16px;
-    padding-bottom: 8px;
-    text-shadow:
-		-1px -1px 0 rgb(107, 106, 106),
-		1px -1px 0 rgb(107, 106, 106),
-		-1px 1px 0 rgb(107, 106, 106),
-        1px 1px 0 rgb(107, 106, 106);
+    padding-bottom: 8px
     letter-spacing: 1px
 }
 
-.about-me-modal {
-    font-size: 20px !important;
+h4.about-me-modal {
+    font-size: 20px;
 }
 
 .update-post-wide {
