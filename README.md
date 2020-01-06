@@ -14,7 +14,7 @@ about their lives. Users can share posts about their activities, comment on thei
 ## Technologies
   + Ruby on Rails
   + PostgreSQL
-  + JBuiler
+  + JBuilder
   + Javascript
   + JQuery
   + HTML/CSS
