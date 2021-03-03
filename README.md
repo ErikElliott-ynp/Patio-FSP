@@ -9,7 +9,7 @@ about their lives. Users can share posts about their activities, comment on thei
 
 ## Demo
 
-[Hang out on the Patio here!](https://patio-fsp.herokuapp.com/?#/)
+[Hang out on the Patio here!](https://patio-fsp.herokuapp.com)
 
 ## Technologies
   + Ruby on Rails
